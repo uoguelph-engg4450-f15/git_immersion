@@ -120,6 +120,11 @@ module Labs
     else
       f.puts "<li>Previous Lab</li>"
     end
+    if lab.next
+      f.puts "<li><a href=\"#{lab.next.filename}\">Next Lab</a></li>"
+    else
+      f.puts "<li>Next Lab</li>"
+    end
     f.puts "<li><a href=\"index.html\">Index</a></li>"
     if lab.next
       f.puts "<li><a href=\"#{lab.next.filename}\">Next Lab &raquo;</a></li>"
