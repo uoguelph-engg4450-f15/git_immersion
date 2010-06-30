@@ -1,8 +1,8 @@
 module Labs
   module_function
-  
+
   HTML_DIR = 'git_tutorial/html'
-  
+
   class Lab
     attr_reader :name, :number, :lines
     attr_accessor :next, :prev
@@ -29,11 +29,11 @@ module Labs
       RedCloth.new(lines).to_html
     end
   end
-  
+
   def make_sample_name(lab_number, word)
     SAMPLES_DIR + ("/%03d_%s.txt" % [lab_number, word])
   end
-  
+
   def generate_labs(io)
     lab_index = -1
     labs = []
@@ -41,7 +41,7 @@ module Labs
     gathered_line = ''
     io.each do |line|
       next if line =~ /^\s*-+\s*$/ # omit dividers
-      next if line =~ /^[+][a-z]/  # omit hidden commands 
+      next if line =~ /^[+][a-z]/  # omit hidden commands
       line.sub!(/^[-!]/,'')        # remove force and execute ignore chars
       case mode
       when :direct
@@ -111,27 +111,27 @@ module Labs
     end
     index(labs)
   end
-  
+
   def emit_links(f, lab)
     f.puts "<div class=\"nav\">"
     f.puts "<ul>"
-    if lab.next
-      f.puts "<li><a href=\"#{lab.next.filename}\">Next Lab</a></li>"
-    else
-      f.puts "<li>Next Lab</li>"
-    end
     if lab.prev
-      f.puts "<li><a href=\"#{lab.prev.filename}\">Previous Lab</a></li>"
+      f.puts "<li><a href=\"#{lab.prev.filename}\">&laquo; Previous Lab</a></li>"
     else
       f.puts "<li>Previous Lab</li>"
     end
     f.puts "<li><a href=\"index.html\">Index</a></li>"
+    if lab.next
+      f.puts "<li><a href=\"#{lab.next.filename}\">Next Lab &raquo;</a></li>"
+    else
+      f.puts "<li>Next Lab</li>"
+    end
     f.puts "</ul>"
     f.puts "</div>"
   end
-  
+
   def index(labs)
-    File.open("#{HTML_DIR}/index.html", "w") { |f| 
+    File.open("#{HTML_DIR}/index.html", "w") { |f|
       f.puts "<html>"
       f.puts "<head>"
       f.puts "<link href=\"labs.css\" media=\"screen,print\" rel=\"stylesheet\" type=\"text/css\" />"
@@ -160,7 +160,7 @@ module Labs
 
   def to_html(lab)
     lab_html = lab.to_html
-    File.open("#{HTML_DIR}/#{lab.filename}", "w") { |f| 
+    File.open("#{HTML_DIR}/#{lab.filename}", "w") { |f|
       f.puts "<html>"
       f.puts "<head>"
       f.puts "<link href=\"labs.css\" media=\"screen,print\" rel=\"stylesheet\" type=\"text/css\" />"
