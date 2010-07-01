@@ -113,81 +113,27 @@ module Labs
   end
 
   def emit_links(f, lab)
-    f.puts "<div class=\"nav\">"
-    f.puts "<ul>"
-    if lab.prev
-      f.puts "<li><a href=\"#{lab.prev.filename}\">&laquo; Previous Lab</a></li>"
-    else
-      f.puts "<li>Previous Lab</li>"
+    partial("nav", binding)
+  end
+
+  def partial(template, bnd)
+    open("templates/#{template}.html.erb") do |tpl|
+      template_string = tpl.read
+      template_string.gsub!(/-%>/, "%>")
+      ERB.new(template_string).result(bnd)
     end
-    if lab.next
-      f.puts "<li><a href=\"#{lab.next.filename}\">Next Lab</a></li>"
-    else
-      f.puts "<li>Next Lab</li>"
-    end
-    f.puts "<li><a href=\"index.html\">Index</a></li>"
-    if lab.next
-      f.puts "<li><a href=\"#{lab.next.filename}\">Next Lab &raquo;</a></li>"
-    else
-      f.puts "<li>Next Lab</li>"
-    end
-    f.puts "</ul>"
-    f.puts "</div>"
   end
 
   def index(labs)
-    File.open("#{HTML_DIR}/index.html", "w") { |f|
-      f.puts "<html>"
-      f.puts "<head>"
-      f.puts "<link href=\"labs.css\" media=\"screen,print\" rel=\"stylesheet\" type=\"text/css\" />"
-      f.puts "</head>"
-      f.puts "<body>"
-      f.puts "<div id=\"header\">"
-      f.puts "<a href=\"http://edgecase.com\">"
-      f.puts "<img id=\"logo\" src=\"edgecase.gif\"\ >"
-      f.puts "</a>"
-      f.puts "<h1 class=\"title\">Git Immersion Labs</h1>"
-      f.puts "</div>"
-      f.puts "<div id=\"main\">"
-      f.puts "<h1>Index of Labs</h1>"
-      f.puts "<ul>"
-      labs.each do |lab|
-        f.puts "<li><a href=\"#{lab.filename}\">Lab #{lab.number}</a>: #{lab.name}</li>"
-      end
-      f.puts "</ul>"
-      f.puts "</div>"
-      f.puts "<div id=\"footer\">"
-      f.puts "</div>"
-      f.puts "</body>"
-      f.puts "</html>"
-    }
+    File.open("#{HTML_DIR}/index.html", "w") do |f|
+      f.puts partial('index', binding)
+    end
   end
 
   def to_html(lab)
     lab_html = lab.to_html
     File.open("#{HTML_DIR}/#{lab.filename}", "w") { |f|
-      f.puts "<html>"
-      f.puts "<head>"
-      f.puts "<link href=\"labs.css\" media=\"screen,print\" rel=\"stylesheet\" type=\"text/css\" />"
-      f.puts "</head>"
-      f.puts "<body>"
-      f.puts "<div id=\"header\">"
-      f.puts "<a href=\"http://edgecase.com\">"
-      f.puts "<img id=\"logo\" src=\"edgecase.gif\"\ >"
-      f.puts "</a>"
-      f.puts "<div class=\"title\">Git Immersion Labs</div>"
-      emit_links(f, lab)
-      f.puts "</div>"
-      f.puts "<div id=\"main\">"
-      f.puts "<div id=\"content\">"
-      f.puts lab_html
-      f.puts "</div>"
-      f.puts "</div>"
-      f.puts "<div id=\"footer\">"
-      emit_links(f, lab)
-      f.puts "</div>"
-      f.puts "</body>"
-      f.puts "</html>"
+      f.puts partial('lab', binding)
     }
   end
 end
