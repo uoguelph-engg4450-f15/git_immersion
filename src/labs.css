@@ -1,3 +1,6 @@
+article,aside,canvas,figcaption,figure,footer,header,hgroup,menu,nav,section,summary {
+    display: block;
+}
 body,
 html {
     margin:0;
@@ -45,29 +48,29 @@ body {
     font-weight: normal;
     font-style: italic;
 }
-.nav {
+nav {
     padding:0px;
 }
-.nav ul{
+nav ul{
     margin:0;
     padding:0px;
     padding:5px;
     list-style:none;
 }
-.nav li{
+nav li{
     display:inline;
     margin:0;
     padding:5px;
     color: #DED0C7;
 }
-.nav a {
+nav a {
     color: #FFFBE7;
     text-decoration: none;
 }
-.nav a:visited {
+nav a:visited {
     color: #EEE0D7;
 }
-.nav a:hover {
+nav a:hover {
     color: #FFFFFF;
 }
 #main {
