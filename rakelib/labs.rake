@@ -106,31 +106,32 @@ module Labs
         end
       end
     end
+    write_index_html(labs)
     labs.each do |lab|
-      to_html(lab)
+      write_lab_html(lab)
     end
-    index(labs)
   end
 
-  def emit_links(f, lab)
+  def nav_links(f, lab)
     partial("nav", binding)
   end
 
   def partial(template, bnd)
-    open("templates/#{template}.html.erb") do |tpl|
+    result = open("templates/#{template}.html.erb") do |tpl|
       template_string = tpl.read
-      template_string.gsub!(/-%>/, "%>")
+      template_string.gsub!(/-%>/, "%>@NONEWLINE@")
       ERB.new(template_string).result(bnd)
     end
+    result.gsub(/@NONEWLINE@\n/, '')
   end
 
-  def index(labs)
+  def write_index_html(labs)
     File.open("#{HTML_DIR}/index.html", "w") do |f|
       f.puts partial('index', binding)
     end
   end
 
-  def to_html(lab)
+  def write_lab_html(lab)
     lab_html = lab.to_html
     File.open("#{HTML_DIR}/#{lab.filename}", "w") { |f|
       f.puts partial('lab', binding)
