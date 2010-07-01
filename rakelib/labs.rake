@@ -147,10 +147,20 @@ CLOBBER.include(Labs::HTML_DIR)
 
 directory Labs::HTML_DIR
 
+TO_HTML = "#{Labs::HTML_DIR}/%f"
+EXTRA_SRCS = FileList['src/*.css', 'src/*.js', 'src/*.gif', 'src/*.jpg', 'src/*.png']
+EXTRA_OUT = EXTRA_SRCS.pathmap(TO_HTML)
+
+task :extra => EXTRA_OUT
+
+EXTRA_SRCS.each do |extra|
+  file extra.pathmap(TO_HTML) => [Labs::HTML_DIR, extra] do |t|
+    cp extra, t.name
+  end
+end
+
 desc "Create the Lab HTML"
-task :labs => [Labs::HTML_DIR, "src/labs.txt", "rakelib/labs.rake"] do |t|
-  cp "src/labs.css", "#{Labs::HTML_DIR}/labs.css"
-  cp "src/edgecase.gif", "#{Labs::HTML_DIR}/edgecase.gif"
+task :labs => [Labs::HTML_DIR, "src/labs.txt", "rakelib/labs.rake", :extra] do |t|
   puts "Generating HTML"
   File.open("src/labs.txt") { |f| Labs.generate_labs(f) }
 end
