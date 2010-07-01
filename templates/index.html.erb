@@ -9,21 +9,21 @@
         <![endif]-->
   </head>
   <body>
-    <div id="header">
+    <header>
       <a href="http://edgecase.com">
         <img id="logo" src="edgecase.gif"\ >
       </a>
       <h1 class="title">Git Immersion Labs</h1>
-    </div>
-    <div id="main">
+    </header>
+    <section id="main">
       <h1>Index of Labs</h1>
       <ul>
         <% labs.each do |lab| -%>
           <li><a href="<%= lab.filename %>">Lab <%= lab.number %></a>: <%= lab.name %></li>
         <% end -%>
       </ul>
-    </div>
-    <div id="footer">
-    </div>
+    </section>
+    <footer>
+    </footer>
   </body>
 </html>

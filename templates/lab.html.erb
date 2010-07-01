@@ -4,20 +4,20 @@
     <link href="labs.css" media="screen,print" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <div id="header">
+    <header>
       <a href="http://edgecase.com">
         <img id="logo" src="edgecase.gif"\ >
       </a>
       <div class="title">Git Immersion Labs</div>
       <%= emit_links(f, lab) %>
-   </div>
-    <div id="main">
-      <div id="content">
+    </header>
+    <section id="main">
+      <article>
         <%= lab_html %>
-      </div>
-    </div>
-    <div id="footer">
+      </article>
+    </section>
+    <footer>
       <%= emit_links(f, lab) %>
-   </div>
+   </footer>
   </body>
 </html>

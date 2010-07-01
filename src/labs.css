@@ -18,29 +18,29 @@ body {
     margin:0 auto;
     width:750px;
 }
-#header, #footer {
+body header, body footer {
     background:#66554A;
     color: #FFFBE7;
     margin: 0px 0px;
     padding: 10px 3em;
     width: 90%;
 }
-#header {
+body header {
     border-bottom: 1px solid black;
     height: 60px;
 }
-#header #logo {
+body header #logo {
     float: right;
 }
-#footer {
+body footer {
     border-top: 1px solid black;
 }
-#header h1 {
+body header h1 {
     padding:5px;
     margin:0;
     font-weight: bold;
 }
-#header h2 {
+body header h2 {
     padding:5px;
     margin:0;
     padding-bottom: 0.5em;
@@ -116,10 +116,10 @@ nav a:hover {
 #sidebar h3, #sidebar p {
     padding:0 10px;
 }
-#footer {
+body footer {
     clear:both;
 }
-#footer p {
+body footer p {
     padding:5px;
     margin:0;
 }
