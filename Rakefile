@@ -4,6 +4,8 @@ require 'rake/clean'
 
 SAMPLES_DIR = Dir.pwd + "/samples"
 
+CLOBBER.include("samples", "auto")
+
 desc "Clean the samples directory"
 task :clean_samples do
   rm_r SAMPLES_DIR rescue nil
