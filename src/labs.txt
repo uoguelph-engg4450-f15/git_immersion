@@ -433,9 +433,14 @@ git add .
 
 p(((((note). <b>Note:</b> We used the current directory ('.') as the
 file to add.  This is a really convenient shortcut for adding in all
-the changes to the files in the current directory and below.  Since it
-adds everything, its a good idea to run the status before doing an
-"add .".
+the changes to the files in the current directory and below.  But
+since it adds everything, it is a _really_ good idea to the status
+before doing an <tt>add .</tt>, just to make sure you don't add any
+file that is not intended.
+
+p(((((note). I wanted you to see the "add ." trick, but we will
+continue to add explicit files in the rest of this tutorial just to be
+safe.
 
 p. You should see ...
 
@@ -1170,7 +1175,7 @@ puts "Hello, #{name}!"
 EOF
 
 Execute:
-git add .
+git add hello.rb
 git commit -m 'Add an author comment'
 
 h3. Oops, Should have an Email
@@ -1193,7 +1198,7 @@ p. We really don't want a separate commit for just the email.  Let's
 amend the previous commit to include the email change.
 
 Execute:
-git add .
+git add hello.rb
 =add
 git commit --amend -m 'Add an author/email comment'
 =commit
@@ -1307,7 +1312,7 @@ EOF
 p. Add and commit the change.
 
 Execute:
-git add .
+git add Rakefile
 git commit -m 'Added a Rakefile.'
 
 p. You should be able to use Rake to run your hello program now.
@@ -1571,7 +1576,7 @@ end
 EOF
 
 Execute:
-git add .
+git add lib/greeter.rb
 git commit -m 'Added greeter class'
 
 h3. Changes for Greet: Modify the main program
@@ -1589,7 +1594,7 @@ puts greeter.greet
 EOF
 
 Execute:
-git add .
+git add lib/hello.rb
 git commit -m 'Hello uses Greeter'
 
 h3. Changes for Greet: Update the Rakefile
@@ -1607,7 +1612,7 @@ end
 EOF
 
 Execute:
-git add .
+git add Rakefile
 git commit -m 'Updated Rakefile'
 
 h3. Up Next
@@ -1790,7 +1795,7 @@ puts "Hello, #{my_name}!"
 EOF
 
 Execute:
-git add .
+git add lib/hello.rb
 git commit -m 'Made interactive'
 
 h3. View the Branches
