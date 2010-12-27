@@ -1305,7 +1305,7 @@ File: Rakefile
 task :default => :run
 
 task :run do
-  require 'lib/hello'
+  require './lib/hello'
 end
 EOF
 
