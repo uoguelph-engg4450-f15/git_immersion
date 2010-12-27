@@ -214,7 +214,7 @@ EOF
 
 p. The change to the @hello.rb@ file has been staged.  This means that
 git now knows about the change, but the changes hasn't been
-_permanently recorded in the repository yet.  The next commit
+_permanently_ recorded in the repository yet.  The next commit
 operation will included the staged changes.
 
 p. If you decide you _don't_ want to commit that change after all, the
