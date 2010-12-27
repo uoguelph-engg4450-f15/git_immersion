@@ -1167,7 +1167,7 @@ h3. Change the program then commit
 p. Add an author commit to the program.
 
 File: hello.rb
-# This is an unwanted but committed change
+# Default is World
 # Author: Jim Weirich
 name = ARGV.first || "World"
 
@@ -1185,7 +1185,7 @@ should have an email included.  Update the hello program to include an
 email.
 
 File: hello.rb
-# This is an unwanted but committed change
+# Default is World
 # Author: Jim Weirich (jim@somewhere.com)
 name = ARGV.first || "World"
 
