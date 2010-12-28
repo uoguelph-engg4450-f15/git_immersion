@@ -1,6 +1,3 @@
-article,aside,canvas,figcaption,figure,footer,header,hgroup,menu,nav,section,summary {
-    display: block;
-}
 body,
 html {
     margin:0;
@@ -18,29 +15,29 @@ body {
     margin:0 auto;
     width:750px;
 }
-body header, body footer {
+#header, #footer {
     background:#66554A;
     color: #FFFBE7;
     margin: 0px 0px;
     padding: 10px 3em;
     width: 90%;
 }
-body header {
+#header {
     border-bottom: 1px solid black;
     height: 60px;
 }
-body header #logo {
+#header #logo {
     float: right;
 }
-body footer {
+#footer {
     border-top: 1px solid black;
 }
-body header h1 {
+#header h1 {
     padding:5px;
     margin:0;
     font-weight: bold;
 }
-body header h2 {
+#header h2 {
     padding:5px;
     margin:0;
     padding-bottom: 0.5em;
@@ -48,29 +45,29 @@ body header h2 {
     font-weight: normal;
     font-style: italic;
 }
-nav {
+.nav {
     padding:0px;
 }
-nav ul{
+.nav ul{
     margin:0;
     padding:0px;
     padding:5px;
     list-style:none;
 }
-nav li{
+.nav li{
     display:inline;
     margin:0;
     padding:5px;
     color: #DED0C7;
 }
-nav a {
+.nav a {
     color: #FFFBE7;
     text-decoration: none;
 }
-nav a:visited {
+.nav a:visited {
     color: #EEE0D7;
 }
-nav a:hover {
+.nav a:hover {
     color: #FFFFFF;
 }
 #main {
@@ -116,10 +113,10 @@ nav a:hover {
 #sidebar h3, #sidebar p {
     padding:0 10px;
 }
-body footer {
+#footer {
     clear:both;
 }
-body footer p {
+#footer p {
     padding:5px;
     margin:0;
 }
@@ -132,10 +129,10 @@ body footer p {
     margin-bottom: 10px;
 }
 .note {
-    font-style: italic;
+    font-style: italic;    
 }
 .filename {
-    font-weight: bold;
+    font-weight: bold;    
     margin-left: 1em;
     margin-bottom: 0em;
     padding: 0.5em 0em;
@@ -161,7 +158,7 @@ body footer p {
     width: 90%;
 }
 .command {
-    font-weight: bold;
+    font-weight: bold;    
     margin-left: 1em;
     margin-bottom: 0em;
     padding: 0em 0em;
