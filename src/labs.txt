@@ -1937,10 +1937,13 @@ p. In this case we want to back greet up to the point prior to the
 merge with master.  We need to find the last commit before the merge.
 
 Execute:
+git checkout greet
+=checkout
 git hist
 =log
 
 Output:
+=checkout
 =log
 EOF
 
