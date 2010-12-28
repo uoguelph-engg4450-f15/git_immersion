@@ -2180,6 +2180,7 @@ ls
 
 Output:
 =cd
+=ls
 EOF
 
 p. You should see a list of all the files in the top level of the
@@ -2330,9 +2331,12 @@ cd ../cloned_hello
 +pwd
 git fetch
 =fetch
+git hist --all
+=hist
 
 Output:
 =fetch
+=hist
 EOF
 
 p. At this point the repository has all the commits from the original
