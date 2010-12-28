@@ -2424,7 +2424,7 @@ change and pulling it again, but we do want you to know that doing:
 
 pre(instructions). git pull
 
-is indeed equivalent to the two step
+is indeed equivalent to the two steps:
 
 pre(instructions). git fetch
 git merge origin/master
