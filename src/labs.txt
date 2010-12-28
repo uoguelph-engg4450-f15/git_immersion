@@ -2022,8 +2022,11 @@ h2. Goals
 
 h2. Steps
 
-p. Ok, we are back in time before the merge and we want to get the
-changes in master into our greet branch.
+p. Ok, we are back in time before the first merge and we want to get
+the changes in master into our greet branch.
+
+p. This time we will use the rebase command instead of the merge
+command to bring in the changes from the master branch.
 
 Execute:
 git checkout greet
