@@ -1786,8 +1786,6 @@ Execute:
 git checkout master
 
 File: lib/hello.rb
-# Default is World
-
 puts "What's your name"
 my_name = gets.strip
 
@@ -1874,8 +1872,6 @@ to be the following.
 
 File: lib/hello.rb
 require 'greeter'
-
-# Default is World
 
 puts "What's your name"
 my_name = gets.strip
