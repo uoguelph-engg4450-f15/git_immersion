@@ -2572,7 +2572,7 @@ git pull origin
 ----------------------------------------------------------------------
 h1. Bare Repositories
 
-Bare repositories (without working directories) are usually used for
+p. Bare repositories (without working directories) are usually used for
 sharing).
 
 h3. Create a bare repository.
