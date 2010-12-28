@@ -2340,10 +2340,24 @@ Output:
 EOF
 
 p. At this point the repository has all the commits from the original
-repository.  However, they have not been merged into the local master
-branch.
+repository, but they are not integrated into the the cloned
+repository's local branches.
+
+p. Find the "Changed README in original repo" commit in the history
+above.  Notice that the commit includes "origin/master" and
+"origin/HEAD".
+
+p. Now look at the "Updated Rakefile" commit.  You will see that it
+the local master branch points to this commit, not to the new commit
+that we just fetched.
+
+p. The upshot of this is that the "git fetch" command will fetch new
+commits from the remote repository, but it will not merge these
+commits into the local branches.
 
 h3. Check the README
+
+We can demonstrate that the cloned README is unchanged.
 
 Execute:
 cat README
@@ -2387,8 +2401,14 @@ This is the Hello World example from the git tutorial.
 (changed in original)
 EOF
 
-p. There's the changes.
+p. There's the changes.  Even though "git fetch" does not merge the
+changes, we can still manually merge the changes from the remote
+repository.
 
+h3. Up Next
+
+p. Next let's take a look at combining the fetch & merge process into
+a single command.
 
 ----------------------------------------------------------------------
 h1. Pulling Changes
