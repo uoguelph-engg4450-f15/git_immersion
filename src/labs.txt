@@ -2078,7 +2078,7 @@ h2. Goals
 
 h2. Steps
 
-h3 Merge greet into master
+h3. Merge greet into master
 
 Execute:
 git checkout master
