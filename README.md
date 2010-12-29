@@ -47,16 +47,16 @@ file with additional directives interpreted for both run time
 
 The Format Directives are:
 
-### h1. \<lab name\>
+### h1. _\<lab name\>_
 
-Starts a new lab with the name _lab name_.  Each lab 
+Starts a new lab with the name _\<lab name\>_.  Each lab 
 
-### pre(&lt;class name&gt;).
+### pre(_\<class name\>_).
 
-A section of predefined code, using the HTML class of _class name_.
-The predefined code block runs until a blank line.
+A section of predefined code, using the HTML class of _\<class
+name\>_.  The predefined code block runs until a blank line.
 
-### p. <text...>
+### p. _\<text...\>_
 
 A paragraph of text.  The text for the paragraph will continue on
 following lines until a blank line.
@@ -66,18 +66,20 @@ following lines until a blank line.
 Execute the following shell command until a blank line is encountered.
 Commands are executed as they appear with the following exceptions.
 
-* +command line
+* +_\<command line\>_
 
-  Run this command line silently, do not include it on the lab output.
+  Run this _\<command\>_ line silently, do not include it on the lab
+  output.
 
 * -command line
 
-  Do not run this command, but include it in the lab output.
+  Do not run this _\<command line\>_, but include it in the lab
+  output.
 
-### File: <filename>
+### File: _\<filename\>_
 
 Format the following lines (until an "EOF" string is encountered) as
-the contents of a file name _filename_.
+the contents of a file name _\<filename\>_.
 
 ### Output:
 
@@ -87,18 +89,18 @@ the output of commands.
 Output lines starting with = are used to grab the sample files
 generated during the run phase.
 
-### Set: <keyword>=<ruby expression>
+### Set: _\<keyword\>_=_\<ruby expression\>_
 
-Evaluate the _ruby expression_ and set the *keyword* to that value.
-Often used to grab dynamic data from the run phase for use in later
-commands.
+Evaluate the _\<ruby expression\>_ and set the _\<keyword\>_ to that
+value.  Often used to grab dynamic data from the run phase for use in
+later commands.
 
 For example, the following will grab the git hash value for the commit
-labelled "First Commit", and store it in *hash*.  When the `git
-checkout` command is executed, it uses the value of *hash* in the
+labelled "First Commit", and store it in _\<hash\>_.  When the `git
+checkout` command is executed, it uses the value of _\<hash\>_ in the
 command.
 
     Set: hash=hash_for("First Commit")
     Execute:
-    git checkout <hash>
+    git checkout \<hash\>
 
