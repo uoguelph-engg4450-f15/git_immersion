@@ -47,11 +47,11 @@ file with additional directives interpreted for both run time
 
 The Format Directives are:
 
-### h1. <lab name>
+### h1. \<lab name\>
 
 Starts a new lab with the name _lab name_.  Each lab 
 
-### pre(<class name>).
+### pre(&lt;class name&gt;).
 
 A section of predefined code, using the HTML class of _class name_.
 The predefined code block runs until a blank line.
