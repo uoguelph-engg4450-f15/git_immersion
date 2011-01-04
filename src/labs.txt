@@ -2240,9 +2240,12 @@ Output:
 =show
 EOF
 
-p. Now we see that the remote repository origin is simply the original
-*hello* repository.  There is nothing particularly special about the
-name "origin", however the convention is to use the name 'origin' for
+p. Now we see that the remote repository "origin" is simply the original
+*hello* repository.  Remote repositories typically live on a separate
+machine, possibly a centralized server.  As we can see here, however,
+they can just as well point to a repository on the same machine.  
+There is nothing particularly special about the name "origin", 
+however the convention is to use the name "origin" for
 the primary centralized repository (if there is one).
 
 ----------------------------------------------------------------------
