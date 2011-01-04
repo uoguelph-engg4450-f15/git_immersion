@@ -1,21 +1,19 @@
-<div class="nav">
-  <ul>
-    <li>
-      <% if lab.next -%>
-        <a href="<%= lab.next.filename %>">Next Lab</a>
-      <% else -%>
-        Next Lab
-      <% end -%>
-    </li>
-    <li>
-      <% if lab.prev -%>
-        <a href="<%= lab.prev.filename %>">Previous Lab</a>
-      <% else -%>
-        Previous Lab
-      <% end -%>
-    </li>
-    <li>
-      <a href="index.html">Index</a>
-    </li>
-  </ul>
-</div>
+<ul>
+  <li><a href="/" id="home_link">Git Immersion</a></li>
+  <li><a href="http://edgecase.com" target="_blank" id="edgecase_link">Brought to you by EdgeCase</a></li>
+  <li>
+    <% if lab.next -%>
+      <a href="<%= lab.next.filename %>" id="top_next" class="arrow">Next</a>
+    <% else -%>
+      Next
+    <% end -%>
+  </li>
+  <li>
+    <% if lab.prev -%>
+      <a href="<%= lab.prev.filename %>" id="top_previous" class="arrow">Previous</a>
+    <% else -%>
+      Previous
+    <% end -%>
+  </li>
+  <li><a href="#" id="top_index" class="index_button">Index</a></li>
+</ul>
