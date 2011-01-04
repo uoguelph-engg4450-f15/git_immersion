@@ -338,7 +338,7 @@ h1. Changes, not Files
 
 h2. Goals
 
-* Learn the git works with changes, not files.
+* Learn that git works with changes, not files.
 
 h2. Steps
 
@@ -434,7 +434,7 @@ git add .
 p(((((note). <b>Note:</b> We used the current directory ('.') as the
 file to add.  This is a really convenient shortcut for adding in all
 the changes to the files in the current directory and below.  But
-since it adds everything, it is a _really_ good idea to the status
+since it adds everything, it is a _really_ good idea to check the status
 before doing an <tt>add .</tt>, just to make sure you don't add any
 file that is not intended.
 
@@ -482,7 +482,7 @@ repository so far.
 
 h3. One Line Histories
 
-p. You have a great deal o control of exactly what the @log@ command
+p. You have a great deal of control over exactly what the @log@ command
 displays.  I like the one line format:
 
 Execute:
@@ -512,7 +512,7 @@ p. See man git-log for all the details.
 h3. Getting Fancy
 
 p. Here's what I use to review the changes made in the last week.
-I'll add a --author=jim to it I only want to see changes I made.
+I'll add @--author=jim@ if I only want to see changes I made.
 
 pre(instructions).
 git log --all --pretty=format:"%h %cd %s (%an)" --since='7 days ago'
@@ -598,8 +598,8 @@ h3. @Type@ and @Dump@
 
 p. We've added a few aliases for command we haven't covered yet. The
 @git branch@ command will be coming up soon.  And the @git cat-file@
-command is useful for exploring git, which we will see in the next
-section.
+command is useful for exploring git, which we will see in a little
+while.
 
 h3. Shell Aliases
 
@@ -1192,7 +1192,7 @@ name = ARGV.first || "World"
 puts "Hello, #{name}!"
 EOF
 
-h3. Ammend the Previous Commit
+h3. Amend the Previous Commit
 
 p. We really don't want a separate commit for just the email.  Let's
 amend the previous commit to include the email change.
@@ -1720,8 +1720,8 @@ Output:
 =log
 EOF
 
-p. Here is our first chance to see the --graph option on @git hist@ in
-action. Adding the --graph option to git log causes it to draw the
+p. Here is our first chance to see the @--graph@ option on @git hist@ in
+action. Adding the @--graph@ option to @git log@ causes it to draw the
 commit tree using simple ASCII characters.  We can see both branches
 (greet and master), and that the master branch is the current HEAD.
 The common ancestor to both branches is the "Added a Rakefile" branch.
@@ -2277,7 +2277,7 @@ Output:
 =branch_a
 EOF
 
-p. Git has all the commits from the original reposistory, but branches
+p. Git has all the commits from the original repository, but branches
 in the remote repository are not treated as local branches here.  If
 we want our own *greet* branch, we need to create it ourselves. We
 will see how to do that in a minute.
@@ -2309,7 +2309,7 @@ p. Now add and commit this change
 
 Execute:
 git add README
-git commit -m 'Changed REAME in original repo'
+git commit -m 'Changed README in original repo'
 
 h3. Up Next
 
