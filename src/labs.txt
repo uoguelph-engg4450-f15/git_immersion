@@ -991,6 +991,9 @@ p. Since we were undoing the very last commit we made We were able to
 use @head@ as the argument to revert.  We can revert any arbitrary
 commit earlier in history by simply specifying its hash value.
 
+p(((((note). *Note:* The @--no-edit@ in the output can be ignored.
+It was necessary to generate the output without opening the editor.
+
 h3. Check the log
 
 p. Checking the log shows both the unwanted and the reverting commits
