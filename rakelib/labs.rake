@@ -36,6 +36,7 @@ module Labs
 
   def generate_labs(io)
     lab_index = -1
+    step_index = 0
     labs = []
     mode = :direct
     gathered_line = ''
@@ -46,12 +47,16 @@ module Labs
       case mode
       when :direct
         if line =~ /^h1.\s+(.+)$/
+          step_index = 0
           lab_index += 1
           lab = Lab.new($1, lab_index+1)
           lab.prev = labs.last
           labs.last.next = lab if labs.last
-          lab.lines << line.sub(/h1\./, "h1. Lab #{lab_index+1}: ")
+          lab.lines << line.sub(/h1\./, "h1(lab_title). _lab #{lab_index+1}_ ")
           labs << lab
+        elsif line =~ /^h2\./
+          step_index += 1
+          labs[lab_index] << line.sub(/h2\.\s+(.+)/, "h2. \\1 _#{step_index.to_s.rjust(2,'0')}_")
         elsif line =~ /^pre*\(.*\)\.\s*$/
           mode = :gather1
           gathered_line = line.strip
@@ -60,15 +65,15 @@ module Labs
           gathered_line = line.strip
         elsif line =~ /^Execute:$/i
           mode = :gather1
-          labs[lab_index] << "p(command). Execute:\n\n"
+          labs[lab_index] << "h4. Execute:\n\n"
           gathered_line = "pre(instructions)."
         elsif line =~ /^File:\s+(\S+)$/i
           file_name = $1
-          labs[lab_index] << "p(filename). File: #{file_name}\n\n"
+          labs[lab_index] << "h4. File: _#{file_name}_\n\n"
           gathered_line = "<pre class=\"file\">"
           mode = :file
         elsif line =~ /^Output:\s*$/
-          labs[lab_index] << "p(command). Output:\n\n"
+          labs[lab_index] << "h4. Output:\n\n"
           gathered_line = "<pre class=\"sample\">"
           mode = :file
         elsif line =~ /^Set: +\w+=.*$/

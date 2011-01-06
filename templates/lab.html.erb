@@ -29,6 +29,9 @@
 
 <body>
   <header>
+    <a href="/" id="home_link">Git Immersion</a>
+    <a href="http://edgecase.com" target="_blank" id="edgecase_link">Brought to you by EdgeCase</a>
+
     <nav>
       <%= nav_links(f, lab) %>
     </nav>
@@ -100,11 +103,7 @@
   
   <footer>
     <nav>
-      <ul>
-        <li id="bottom_next" class="arrow"><a href="#">Lab 13</a></li>
-        <li id="bottom_previous" class="arrow"><a href="#">Lab 11</a></li>
-        <li><a href="#" id="bottom_index" class="index_button">Index</a></li>
-      </ul>
+      <%= nav_links(f, lab) %>
     </nav>
   </footer>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script> 
