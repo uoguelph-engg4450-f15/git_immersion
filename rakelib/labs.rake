@@ -153,10 +153,11 @@ CLOBBER.include(Labs::HTML_DIR)
 directory Labs::HTML_DIR
 
 TO_HTML = "#{Labs::HTML_DIR}/%f"
-EXTRA_SRCS = FileList['src/*.css', 'src/*.js', 'src/*.gif', 'src/*.jpg', 'src/*.png', 'src/*.eot', 'src/*.ttf', 'src/*.woff']
+EXTRA_SRCS = FileList['src/*.css', 'src/*.js', 'src/*.gif', 'src/*.jpg', 'src/*.png', 'src/*.eot', 'src/*.ttf', 'src/*.woff', 'images/*.png']
 EXTRA_OUT = EXTRA_SRCS.pathmap(TO_HTML)
 
 task :extra => EXTRA_OUT
+
 
 EXTRA_SRCS.each do |extra|
   file extra.pathmap(TO_HTML) => [Labs::HTML_DIR, extra] do |t|
