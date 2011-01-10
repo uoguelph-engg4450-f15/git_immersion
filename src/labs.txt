@@ -2051,6 +2051,31 @@ EOF
 p. The greet and master branches are now identical.
 
 ----------------------------------------------------------------------
+h1. Mutliple Repositories
+
+p. Up to this point we have been working with a single git repository.
+However, git excells at working with multiple repositories.  These
+extra repositories may be stored locally, or may be accessed across a
+network connection.
+
+p. In the next section will create a new repository called
+"cloned_hello".  We will show how to move changes from one repository
+to another, and how to handle conflicts when they arise from between
+two repositories.
+
+ !git_clone.png!
+
+
+p. For now, we will be working with local repositories
+(i.e. repositories stored on your local hard disk), however most of
+the things learned in this section will apply to multiple repositories
+whether they are stored locally or remotely over a network.
+
+p. *NOTE:* We are going be making changes to both copies of our
+repositories.  Make sure you pay attention to which repository in are
+in at each step of the following labs.
+
+----------------------------------------------------------------------
 h1. Cloning Repositories
 
 h3. Goals
