@@ -415,14 +415,14 @@ git add .
 !git status
 =status3
 
-p(((((note). <b>Note:</b> We used the current directory ('.') as the
+p(note). <b>Note:</b> We used the current directory ('.') as the
 file to add.  This is a really convenient shortcut for adding in all
 the changes to the files in the current directory and below.  But
 since it adds everything, it is a _really_ good idea to check the status
 before doing an <tt>add .</tt>, just to make sure you don't add any
 file that is not intended.
 
-p(((((note). I wanted you to see the "add ." trick, but we will
+p(note). I wanted you to see the "add ." trick, but we will
 continue to add explicit files in the rest of this tutorial just to be
 safe.
 
@@ -626,7 +626,7 @@ Execute:
 git hist
 =log
 
-p(((((note). *Note:* You did remember to define @hist@ in your
+p(note). *Note:* You did remember to define @hist@ in your
 @.gitconfig@ file, right?  If not, review the lab on aliases.
 
 Output:
@@ -645,11 +645,11 @@ git checkout <hash>
 cat hello.rb
 =cat
 
-p(((((note). *Note:* The commands given here are Unix commands and
+p(note). *Note:* The commands given here are Unix commands and
 work on both Mac and Linux boxes.  Unfortunately, Windows users will
 have to translate to their native commands.
 
-p(((((note). *Note:* Many commands depend on the hash values in the
+p(note). *Note:* Many commands depend on the hash values in the
 repository.  Since your hash values will vary from mine, whenever you
 see something like &lt;hash&gt; or &lt;treehash&gt; in the command,
 substitute in the proper hash value for your repository.
@@ -961,7 +961,7 @@ p. Since we were undoing the very last commit we made We were able to
 use @head@ as the argument to revert.  We can revert any arbitrary
 commit earlier in history by simply specifying its hash value.
 
-p(((((note). *Note:* The @--no-edit@ in the output can be ignored.
+p(note). *Note:* The @--no-edit@ in the output can be ignored.
 It was necessary to generate the output without opening the editor.
 
 h2. Check the log
@@ -1438,7 +1438,7 @@ Output:
 =dump
 EOF
 
-p(((((note). *NOTE:* If you defined the 'type' and 'dump' aliases from
+p(note). *NOTE:* If you defined the 'type' and 'dump' aliases from
 the aliases lab, then you can type @git type@ and @git dump@ rather
 than the longer cat-file commands (which I never remember).
 
@@ -2558,7 +2558,7 @@ Output:
 =push
 EOF
 
-p(((((note). *NOTE:* We had to explicitly name the branch master that
+p(note). *NOTE:* We had to explicitly name the branch master that
 we were pushing.  It is possible to set it up automatically, but I
 _never_ remember the commands to do that.  Check out the "Git Remote
 Branch" gem for easy management of remote branches.
@@ -2613,7 +2613,7 @@ h1. Sharing Repos
 p. See if your neighbor is running the git daemon.  Exchange IP
 addresses and see if you can pull from each other's repositories.
 
-p(((((note). *NOTE:* The gitjour gem is really useful in sharing
+p(note). *NOTE:* The gitjour gem is really useful in sharing
 ad-hoc repositories.
 
 ----------------------------------------------------------------------
