@@ -13,7 +13,7 @@ end
 
 task :default => :labs
 
-task :rebuild => [:clobber, :labs]
+task :rebuild => [:clobber, :run, :labs]
 
 task :see => [:rebuild, :view]
 
