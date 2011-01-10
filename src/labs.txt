@@ -2656,3 +2656,10 @@ p. Here are some topics you might want to research on your own:
 * Workflows
 * Non-command line tools (gitx, gitk, magit)
 * Working with GitHub
+
+----------------------------------------------------------------------
+h1. Thank You
+
+p. Thank you for trying out the Git Immersion Labs.  Feel free to send
+comments to jim.weirich@gmail.com.
+
