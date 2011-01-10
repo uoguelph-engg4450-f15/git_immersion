@@ -170,14 +170,17 @@ h1.lab_title em {
   text-transform : lowercase;
   letter-spacing : 0; }
 
-pre.instructions {
+div.instructions {
+  margin-bottom: 1em; }
+
+div.instructions pre {
   display       : block;
   width         : 608px;
   margin-bottom : 0.25em;
   padding-left  : 22px;
   margin-left   : 63px;
   font          : 18px courier, monospace;
-  background    : url(prompt.png) no-repeat 0 5px; }
+  background    : url(prompt.png) no-repeat 0 50%; }
 
 #main_content img {
   display     : block;

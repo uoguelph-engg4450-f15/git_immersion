@@ -99,4 +99,15 @@ $(function() {
   }).keyup(function(e) {
     if(e.keyCode == 27) { $('#index').fadeOut(100); }
   });
+
+  $('pre.instructions').each(function(i, pre) { 
+    var lines = pre.innerHTML.split("\n")
+        container = $('<div class="instructions">');
+
+    $.each(lines, function(i, line) {
+      $('<pre>').html(line).appendTo(container);
+    });
+
+    $(pre).replaceWith(container);
+  });
 });
