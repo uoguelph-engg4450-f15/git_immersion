@@ -113,7 +113,7 @@ module Labs
     end
     write_index_html(labs)
     labs.each do |lab|
-      write_lab_html(lab)
+      write_lab_html(lab, labs)
     end
   end
 
@@ -136,7 +136,7 @@ module Labs
     end
   end
 
-  def write_lab_html(lab)
+  def write_lab_html(lab, labs)
     lab_html = lab.to_html
     File.open("#{HTML_DIR}/#{lab.filename}", "w") { |f|
       f.puts partial('lab', binding)

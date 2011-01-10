@@ -44,60 +44,9 @@
   <div id="index">
     <h1>Labs Index</h1>
     <ul>
-      <li><a href="lab_01.html"><span>1:</span> Setup</a></li>
-      <li><a href="lab_02.html"><span>2:</span> More Setup</a></li>
-      <li><a href="lab_03.html"><span>3:</span> Create a Project</a></li>
-      <li><a href="lab_04.html"><span>4:</span> Checking Status</a></li>
-      <li><a href="lab_05.html"><span>5:</span> Making Changes</a></li>
-      <li><a href="lab_06.html"><span>6:</span> Staging Changes</a></li>
-      <li><a href="lab_07.html"><span>7:</span> Staging and Committing</a></li>
-      <li><a href="lab_08.html"><span>8:</span> Commiting Changes</a></li>
-      <li><a href="lab_09.html"><span>9:</span> Changes, not Files</a></li>
-      <li><a href="lab_10.html"><span>10:</span> History</a></li>
-      <li><a href="lab_11.html"><span>11:</span> Aliases</a></li>
-      <li><a href="lab_12.html"><span>12:</span> Getting Old Versions</a></li>
-      <li><a href="lab_13.html"><span>13:</span> Tagging versions</a></li>
-      <li><a href="lab_14.html"><span>14:</span> Reverting Local Changes (before staging)</a></li>
-      <li><a href="lab_15.html"><span>15:</span> Reverting Staged Changes (before committing)</a></li>
-      <li><a href="lab_16.html"><span>16:</span> Reverting Committed Changes</a></li>
-      <li><a href="lab_17.html"><span>17:</span> Removing Commits from a Branch</a></li>
-      <li><a href="lab_18.html"><span>18:</span> Remove the oops tag</a></li>
-      <li><a href="lab_19.html"><span>19:</span> Amending Commits</a></li>
-      <li><a href="lab_20.html"><span>20:</span> Moving Files</a></li>
-      <li><a href="lab_21.html"><span>21:</span> More Structure</a></li>
-      <li><a href="lab_22.html"><span>22:</span> Git Internals: The .git directory</a></li>
-      <li><a href="lab_23.html"><span>23:</span> Git Internals: Working directly with Git Objects</a></li>
-      <li><a href="lab_24.html"><span>24:</span> Creating a Branch</a></li>
-      <li><a href="lab_25.html"><span>25:</span> Navigating Branches</a></li>
-      <li><a href="lab_26.html"><span>26:</span> Changes in Master</a></li>
-      <li><a href="lab_27.html"><span>27:</span> Viewing Diverging Branches</a></li>
-      <li><a href="lab_28.html"><span>28:</span> Merging</a></li>
-      <li><a href="lab_29.html"><span>29:</span> Creating a Conflict</a></li>
-      <li><a href="lab_30.html"><span>30:</span> Resolving Conflicts</a></li>
-      <li><a href="lab_31.html"><span>31:</span> Rebasing VS Merging</a></li>
-      <li><a href="lab_32.html"><span>32:</span> Resetting the Greet Branch</a></li>
-      <li><a href="lab_33.html"><span>33:</span> Resetting the Master Branch</a></li>
-      <li><a href="lab_34.html"><span>34:</span> Rebasing</a></li>
-      <li><a href="lab_35.html"><span>35:</span> Merging Back to Master</a></li>
-      <li><a href="lab_36.html"><span>36:</span> Cloning Repositories</a></li>
-      <li><a href="lab_37.html"><span>37:</span> Review the Cloned Repository</a></li>
-      <li><a href="lab_38.html"><span>38:</span> What is Origin?</a></li>
-      <li><a href="lab_39.html"><span>39:</span> Remote Branches</a></li>
-      <li><a href="lab_40.html"><span>40:</span> Change the Original Repository</a></li>
-      <li><a href="lab_41.html"><span>41:</span> Fetching Changes</a></li>
-      <li><a href="lab_42.html"><span>42:</span> Merging Pulled Changes</a></li>
-      <li><a href="lab_43.html"><span>43:</span> Pulling Changes</a></li>
-      <li><a href="lab_44.html"><span>44:</span> Local Branches</a></li>
-      <li><a href="lab_45.html"><span>45:</span> Added a Tracking Branch</a></li>
-      <li><a href="lab_46.html"><span>46:</span> Pulling changes</a></li>
-      <li><a href="lab_47.html"><span>47:</span> Pull the Changes (TBD)</a></li>
-      <li><a href="lab_48.html"><span>48:</span> Bare Repositories</a></li>
-      <li><a href="lab_49.html"><span>49:</span> Adding a Remote Repository</a></li>
-      <li><a href="lab_50.html"><span>50:</span> Pushing a Change</a></li>
-      <li><a href="lab_51.html"><span>51:</span> Pulling Shared Changes</a></li>
-      <li><a href="lab_52.html"><span>52:</span> Hosting your Git Repositories</a></li>
-      <li><a href="lab_53.html"><span>53:</span> Sharing Repos</a></li>
-      <li><a href="lab_54.html"><span>54:</span> Advanced / Future Topics</a></li>
+      <% labs.each do |lab| -%>
+        <li><a href="<%= lab.filename %>"><span><%= lab.number %>:</span> <%= lab.name %></a></li>
+      <% end -%>
     </ul>
   </div>
   
