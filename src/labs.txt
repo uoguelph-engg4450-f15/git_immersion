@@ -2095,6 +2095,8 @@ pwd
 ls
 =ls
 
+p{color:red}. *NOTE: Now in the work directory.*
+
 Output:
 =cd
 =pwd
@@ -2257,6 +2259,8 @@ cd ../hello
 +pwd
 # (You should be in the original hello repository now)
 
+p{color:red}. *NOTE: Now in the _hello_ repo*
+
 p. Make the following changes to README:
 
 File: README
@@ -2290,6 +2294,8 @@ git fetch
 =fetch
 git hist --all
 =hist
+
+p{color:red}. *NOTE: Now in the _cloned_hello_ repo*
 
 Output:
 =fetch
@@ -2461,7 +2467,8 @@ Switch back to the original repository and add a line to the readme.
 Execute:
 cd ../hello
 +pwd
-# (You should be in the original hello repository)
+
+p{color:red}. *NOTE: Now in the _hello_ repo*
 
 p. Change the README file
 
@@ -2490,6 +2497,8 @@ cd ../cloned_hello
 +pwd
 # (You should be in the cloned hello repository)
 ls
+
+p{color:red}. *NOTE: Now in the _cloned_hello_ repo*
 
 p. We see the changes to README are not here yet.
 
@@ -2531,11 +2540,12 @@ h2. Create a bare repository.
 Execute:
 cd ..
 +pwd
-# (You should be in the work directory)
 git clone --bare hello hello.git
 =clone
 ls hello.git
 =ls
+
+p{color:red}. *NOTE: Now in the work directory*
 
 Output:
 =clone
@@ -2602,6 +2612,8 @@ git remote add shared ../hello.git
 git branch --track shared master
 git pull shared master
 cat README
+
+p{color:red}. *NOTE: Now in the _cloned_hello_ repo*
 
 ----------------------------------------------------------------------
 h1. Hosting your Git Repositories
