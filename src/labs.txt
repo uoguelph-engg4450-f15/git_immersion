@@ -2390,48 +2390,8 @@ is indeed equivalent to the two steps:
 pre(instructions). git fetch
 git merge origin/master
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ----------------------------------------------------------------------
-h1. Local Branches
-
-TBD
-
-----------------------------------------------------------------------
-h1. Added a Tracking Branch
-
- (NOTE: Consider moving this section after the bare repository)
+h1. Adding a Tracking Branch
 
 h3. Goals
 
@@ -2460,77 +2420,11 @@ EOF
 p. We can now see the greet branch in the branch list and in the log.
 
 ----------------------------------------------------------------------
-h1. Pulling changes
-
-Switch back to the original repository and add a line to the readme.
-
-Execute:
-cd ../hello
-+pwd
-
-p{color:red}. *NOTE: Now in the _hello_ repo*
-
-p. Change the README file
-
-File: README
-This is the Hello World example from the git tutorial.
-(Changed in the original)
-EOF
-
-p. Commit the change
-
-Execute:
-git add README
-git commit -m 'Updated README'
-
-----------------------------------------------------------------------
-h1. Pull the Changes (TBD)
-
-h3. Goal
-
-* TBD
-
-h2. Now switch back to the cloned directory
-
-Execute:
-cd ../cloned_hello
-+pwd
-# (You should be in the cloned hello repository)
-ls
-
-p{color:red}. *NOTE: Now in the _cloned_hello_ repo*
-
-p. We see the changes to README are not here yet.
-
-h2. Fetch the Changes
-
-Execute:
-git fetch origin
-=fetch
-cat README
-=cat
-
-Output:
-=fetch
-=cat
-EOF
-
-p. The changes have been copied into the repository, but have not yet
-been moved into the working directory.  We get the changes by merging
-the changes in the remote branch into master.
-
-Execute:
-git merge origin/master
-
-h2. Pulling
-
-The fetch/merge commands can be done in one operation with pull.
-
-Execute:
-git pull origin
-
-----------------------------------------------------------------------
 h1. Bare Repositories
+
+h3. Goals
+
+* Learn how to create bare repositories.
 
 p. Bare repositories (without working directories) are usually used for
 sharing).
@@ -2560,18 +2454,32 @@ non-bare repo.
 ----------------------------------------------------------------------
 h1. Adding a Remote Repository
 
+h3. Goals
+
+* Add the bare repository as a remote to our original repository.
+
 p. Let's add the hello.git repo to our original repo.
 
 Execute:
 cd hello
 +pwd
-# (You should be in the original repository)
 git remote add shared ../hello.git
+
+p{color:red}. *NOTE: Now in the +hello_ repository.*
 
 ----------------------------------------------------------------------
 h1. Pushing a Change
 
-p. Edit the README and commit it
+h3. Goals
+
+* Learn out to push a change to a remote repository.
+
+p. Since bare repositories are usually shared on some sort of network
+server, it is usually difficult to cd into the repo and pull changes.
+So we need to push our changes into other repositories.
+
+p. Let's start by creating a change to be pushed.  Edit the README and
+commit it
 
 File: README
 This is the Hello World example from the git tutorial.
@@ -2589,6 +2497,9 @@ Execute:
 git push shared master
 =push
 
+p. _shared_ is the name of the repository receiving the changes we are
+pushing. (Remember, we added it as a remote in the previous lab.)
+
 Output:
 =push
 EOF
@@ -2601,22 +2512,33 @@ Branch" gem for easy management of remote branches.
 ----------------------------------------------------------------------
 h1. Pulling Shared Changes
 
+h3. Goals
+
+* Learn how to pull changes from a shared repository.
+
 p. Quick hop over to the clone repository and lets pull down the
 changes just pushed to the shared repo.
 
 Execute:
 cd ../cloned_hello
 +pwd
-# (You should be in the cloned repository)
+
+p{color:red}. *NOTE: Now in the _cloned_hello_ repo.*
+
+p. Continue with...
+
+Execute:
 git remote add shared ../hello.git
 git branch --track shared master
 git pull shared master
 cat README
 
-p{color:red}. *NOTE: Now in the _cloned_hello_ repo*
-
 ----------------------------------------------------------------------
 h1. Hosting your Git Repositories
+
+h3. Goals
+
+* Learn how to setup git server for sharing repositories.
 
 p. There are many ways to share git repositories over the network.
 Here is a quick and dirty way.
@@ -2641,11 +2563,15 @@ h2. Pushing to the Git Daemon
 
 p. If you want to push to the git daemon repository, add
 @--enable=receive-pack@ to the git daemon command.  Be careful because
-there is not authentication on this server, anyone could push to your
+there is no authentication on this server, anyone could push to your
 repository.
 
 ----------------------------------------------------------------------
 h1. Sharing Repos
+
+h3. Goals
+
+* Learn to share repos across WIFI.
 
 p. See if your neighbor is running the git daemon.  Exchange IP
 addresses and see if you can pull from each other's repositories.
