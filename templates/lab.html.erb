@@ -109,13 +109,9 @@
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script> 
   <script type="text/javascript">
   $(function() {
-    $('#main_content section h2').each(function(i, heading) {
-      $(heading).append('<span>0' + (i+1) + '</span>');
-    });
-    
-    $('#top_index, #bottom_index').click(function(e) {
+    $('.index_button a').click(function(e) {
       e.preventDefault();
-      $('#index')[$('#index').is(':visible') ? 'fadeOut' : 'fadeIn'](200);
+      $('#index').fadeToggle(200);
     });
     
     $('#index ul').hover(
@@ -124,11 +120,9 @@
     );
     
     $(document).click(function(e) {
-      var target = $(e.target);
-      if(target.closest('#index').length || target.hasClass('index_button')) {
-        return;
+      if (!$(e.target).closest('#index, .index_button').length) {
+        $('#index').fadeOut(100);
       }
-      $('#index').fadeOut(100);
     }).keyup(function(e) {
       if(e.keyCode == 27) { $('#index').fadeOut(100); }
     });
