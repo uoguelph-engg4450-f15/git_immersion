@@ -44,8 +44,8 @@
   <div id="index">
     <h1>Labs Index</h1>
     <ul>
-      <% labs.each do |lab| -%>
-        <li><a href="<%= lab.filename %>"><span><%= lab.number %>:</span> <%= lab.name %></a></li>
+      <% labs.each do |l| -%>
+        <li><a href="<%= l.filename %>"><span><%= l.number %>:</span> <%= l.name %></a></li>
       <% end -%>
     </ul>
   </div>
