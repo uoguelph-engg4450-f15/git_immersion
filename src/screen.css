@@ -51,6 +51,9 @@ header .arrow * {
   line-height : 55px;
   text-align  : center;
 }
+
+header .arrow span {
+  color: #aaa; }
   
 header .previous * {
   left        : 400px;
@@ -307,6 +310,9 @@ footer nav .arrow * {
   line-height     : 34px;
   text-decoration : none;
   text-transform  : uppercase; }
+
+footer nav .arrow span {
+  color: #aaa; }
   
 footer nav .previous   { left: 0; }
 footer nav .previous * {
