@@ -86,7 +86,8 @@ header #bookmark {
 
 h1.lab_title {
   width          : 608px;
-  margin         : 0 0 20px 84px;
+  margin         : 0 0 40px 84px;
+  border-bottom  : 1px solid #dfdfdf;
   color          : #222;
   font           : 48px 'BebasNeueRegular', helvetica, arial, sans-serif;
   letter-spacing : 0.025em;
@@ -110,12 +111,8 @@ h1.lab_title em {
 ------------------------------------------------------------ */
 
 #main_content h3 {
-  clear          : left;
-  float          : left;
-  overflow       : hidden;
   width          : 608px;
-  margin         : 0 0 40px 85px;
-  width          : 85px;
+  margin         : 0 0 0.15em 85px;
   font           : 28px 'BebasNeueRegular', helvetica, arial, sans-serif;
   text-transform : uppercase; }
 
@@ -181,6 +178,11 @@ pre.instructions {
   margin-left   : 63px;
   font          : 18px courier, monospace;
   background    : url(prompt.png) no-repeat 0 5px; }
+
+#main_content img {
+  display     : block;
+  margin-left : 85px;
+ -webkit-box-shadow : 0 0 14px rgba(0,0,0, 0.15); }
 
 #main_content p {
   width        : 608px;
