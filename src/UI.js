@@ -1,118 +1,102 @@
+function createCookie(name,value,days) {
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime()+(days*24*60*60*1000));
+    var expires = "; expires="+date.toGMTString();
+  }
+  else var expires = "";
+  document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function readCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0;i < ca.length;i++) {
+    var c = ca[i];
+    while (c.charAt(0)==' ') c = c.substring(1,c.length);
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+  }
+  return null;
+}
+
+function eraseCookie(name) {
+  createCookie(name,"",-1);
+}
+
+function switchBookmarkOn() {
+  $('#bookmark').addClass('active')
+                .css({ backgroundPosition: '-69px 0'})
+                .animate({ top: -45, }, 100);
+}
+function switchBookmarkOff() {
+  $('#bookmark').removeClass('active')
+                .css({ backgroundPosition: '-38px 0'})
+                .animate({ top: -75, }, 100);
+}
+
+
 $(function() {
-  HidePopoversOnDocumentClick();
-  InspectorMenuSetup();
-  HotlinkPopoverSetup();
-  ToolbarButtonsSetup();
-  $('#back_to_edit_mode').click(function(e){ BackToEditMode(); });
-  $('.wrapper').hover(function(){ $(this).addClass('hover'); }, function(){ $(this).removeClass('hover'); });
-  $('#share_content textarea, #comments textarea').autoResize({ extraSpace: 5 });
-});
+  // Bookmark
+  var currentLabID = $('body').data('lab-id');
+  if(readCookie(currentLabID)) { switchBookmarkOn(); }
 
-function ToolbarButtonsSetup() {
-  $('#share_button').click(function(e) {
-    containerFullWidth();
-    $('.main_content:visible').fadeOut(200);
-    $('#share_content').fadeIn(200);
-
-    $('#storyboard_title').addClass('button_below', 100);
-    $('#back_to_edit_mode').fadeIn(100);
-    $('#edit_mode_buttons').fadeOut(100);
+  $('#index li').each(function(i, item){
+    var item = $(item);
+    if(readCookie(item.data('lab-id'))) { item.addClass('bookmark'); }
   });
 
-  $('#add_screen_button').click(function(e) {
-    containerFullWidth();
-    $('.main_content:visible').fadeOut(200);
-    $('#upload_instructions').fadeIn(200);
-
-    $('#storyboard_title').addClass('button_below', 100);
-    $('#back_to_edit_mode').fadeIn(100);
-    $('#edit_mode_buttons').fadeOut(100);
-    $('#upload_mode_buttons').fadeIn(100);
+  $('#bookmark').click(function() {
+    var bookmark = $(this);
+    if(bookmark.hasClass('active')) {
+      switchBookmarkOff();
+      eraseCookie(currentLabID);
+      $('#index li[data-lab-id=' + currentLabID +']').removeClass('bookmark');
+    } else {
+      switchBookmarkOn();
+      createCookie(currentLabID, '1', 365);
+      $('#index li[data-lab-id=' + currentLabID +']').addClass('bookmark');
+    }
   });
 
-  $('#preview_button').click(function(e) {
-    containerPreviewMode();
-    $('.main_content:visible').fadeOut(200);
-    $('#comments').fadeIn(200);
-    $('#iphone4').fadeIn(200);
+  $('#show_bookmarks').click(function() {
+    var bookmark = $(this);
+    if(bookmark.hasClass('active')) {
+      bookmark.removeClass('active')
+              .css({ backgroundPosition: '0 0'})
+              .animate({ top: -20, }, 100);
 
-    $('#storyboard_title').addClass('button_below', 100);
-    $('#back_to_edit_mode').fadeIn(100);
-    $('#edit_mode_buttons').fadeOut(100);
-    $('#preview_mode_buttons').fadeIn(100);
+      $('#no_bookmarks').fadeOut(100);
+      $('#index li').fadeIn(100);
+    } else {
+      bookmark.addClass('active')
+              .css({ backgroundPosition: '-19px 0'})
+              .animate({ top: 0, }, 100);
+
+      $('#index li:not(.bookmark)').fadeOut(100);
+      if(!$('#index .bookmark').length) {
+        $('#no_bookmarks').fadeIn(200);
+      }
+    }
   });
 
-  function containerFullWidth() {
-    $('#inspector').fadeOut(200);
-    $('#container').addClass('full_width', 200);
-  }
 
-  function containerPreviewMode() {
-    $('#inspector').fadeOut(200);
-    $('#container').addClass('preview', 200);
-  }
-}
+  // Lab Index
+  $('.index_button a').click(function(e) {
+    e.preventDefault();
+    $('#index').fadeToggle(200);
+  });
 
-function BackToEditMode() {
-  $('#inspector').fadeIn(200);
+  $('#index ul').hover(
+    function() { $(this).addClass('hover'); },
+    function() { $(this).removeClass('hover'); }
+  );
 
-  var classToRemove = $('#container').hasClass('full_width') ? 'full_width' : 'preview';
-  $('#container').removeClass(classToRemove, 200);
 
-  $('#iphone4').fadeOut(100);
-
-  $('.main_content:visible').fadeOut(200);
-  $('#stage').fadeIn(200);
-
-  $('#storyboard_title').removeClass('button_below', 100);
-  $('#back_to_edit_mode').fadeOut(100);
-
-  $('#edit_mode_buttons').fadeIn(100);
-  $('#preview_mode_buttons').fadeOut(100);
-  $('#upload_mode_buttons').fadeOut(100);
-}
-
-function HidePopoversOnDocumentClick() {
   $(document).click(function(e) {
-    var notInsidePopover  = $(e.target).closest('.popover').length == 0;
-    var notHotLink        = $(e.target).closest('#inspector .hotlink').length == 0;
-    var notMenuButton     = $(e.target).attr('id') != 'menu_button';
-    if(notInsidePopover && notMenuButton && notHotLink) { hideAllPopovers(); }
+    if (!$(e.target).closest('#index, .index_button').length) {
+      $('#index').fadeOut(100);
+    }
+  }).keyup(function(e) {
+    if(e.keyCode == 27) { $('#index').fadeOut(100); }
   });
-}
-
-function hideAllPopovers() {
-  $('.popover').fadeOut(100);
-  $('#menu_button').removeClass('active');
-}
-
-
-function InspectorMenuSetup() {
-  $('#menu_button').click(function(e) {
-    $('#menu_popover').is(':visible') ? hideAllPopovers() : enableInspectorMenu();
-  });
-}
-
-function enableInspectorMenu() {
-  $('#menu_button').addClass('active');
-  $('#menu_popover').fadeIn(50);
-}
-
-
-function HotlinkPopoverSetup() {
-  $('#screen_container .hotlink').click(function(e) {
-    $('.hotlink_popover').is(':visible') ? hideAllPopovers() : enableHotlinkPopover(e);
-  });
-}
-
-function enableHotlinkPopover(e) {
-  var hotlink = $(e.target);
-  var x       = hotlink.offset().left;
-  var y       = hotlink.offset().top;
-  var popover = $('.hotlink_popover');
-
-  popover.css({
-     'top': y - 105,
-    'left': x - 35
-  }).fadeIn(50);
-}
+});
