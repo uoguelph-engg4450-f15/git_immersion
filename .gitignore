@@ -1,6 +1,6 @@
 .DS_Store
 auto
-git_tutorial
 samples
 served
-work
+git_tutorial/work/**/*
+git_tutorial/html

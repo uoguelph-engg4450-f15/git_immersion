@@ -50,7 +50,6 @@ p. The tutorial package should have a main diretory "git_tutorial"
 with three sub-directories:
 
 * html -- These html files.  Point your browser to html/index.html
-* repos -- Prepackages repos for later use
 * work -- An empty working directory.  Create your repos in here.
 
 ----------------------------------------------------------------------
