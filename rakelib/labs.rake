@@ -52,7 +52,10 @@ module Labs
           lab = Lab.new($1, lab_index+1)
           lab.prev = labs.last
           labs.last.next = lab if labs.last
-          lab.lines << line.sub(/h1\./, "h1(lab_title). _lab #{lab_index+1}_ ")
+          line.sub!(/h1\./, "h1(lab_title). _lab #{lab_index+1}_ ") # add lab number
+          line.sub!(/:/, ":<br>")                                   # break long titles at the colon
+          line.sub!(/\((?!lab_title)/, "<br>(")                     # break long titles at the last open paren
+          lab.lines << line
           labs << lab
         elsif line =~ /^h2\./
           step_index += 1
