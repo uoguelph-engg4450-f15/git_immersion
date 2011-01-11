@@ -415,7 +415,7 @@ git add .
 !git status
 =status3
 
-p(note). <b>Note:</b> We used the current directory ('.') as the
+p(note). *Note:* We used the current directory ('.') as the
 file to add.  This is a really convenient shortcut for adding in all
 the changes to the files in the current directory and below.  But
 since it adds everything, it is a _really_ good idea to check the status
