@@ -200,16 +200,16 @@ div.instructions pre {
   line-height  : 130px; }
 
 #main_content pre.sample {
-  display    : block;
-  margin     : 10px 0 0 0;
-  padding    : 10px 0 10px 85px;
-  color      : #74e83f;
-  font       : 13px courier, monospace;
-  background : #1e1e1e; }
+  display       : block;
+  margin-bottom : 1em;
+  padding       : 10px 0 10px 85px;
+  color         : #74e83f;
+  font          : 13px courier, monospace;
+  background    : #1e1e1e; }
 
 #main_content pre.file {
   display       : block;
-  margin        : 10px 0 0 0;
+  margin-bottom : 1em;
   border-top    : 1px solid #b6b6b6;
   border-bottom : 1px solid #b6b6b6;
   padding       : 10px 0 10px 85px;
