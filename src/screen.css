@@ -365,7 +365,7 @@ footer nav .previous * {
   text-align    : right;
   background    : url(previous_arrow.png) no-repeat; }
 
-footer nav .next   { left : 223px; }
+footer nav .next   { left : 206px; }
 footer nav .next * {
   padding      : 0 30px 0 40px;
   background   : url(next_arrow.png) no-repeat 100% 0; }
@@ -373,7 +373,7 @@ footer nav .next * {
 footer nav .index_button a {
   position    : absolute;
   top         : -5px;
-  left        : 184px;
+  left        : 174px;
   width       : 40px;
   height      : 40px;
   text-indent : -999em;
