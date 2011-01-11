@@ -3,8 +3,9 @@
 require 'rake/clean'
 
 SAMPLES_DIR = Dir.pwd + "/samples"
+REPOS_DIR   = Dir.pwd + "/git_tutorial/repos"
 
-CLOBBER.include("samples", "auto")
+CLOBBER.include("samples", "auto", "git_tutorial/repos")
 
 desc "Clean the samples directory"
 task :clean_samples do

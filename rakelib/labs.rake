@@ -81,6 +81,8 @@ module Labs
           mode = :file
         elsif line =~ /^Set: +\w+=.*$/
           # Skip set lines
+        elsif line =~ /^Freeze\s*$/
+          # Skip freeze lines
         elsif line =~ /^=\w+/
           # Skip include lines
         else

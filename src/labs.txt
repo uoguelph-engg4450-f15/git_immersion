@@ -51,6 +51,7 @@ with three sub-directories:
 
 * html -- These html files.  Point your browser to html/index.html
 * work -- An empty working directory.  Create your repos in here.
+* repos -- Prepackaged Git repositories so you can jump into the tutorial at any point.
 
 ----------------------------------------------------------------------
 h1. Create a Project
@@ -102,6 +103,8 @@ Output:
 =add
 =commit
 EOF
+
+Freeze
 
 ----------------------------------------------------------------------
 h1. Checking Status
@@ -317,6 +320,8 @@ Output:
 EOF
 
 p. The working directory is clean and ready for you to continue.
+
+Freeze
 
 ----------------------------------------------------------------------
 h1. Changes, not Files

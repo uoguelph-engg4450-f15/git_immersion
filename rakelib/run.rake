@@ -32,7 +32,7 @@ module RunLabs
     fail "No hash found for /#{pattern}/ while dumping '#{hash}'" if md.nil?
     md[0][0,7]
   end
-  
+
   def run_labs(source, last_lab)
     last_lab = last_lab.to_i if last_lab
     var = {}
@@ -65,6 +65,10 @@ module RunLabs
           code = $2
           var[vname] = eval(code)
           puts "SETTING: #{vname}='#{var[vname]}' (from #{code})"
+        elsif line =~ /^Freeze\s*$/
+          repo_name = "lab_#{lab_number+1}"
+          cp_r '.', "#{REPOS_DIR}/#{repo_name}"
+          puts "FREEZING: #{repo_name}"
         else
           puts "                #{line}"
         end
@@ -107,9 +111,10 @@ end
 
 
 directory SAMPLES_DIR
+directory REPOS_DIR
 
 desc "Run the labs automatically"
-task :run, [:last_lab] => [SAMPLES_DIR] do |t, args|
+task :run, [:last_lab] => [SAMPLES_DIR, REPOS_DIR] do |t, args|
   begin
     old_dir = Dir.pwd
     rm_r "auto" rescue nil
