@@ -98,7 +98,7 @@ h1.lab_title {
 h1.lab_title em {
   display        : block;
   height         : 21px;
-  margin-bottom  : 8px;
+  margin-bottom  : 13px;
   font           : 18px/16px georgia, sans-serif;
   font-variant   : small-caps;
   letter-spacing : 0;
@@ -218,8 +218,76 @@ div.instructions pre {
 
 #main_content p.note {
   margin-left: 2em;
-  font-style: italic; 
+  font-style: italic;
   color: #555; }
+
+
+#border_left {
+  position     : relative;
+  top          : -85px;
+  width        : 608px;
+  margin-left  : 54px;
+  padding-top  : 85px;
+  padding-left : 23px;
+  background   : url(border_left.gif) repeat-y; }
+
+#homepage h1 {
+  margin : 0 0 10px 0;
+  color  : #cf0000;
+  font   : 32px 'BebasNeueRegular', helvetica, arial, sans-serif; }
+
+#homepage h2 {
+  font : 21px 'BebasNeueRegular', helvetica, arial, sans-serif; }
+
+#homepage a {
+  color : #000; }
+
+#homepage .beep {
+  float        : left;
+  margin-right : 32px; }
+
+#homepage #install {
+  position     : relative;
+  left         : -23px;
+  padding-left : 346px;
+  background   : url(install_circle.png) no-repeat 0 8px; }
+
+#homepage #brought_to_you_by {
+  position      : relative;
+  top           : -117px;
+  left          : 55px;
+  width         : 400px;
+  margin-bottom : 40px;
+  padding-left  : 346px;
+  background    : url(install_circle.png) no-repeat 0 8px; }
+
+#homepage #brought_to_you_by a {
+  display     : block;
+  width       : 280px;
+  height      : 89px;
+  text-indent : -999em;
+  background  : url(edgecase_logo.png); }
+
+#homepage #other_resources {
+  position      : relative;
+  top           : -30px;
+  left          : -27px;
+  width         : 300px;
+  margin-bottom : 20px;
+  padding-left  : 27px;
+  background    : url(circle.png) no-repeat 0 8px; }
+
+#intro p {
+  position     : relative;
+  left         : -27px;
+  font         : 18px baskerville, georgia, serif;
+  margin       : 0 0 40px 0;
+  padding-left : 27px;
+  background   : url(circle.png) no-repeat 0 8px; }
+
+#intro p em {
+  font-size  : 27px;
+  font-style : normal; }
 
 
 
