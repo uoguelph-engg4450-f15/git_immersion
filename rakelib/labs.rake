@@ -2,6 +2,7 @@ module Labs
   module_function
 
   HTML_DIR = 'git_tutorial/html'
+  WORK_DIR = 'git_tutorial/work'
 
   class Lab
     attr_reader :name, :number, :lines
@@ -158,8 +159,10 @@ require 'redcloth'
 require 'rake/clean'
 
 CLOBBER.include(Labs::HTML_DIR)
+CLOBBER.include(Labs::WORK_DIR)
 
 directory Labs::HTML_DIR
+directory Labs::WORK_DIR
 
 TO_HTML = "#{Labs::HTML_DIR}/%f"
 EXTRA_SRCS = FileList['src/*.css', 'src/*.js', 'src/*.gif', 'src/*.jpg', 'src/*.png', 'src/*.eot', 'src/*.ttf', 'src/*.woff', 'diagrams/*.png']
@@ -175,7 +178,7 @@ EXTRA_SRCS.each do |extra|
 end
 
 desc "Create the Lab HTML"
-task :labs => [Labs::HTML_DIR, "src/labs.txt", "rakelib/labs.rake", :extra] do |t|
+task :labs => [Labs::HTML_DIR, Labs::WORK_DIR, "src/labs.txt", "rakelib/labs.rake", :extra] do |t|
   puts "Generating HTML"
   File.open("src/labs.txt") { |f| Labs.generate_labs(f) }
 end

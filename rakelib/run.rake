@@ -1,10 +1,10 @@
 module RunLabs
   module_function
-  
+
   def make_sample_name(lab_number, word)
     SAMPLES_DIR + ("/%03d_%s.txt" % [lab_number, word])
   end
-  
+
   def run_command(command, var)
     command.gsub!(/<(\w+)>/) { |args, one| var[$1] }
     if command =~ /^cd +(\S+)$/
@@ -24,13 +24,19 @@ module RunLabs
     fail "Invalid hash (#{hash}) for '#{pattern}'" unless hash =~ /^[0-9a-zA-Z]{7}$/
     hash
   end
-  
+
   def hash_in(hash, pattern)
     lines = `git cat-file -p #{hash}`.split(/\n/)
     line = lines.grep(/#{pattern}/).first || ""
     md = /[0-9a-zA-Z]{40}/.match(line)
     fail "No hash found for /#{pattern}/ while dumping '#{hash}'" if md.nil?
     md[0][0,7]
+  end
+
+  def freeze_lab(lab_number)
+    repo_name = ("lab_%02d" % (lab_number+1))
+    cp_r '.', "#{REPOS_DIR}/#{repo_name}"
+    puts "FREEZING: #{repo_name}"
   end
 
   def run_labs(source, last_lab)
@@ -52,6 +58,7 @@ module RunLabs
           output_file = open(fn, "w")
           state = :file
         elsif line =~ /^-------------* *$/
+          freeze_lab(lab_number) if (lab_number+1) % 5 == 0
           if last_lab && lab_number >= last_lab
             puts
             puts "** Stopping at Lab #{lab_number} **"
@@ -66,9 +73,7 @@ module RunLabs
           var[vname] = eval(code)
           puts "SETTING: #{vname}='#{var[vname]}' (from #{code})"
         elsif line =~ /^Freeze\s*$/
-          repo_name = "lab_#{lab_number+1}"
-          cp_r '.', "#{REPOS_DIR}/#{repo_name}"
-          puts "FREEZING: #{repo_name}"
+          freeze_lab(lab_number)
         else
           puts "                #{line}"
         end

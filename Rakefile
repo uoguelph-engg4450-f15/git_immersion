@@ -32,3 +32,9 @@ task :publish => [:not_dirty, :run, :labs] do
   sh 'git push'
   sh 'git checkout master'
 end
+
+directory "dist"
+
+task :package => [:rebuild, "dist"] do
+  sh 'zip -r dist/git_tutorial.zip git_tutorial'
+end
