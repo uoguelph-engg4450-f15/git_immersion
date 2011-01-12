@@ -126,6 +126,10 @@ module Labs
     partial("nav", binding)
   end
 
+  def lab_index(f, labs)
+    partial("lab_index", binding)
+  end
+
   def partial(template, bnd)
     result = open("templates/#{template}.html.erb") do |tpl|
       template_string = tpl.read

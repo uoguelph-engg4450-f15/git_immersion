@@ -1,0 +1,10 @@
+<div id="index">
+  <h1>Labs Index</h1>
+  <div id="show_bookmarks"></div>
+  <div id="no_bookmarks"></div>
+  <ul>
+    <% labs.each do |l| -%>
+      <li data-lab-id="<%= l.number %>"><a href="<%= l.filename %>"><span><%= l.number %>:</span> <%= l.name %></a></li>
+    <% end -%>
+  </ul>
+</div>
