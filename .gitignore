@@ -1,7 +1,8 @@
 .DS_Store
 auto
-samples
-served
-git_tutorial/work/**/*
+dist
 git_tutorial/html
 git_tutorial/repos
+git_tutorial/work/**/*
+samples
+served
