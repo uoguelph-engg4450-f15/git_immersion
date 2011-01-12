@@ -950,8 +950,8 @@ Execute:
 +git revert head --no-edit
 =revert
 
-p. This will pop you into the editor.  Edit the commit message and
-close the file.  You should see ...
+p. This will pop you into the editor.  You can edit the default commit
+message or leave it as is.  Save and close the file. You should see ...
 
 Output:
 =revert
