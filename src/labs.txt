@@ -104,6 +104,8 @@ Output:
 =commit
 EOF
 
+Freeze
+
 ----------------------------------------------------------------------
 h1. Checking Status
 
@@ -318,6 +320,8 @@ Output:
 EOF
 
 p. The working directory is clean and ready for you to continue.
+
+Freeze
 
 ----------------------------------------------------------------------
 h1. Changes, not Files

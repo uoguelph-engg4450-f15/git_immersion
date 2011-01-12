@@ -60,15 +60,15 @@ module RunLabs
           end
           lab_number += 1
           puts "** Lab #{lab_number} **********************************************************"
-
-          repo_name = "lab_#{lab_number.to_s.rjust(2,'0')}"
-          cp_r '.', "#{REPOS_DIR}/#{repo_name}"
-          puts "FREEZING: #{repo_name}"
         elsif line =~ /^Set: +(\w+)=(.*)$/
           vname = $1
           code = $2
           var[vname] = eval(code)
           puts "SETTING: #{vname}='#{var[vname]}' (from #{code})"
+        elsif line =~ /^Freeze\s*$/
+          repo_name = "lab_#{lab_number+1}"
+          cp_r '.', "#{REPOS_DIR}/#{repo_name}"
+          puts "FREEZING: #{repo_name}"
         else
           puts "                #{line}"
         end
