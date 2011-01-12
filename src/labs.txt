@@ -706,8 +706,12 @@ h2. Tagging Previous Versions
 
 p. Let's tag the version immediately prior to the current version
 v1-beta.  First we need to checkout the previous version.  Rather than
-lookup up the hash, we will use the ^ notation to indicate "the parent
+lookup up the hash, we will use the @^@ notation to indicate "the parent
 of v1".
+
+p(note). If the @v1@^ notation gives you any trouble, you can also try
+@v1~1@, which will reference the same version.  This notation means 
+"the first ancestor of v1".
 
 Execute:
 git checkout v1^
