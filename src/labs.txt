@@ -44,7 +44,7 @@ p. Git the tutorial package from either:
 * The memory sticks provided in the tutorial
 * The URL "http://onestepback.org/download/git_tutorial.zip":http://onestepback.org/download/git_tutorial.zip
 
-h2. Unzip the tuturial
+h2. Unzip the tutorial
 
 p. The tutorial package should have a main diretory "git_tutorial"
 with three sub-directories:
