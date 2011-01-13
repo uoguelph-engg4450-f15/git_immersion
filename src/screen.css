@@ -170,6 +170,9 @@ h1.lab_title em {
   text-transform : lowercase;
   letter-spacing : 0; }
 
+#main_content a {
+  color : #d00 ;}
+
 div.instructions {
   margin-bottom: 1em; }
 
@@ -394,6 +397,7 @@ div.instructions pre {
 ------------------------------------------------------------ */
 
 footer {
+  position   : relative;
   height     : 100px;
   margin-top : 50px;
   border-top : 4px double #adadad;
@@ -446,3 +450,13 @@ footer nav .index_button a {
   height      : 40px;
   text-indent : -999em;
   background  : url(index.png); }
+
+footer a#edgecase_link_small {
+  position    : absolute;
+  top         : 24px;
+  left        : 575px;
+  display     : block;
+  width       : 169px;
+  height      : 53px;
+  text-indent : -999em;
+  background  : url(edgecase_logo_small.png); }
