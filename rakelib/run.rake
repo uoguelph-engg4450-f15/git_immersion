@@ -35,6 +35,7 @@ module RunLabs
 
   def freeze_lab(lab_number)
     repo_name = ("lab_%02d" % (lab_number+1))
+    rm_r "#{REPOS_DIR}/#{repo_name}" rescue nil
     cp_r '.', "#{REPOS_DIR}/#{repo_name}"
     puts "FREEZING: #{repo_name}"
   end

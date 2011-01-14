@@ -82,6 +82,8 @@ repository from that directory, run the git init command.
 Execute:
 git init
 =init
++git config user.name "Jim Weirich"
++git config user.email "jim (at) edgecase.com"
 
 Output:
 =init
@@ -2119,6 +2121,10 @@ git clone hello cloned_hello
 =clone
 ls
 =ls2
++cd cloned_hello
++git config user.name "Jim Weirich"
++git config user.email "jim (at) edgecase.com"
++cd ..
 
 Output:
 =clone
