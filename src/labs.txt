@@ -776,7 +776,7 @@ output, along with the branch name (@master@).  Also @HEAD@ shows you
 the currently checked out commit (which is @v1-beta@ at the moment).
 
 ----------------------------------------------------------------------
-h1. Reverting Local Changes (before staging)
+h1. Undoing Local Changes (before staging)
 
 h3. Goals
 
@@ -843,7 +843,7 @@ in the working directory.  And the "bad comment" is no longer part of
 the file contents.
 
 ----------------------------------------------------------------------
-h1. Reverting Staged Changes (before committing)
+h1. Undoing Staged Changes (before committing)
 
 h3. Goals
 
@@ -915,7 +915,7 @@ EOF
 p. And our working directory is clean once again.
 
 ----------------------------------------------------------------------
-h1. Reverting Committed Changes
+h1. Undoing Committed Changes
 
 h3. Goals
 
