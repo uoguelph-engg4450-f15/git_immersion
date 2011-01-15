@@ -952,8 +952,8 @@ p. To undo a committed change, we need to generate a commit that
 removes the changes introduced by our unwanted commit.
 
 Execute:
--git revert head
-+git revert head --no-edit
+-git revert HEAD
++git revert HEAD --no-edit
 =revert
 
 p. This will pop you into the editor.  You can edit the default commit
@@ -964,7 +964,7 @@ Output:
 EOF
 
 p. Since we were undoing the very last commit we made We were able to
-use @head@ as the argument to revert.  We can revert any arbitrary
+use @HEAD@ as the argument to revert.  We can revert any arbitrary
 commit earlier in history by simply specifying its hash value.
 
 p(note). *Note:* The @--no-edit@ in the output can be ignored.
