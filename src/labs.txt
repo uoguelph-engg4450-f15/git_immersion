@@ -1077,7 +1077,7 @@ h2. Nothing is Ever Lost
 p. But what happened to the bad commits?  It turns out that the
 commits are still in the repository.  In fact, we can still reference
 them.  Remember that at the beginning of this lab we tagged the
-reverting commit with the tag "oops".  Lets look at _all_ the commits.
+reverting commit with the tag "oops".  Let's look at _all_ the commits.
 
 Execute:
 git hist --all
@@ -2021,7 +2021,7 @@ h1. Merging Back to Master
 
 h3. Goals
 
-* We've kept our greet branch up to date with master (via rebase), now lets merge the greet changes back into the master branch.
+* We've kept our greet branch up to date with master (via rebase), now let's merge the greet changes back into the master branch.
 
 h2. Merge greet into master
 
@@ -2526,7 +2526,7 @@ h3. Goals
 
 * Learn how to pull changes from a shared repository.
 
-p. Quick hop over to the clone repository and lets pull down the
+p. Quick hop over to the clone repository and let's pull down the
 changes just pushed to the shared repo.
 
 Execute:
