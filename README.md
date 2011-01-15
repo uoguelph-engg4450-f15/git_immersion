@@ -6,7 +6,7 @@ self-paced exercises that take you through the basics of using git.
 ## Online
 
 You can find the labs online at
-[http://edgecase.github.com/git_immersion](http://edgecase.github.com/git_immersion).
+[http://gitimmersion.com](http://gitimmersion.com).
 
 ## Building the Labs
 
