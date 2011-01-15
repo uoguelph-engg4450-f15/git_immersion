@@ -2563,7 +2563,7 @@ p. Now, in a separate terminal window, go to your work directory
 
 execute:
 # (From the work directory)
-git clone git:localhost/hello.git network_hello
+git clone git://localhost/hello.git network_hello
 cd network_hello
 ls
 
