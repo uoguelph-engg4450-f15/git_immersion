@@ -2599,8 +2599,8 @@ p. Here are some topics you might want to research on your own:
 * Remote Servers
 * Protocols
 * SSH Setup
-* Remote Branch Management (git bisect)
-* Finding Buggy Commits
+* Remote Branch Management
+* Finding Buggy Commits (git bisect)
 * Workflows
 * Non-command line tools (gitx, gitk, magit)
 * Working with GitHub
