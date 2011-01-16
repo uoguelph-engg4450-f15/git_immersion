@@ -527,7 +527,7 @@ p. Let's look at it in detail:
 * @--graph@ informs git to display the commit tree in an ASCII graph layout
 * @--date=short@ keeps the date format nice and short
 
-p. This is a lot to type everytime you want to see the log.
+p. This is a lot to type every time you want to see the log.
 Fortunately we will learn about git aliases in the next lab.
 
 h2. Other Tools
@@ -544,8 +544,8 @@ h3. Goals
 
 h2. Common Aliases
 
-p. Git status, git add, git commit, and git checkout are such common
-commands that it is useful to have abbreviations for them.
+p. +git status+, +git add+, +git commit+, and +git checkout+ are such
+common commands that it is useful to have abbreviations for them.
 
 p. Add the following to the .gitconfig file in your $HOME directory.
 
@@ -562,7 +562,7 @@ EOF
 
 p. We've covered checkout, commit and status already.  And we just
 covered the @log@ command in the previous lab. Now you can type @git
-co@ whereever you used to have to type @git checkout@.  Likewise with
+co@ wherever you used to have to type @git checkout@.  Likewise with
 @git st@ for @git status@ and @git ci@ for @git commit@.  And best of
 all, @git hist@ will allow you to avoid the really long @log@ command.
 
@@ -578,7 +578,7 @@ continuing if you wish to follow along.
 
 h2. @Type@ and @Dump@
 
-p. We've added a few aliases for command we haven't covered yet. The
+p. We've added a few aliases for commands we haven't covered yet. The
 @git branch@ command will be coming up soon.  And the @git cat-file@
 command is useful for exploring git, which we will see in a little
 while.
@@ -926,7 +926,7 @@ h2. Undoing Commits
 p. Sometimes you realized that a change that you have already
 committed was not correct and you wish to undo that commit.  There are
 several ways of handling that issue, and the way we are going to use
-in this lab is always safe to use.
+in this lab is always safe.
 
 p. Essentially we will undo the commit by creating a new commit that
 reverses the unwanted changes.
@@ -1343,7 +1343,7 @@ Output:
 EOF
 
 p. Look in one of the two-letter directories.  You should see some
-files with 38 character names.  These are the files that contain the
+files with 38-character names.  These are the files that contain the
 objects stored in git.  These files are compressed and encoded, so
 looking at their contents directly won't be very helpful, but we will
 take a closer look in a bit.
@@ -1381,9 +1381,9 @@ Output:
 =refv1
 EOF
 
-p. You should recogize the files in the tags subdirectory.  Each file
+p. You should recognize the files in the tags subdirectory.  Each file
 corresponds to a tag you created with the @git tag@ command earlier.
-It's content is just the hash of the commit tied to the tag.
+Its content is just the hash of the commit tied to the tag.
 
 p. The heads directory is similar, but is used for branches rather
 than tags.  We only have one branch at the moment, so all you will see
@@ -1399,8 +1399,8 @@ Output:
 =head
 EOF
 
-p. The HEAD file contains a reference to the current branch.  Should
-be a reference to master at this point.
+p. The HEAD file contains a reference to the current branch.  It
+should be a reference to master at this point.
 
 ----------------------------------------------------------------------
 h1. Git Internals: Working directly with Git Objects
@@ -1496,8 +1496,8 @@ Output:
 EOF
 
 p. There you have it.  We've dumped commit objects, tree objects and
-blob objects directly from the git repository.  That's all that is
-there, blobs, trees and commits.
+blob objects directly from the git repository.  That's all there is to
+it, blobs, trees and commits.
 
 h2. Explore On You Own
 
@@ -1513,7 +1513,7 @@ h3. Goals
 * Learn how to create a local branch in a repository
 
 p. It's time to do a major rewrite of the hello world functionality.
-Since this might take awhile, you want to put these changes into a
+Since this might take awhile, you'll want to put these changes into a
 separate branch to isolate them from changes in master.
 
 h2. Create a Branch
@@ -2038,11 +2038,11 @@ $
 EOF
 
 p. Because the head of master is a direct ancestor of the head of the
-greet branch, git is able to do a fast forward merge.  When
+greet branch, git is able to do a fast-forward merge.  When
 fast-forwarding, the branch pointer is simply moved forward to point
-to same commit as the greeter branch.
+to the same commit as the greeter branch.
 
-p. There will never be conflicts in a fast forward merge.
+p. There will never be conflicts in a fast-forward merge.
 
 h2. Review the logs
 
@@ -2078,7 +2078,7 @@ the things learned in this section will apply to multiple repositories
 whether they are stored locally or remotely over a network.
 
 p. *NOTE:* We are going be making changes to both copies of our
-repositories.  Make sure you pay attention to which repository in are
+repositories.  Make sure you pay attention to which repository you are
 in at each step of the following labs.
 
 ----------------------------------------------------------------------
@@ -2372,7 +2372,7 @@ This is the Hello World example from the git tutorial.
 (changed in original)
 EOF
 
-p. There's the changes.  Even though "git fetch" does not merge the
+p. There are the changes.  Even though "git fetch" does not merge the
 changes, we can still manually merge the changes from the remote
 repository.
 
@@ -2482,7 +2482,7 @@ h1. Pushing a Change
 
 h3. Goals
 
-* Learn out to push a change to a remote repository.
+* Learn how out to push a change to a remote repository.
 
 p. Since bare repositories are usually shared on some sort of network
 server, it is usually difficult to cd into the repo and pull changes.
@@ -2514,8 +2514,8 @@ Output:
 =push
 EOF
 
-p(note). *NOTE:* We had to explicitly name the branch master that
-we were pushing.  It is possible to set it up automatically, but I
+p(note). *NOTE:* We had to explicitly name the branch master that was
+receiving the push.  It is possible to set it up automatically, but I
 _never_ remember the commands to do that.  Check out the "Git Remote
 Branch" gem for easy management of remote branches.
 
