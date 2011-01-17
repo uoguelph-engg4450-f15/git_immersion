@@ -24,7 +24,7 @@ task :not_dirty do
   fail "Directory not clean" if /nothing to commit/ !~ `git status`
 end
 
-task :publish => [:not_dirty, :run, :labs] do
+task :publish => [:not_dirty, :build, :labs] do
   sh 'git checkout master'
   head = `git log --pretty="%h" -n1`.strip
   sh 'git checkout gh-pages'
@@ -41,9 +41,9 @@ file "dist/git_tutorial.zip" => [:build, :labs, "dist"] do
   sh 'zip -r dist/git_tutorial.zip git_tutorial'
 end
 
-task :package => "dist/git_tutorial.zip"
-task :repackage => [:clobber, "dist/git_tutorial.zip"]
+task :package => [:not_dirty, "dist/git_tutorial.zip"]
+task :repackage => [:clobber, :package]
 
-task :upload => "dist/git_tutorial.zip" do
+task :upload => [:not_dirty, "dist/git_tutorial.zip"] do
   sh 'scp dist/git_tutorial.zip linode:htdocs/download/git_tutorial.zip'
 end
