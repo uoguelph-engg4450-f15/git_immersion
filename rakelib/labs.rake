@@ -178,12 +178,12 @@ EXTRA_SRCS.each do |extra|
   end
 end
 
-desc "Create the Lab HTML"
 file INDEX_HTML => [Labs::HTML_DIR, Labs::WORK_DIR, "src/labs.txt", "rakelib/labs.rake", :extra, SAMPLE_TAG] do |t|
   puts "Generating HTML"
   File.open("src/labs.txt") { |f| Labs.generate_labs(f) }
 end
 
+desc "Create the Lab HTML"
 task :labs => [INDEX_HTML]
 
 desc "View the Labs"
