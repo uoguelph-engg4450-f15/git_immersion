@@ -3,6 +3,8 @@
 require 'rake/clean'
 
 SAMPLES_DIR = Dir.pwd + "/samples"
+SAMPLE_TAG  = SAMPLES_DIR + "/buildtag"
+
 REPOS_DIR   = Dir.pwd + "/git_tutorial/repos"
 
 CLOBBER.include("samples", "auto", "git_tutorial/repos")
@@ -35,6 +37,13 @@ end
 
 directory "dist"
 
-task :package => [:rebuild, "dist"] do
+file "dist/git_tutorial.zip" => [:build, :labs, "dist"] do
   sh 'zip -r dist/git_tutorial.zip git_tutorial'
+end
+
+task :package => "dist/git_tutorial.zip"
+task :repackage => [:clobber, "dist/git_tutorial.zip"]
+
+task :upload => "dist/git_tutorial.zip" do
+  sh 'scp dist/git_tutorial.zip linode:htdocs/download/git_tutorial.zip'
 end

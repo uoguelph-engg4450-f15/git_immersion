@@ -113,23 +113,37 @@ module RunLabs
   ensure
     output_file.close if output_file
   end
+
+  def build
+    build_to(nil)
+  end
+
+  def build_to(last_lab=nil)
+    old_dir = Dir.pwd
+    rm_r "auto" rescue nil
+    mkdir_p "auto"
+    open("src/labs.txt") do |lab_source|
+      Dir.chdir "auto"
+      RunLabs.run_labs(lab_source, last_lab)
+    end
+    touch SAMPLE_TAG
+  ensure
+    Dir.chdir(old_dir)
+  end
 end
 
 
 directory SAMPLES_DIR
 directory REPOS_DIR
 
+file SAMPLE_TAG => ["src/labs.txt", SAMPLES_DIR, REPOS_DIR] do
+  RunLabs.build
+end
+
+desc "Run the labs if needed"
+task :build => SAMPLE_TAG
+
 desc "Run the labs automatically"
 task :run, [:last_lab] => [SAMPLES_DIR, REPOS_DIR] do |t, args|
-  begin
-    old_dir = Dir.pwd
-    rm_r "auto" rescue nil
-    mkdir_p "auto"
-    open("src/labs.txt") do |lab_source|
-      Dir.chdir "auto"
-      RunLabs.run_labs(lab_source, args.last_lab)
-    end
-  ensure
-    Dir.chdir(old_dir)
-  end
+  RunLabs.build_to(args.last_lab)
 end

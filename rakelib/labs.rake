@@ -167,6 +167,7 @@ directory Labs::WORK_DIR
 TO_HTML = "#{Labs::HTML_DIR}/%f"
 EXTRA_SRCS = FileList['src/*.css', 'src/*.js', 'src/*.gif', 'src/*.jpg', 'src/*.png', 'src/*.eot', 'src/*.ttf', 'src/*.woff', 'diagrams/*.png']
 EXTRA_OUT = EXTRA_SRCS.pathmap(TO_HTML)
+INDEX_HTML = File.join(Labs::HTML_DIR, "index.html")
 
 task :extra => EXTRA_OUT
 
@@ -178,10 +179,12 @@ EXTRA_SRCS.each do |extra|
 end
 
 desc "Create the Lab HTML"
-task :labs => [Labs::HTML_DIR, Labs::WORK_DIR, "src/labs.txt", "rakelib/labs.rake", :extra] do |t|
+file INDEX_HTML => [Labs::HTML_DIR, Labs::WORK_DIR, "src/labs.txt", "rakelib/labs.rake", :extra, SAMPLE_TAG] do |t|
   puts "Generating HTML"
   File.open("src/labs.txt") { |f| Labs.generate_labs(f) }
 end
+
+task :labs => [INDEX_HTML]
 
 desc "View the Labs"
 task :view do
