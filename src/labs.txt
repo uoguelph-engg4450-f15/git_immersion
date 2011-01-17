@@ -1528,6 +1528,9 @@ Execute:
 git checkout -b greet
 !git status
 
+p(note). *NOTE:* @git checkout -b <branchname>@ is a shortcut for @git
+branch <branchname>@ followed by a @git checkout <branchname>@.
+
 p. Notice that the git status command reports that you are on the
 'greet' branch.
 
@@ -1645,7 +1648,7 @@ h1. Changes in Master
 
 h3. Goals
 
-* Learing how to deal with multiple branches with different (and possibly conflicting) changes.
+* Learning how to deal with multiple branches with different (and possibly conflicting) changes.
 
 p. While you were changing the greet branch, someone else decided to
 update the master branch.  They added a README.
@@ -2014,7 +2017,7 @@ h2. When to Rebase, When to Merge?
 
 p. Don't use rebase ...
 
-# If the branch is public and shared with others.  Writing publicly shared branches will tend to screw up other members of the team.
+# If the branch is public and shared with others.  Rewriting publicly shared branches will tend to screw up other members of the team.
 # When the _exact_ history of the commit branch is important (since rebase rewrites the commit history).
 
 p. Given the above guidelines, I tend to use rebase for short-lived,
@@ -2162,7 +2165,7 @@ Output:
 EOF
 
 p. You should see a list of all the files in the top level of the
-original repository (@README@, @Rakefile@ and @lib).
+original repository (@README@, @Rakefile@ and @lib@).
 
 
 h2. Review the Repository History
@@ -2479,7 +2482,7 @@ cd hello
 +pwd
 git remote add shared ../hello.git
 
-p{color:red}. *NOTE: Now in the +hello_ repository.*
+p{color:red}. *NOTE: Now in the +hello+ repository.*
 
 ----------------------------------------------------------------------
 h1. Pushing a Change
