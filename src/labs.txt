@@ -2425,7 +2425,7 @@ git branch --track greet origin/greet
 =branch_track
 git branch -a
 =branch_a
-git hist --max-count=1
+git hist --max-count=2
 =log
 
 Output:
