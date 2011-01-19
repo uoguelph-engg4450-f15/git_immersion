@@ -96,7 +96,7 @@ Now let's add the "Hello, World" program to the repository.
 Execute:
 git add hello.rb
 =add
-git commit -m 'First Commit'
+git commit -m "First Commit"
 =commit
 
 p. You should see ...
@@ -232,11 +232,11 @@ p. You could do the following:
 pre(instructions).
 git add a.rb
 git add b.rb
-git commit -m 'Changes for a and b'
+git commit -m "Changes for a and b"
 
 pre(instructions).
 git add c.rb
-git commit -m 'Unrelated change to c'
+git commit -m "Unrelated change to c"
 
 p. By separating staging and committing, you have the ability to
 easily fine tune what goes into each commit.
@@ -274,7 +274,7 @@ p. So commit now and check the status.
 
 Execute:
 -git commit
-+git commit -m 'Using ARGV'
++git commit -m "Using ARGV"
 
 p. You should see the following in your editor:
 
@@ -393,7 +393,7 @@ p. Commit the staged change (the default value), and then recheck the
 status.
 
 Execute:
-git commit -m 'Added a default value'
+git commit -m "Added a default value"
 =commit
 git status
 =status2
@@ -439,7 +439,7 @@ p. Now the second change has been staged and is ready to commit.
 h2. Commit the Second Change
 
 Execute:
-git commit -m 'Added a comment'
+git commit -m "Added a comment"
 
 ----------------------------------------------------------------------
 h1. History
@@ -1153,7 +1153,7 @@ EOF
 
 Execute:
 git add hello.rb
-git commit -m 'Add an author comment'
+git commit -m "Add an author comment"
 
 h2. Oops, Should have an Email
 
@@ -1177,7 +1177,7 @@ amend the previous commit to include the email change.
 Execute:
 git add hello.rb
 =add
-git commit --amend -m 'Add an author/email comment'
+git commit --amend -m "Add an author/email comment"
 =commit
 
 Output:
@@ -1258,7 +1258,7 @@ h2. Commit the new directory
 p. Let's commit this move.
 
 Execute:
-git commit -m 'Moved hello.rb to lib'
+git commit -m "Moved hello.rb to lib"
 
 ----------------------------------------------------------------------
 h1. More Structure
@@ -1286,7 +1286,7 @@ p. Add and commit the change.
 
 Execute:
 git add Rakefile
-git commit -m 'Added a Rakefile.'
+git commit -m "Added a Rakefile."
 
 p. You should be able to use Rake to run your hello program now.
 
@@ -1549,7 +1549,7 @@ EOF
 
 Execute:
 git add lib/greeter.rb
-git commit -m 'Added greeter class'
+git commit -m "Added greeter class"
 
 h2. Changes for Greet: Modify the main program
 
@@ -1567,7 +1567,7 @@ EOF
 
 Execute:
 git add lib/hello.rb
-git commit -m 'Hello uses Greeter'
+git commit -m "Hello uses Greeter"
 
 h2. Changes for Greet: Update the Rakefile
 
@@ -1585,7 +1585,7 @@ EOF
 
 Execute:
 git add Rakefile
-git commit -m 'Updated Rakefile'
+git commit -m "Updated Rakefile"
 
 h2. Up Next
 
@@ -1664,7 +1664,7 @@ h2. Commit the README changes to master.
 Execute:
 git checkout master
 git add README
-git commit -m 'Added README'
+git commit -m "Added README"
 
 ----------------------------------------------------------------------
 h1. Viewing Diverging Branches
@@ -1756,7 +1756,7 @@ EOF
 
 Execute:
 git add lib/hello.rb
-git commit -m 'Made interactive'
+git commit -m "Made interactive"
 
 h2. View the Branches
 
@@ -1845,7 +1845,7 @@ h2. Commit the Conflict Resolution
 Execute:
 git add lib/hello.rb
 =add
-git commit -m 'Merged master fixed conflict.'
+git commit -m "Merged master fixed conflict."
 =commit
 
 Output:
@@ -2289,7 +2289,7 @@ p. Now add and commit this change
 
 Execute:
 git add README
-git commit -m 'Changed README in original repo'
+git commit -m "Changed README in original repo"
 
 h2. Up Next
 
@@ -2506,7 +2506,7 @@ EOF
 Execute:
 git checkout master
 git add README
-git commit -m 'Added shared comment to readme'
+git commit -m "Added shared comment to readme"
 
 p. Now push the change to the shared repo.
 
