@@ -96,7 +96,7 @@ Now let's add the "Hello, World" program to the repository.
 Execute:
 git add hello.rb
 =add
-git commit -m 'First Commit'
+git commit -m "First Commit"
 =commit
 
 p. You should see ...
@@ -203,9 +203,9 @@ Output:
 EOF
 
 p. The change to the @hello.rb@ file has been staged.  This means that
-git now knows about the change, but the changes hasn't been
+git now knows about the change, but the change hasn't been
 _permanently_ recorded in the repository yet.  The next commit
-operation will included the staged changes.
+operation will include the staged changes.
 
 p. If you decide you _don't_ want to commit that change after all, the
 status command reminds you that the @git reset@ command can be used to
@@ -217,11 +217,11 @@ h1. Staging and Committing
 p. A separate staging step in git is in line with the philosophy of
 getting out of the way until you need to deal with source control.
 You can continue to make changes to your working directory, and then
-at the point you want to interact with source control, git allows to
+at the point you want to interact with source control, git allows you
 to record your changes in small commits that record exactly what you
 did.
 
-p. For example, suppose you editted three files (@a.rb@, @b.rb@, and
+p. For example, suppose you edited three files (@a.rb@, @b.rb@, and
 @c.rb@).  Now you want to commit all the changes, but you want the
 changes in @a.rb@ and @b.rb@ to be a single commit, while the changes
 to @c.rb@ are not logically related to the first two files and should
@@ -232,14 +232,14 @@ p. You could do the following:
 pre(instructions).
 git add a.rb
 git add b.rb
-git commit -m 'Changes for a and b'
+git commit -m "Changes for a and b"
 
 pre(instructions).
 git add c.rb
-git commit -m 'Unrelated change to c'
+git commit -m "Unrelated change to c"
 
 p. By separating staging and committing, you have the ability to
-easily fine tune what goes into each commit
+easily fine tune what goes into each commit.
 
 ----------------------------------------------------------------------
 h1. Commiting Changes
@@ -274,7 +274,7 @@ p. So commit now and check the status.
 
 Execute:
 -git commit
-+git commit -m 'Using ARGV'
++git commit -m "Using ARGV"
 
 p. You should see the following in your editor:
 
@@ -385,15 +385,15 @@ change (adding a default) is staged and is ready to be committed.  The
 second change (adding a comment) is unstaged.  If you were to commit
 right now, the comment would not be saved in the repository.
 
-p. Let's try that
+p. Let's try that.
 
-h2. Commiting
+h2. Committing
 
-p. Commit the stage change (the default value), and then recheck the
+p. Commit the staged change (the default value), and then recheck the
 status.
 
 Execute:
-git commit -m 'Added a default value'
+git commit -m "Added a default value"
 =commit
 git status
 =status2
@@ -406,7 +406,7 @@ Output:
 EOF
 
 p. The status command is telling you that @hello.rb@ has unrecorded changes,
-but is no longer in the staging area.  The
+but is no longer in the staging area.
 
 h2. Add the Second Change
 
@@ -439,7 +439,7 @@ p. Now the second change has been staged and is ready to commit.
 h2. Commit the Second Change
 
 Execute:
-git commit -m 'Added a comment'
+git commit -m "Added a comment"
 
 ----------------------------------------------------------------------
 h1. History
@@ -527,7 +527,7 @@ p. Let's look at it in detail:
 * @--graph@ informs git to display the commit tree in an ASCII graph layout
 * @--date=short@ keeps the date format nice and short
 
-p. This is a lot to type everytime you want to see the log.
+p. This is a lot to type every time you want to see the log.
 Fortunately we will learn about git aliases in the next lab.
 
 h2. Other Tools
@@ -544,8 +544,8 @@ h3. Goals
 
 h2. Common Aliases
 
-p. Git status, git add, git commit, and git checkout are such common
-commands that it is useful to have abbreviations for them.
+p. +git status+, +git add+, +git commit+, and +git checkout+ are such
+common commands that it is useful to have abbreviations for them.
 
 p. Add the following to the .gitconfig file in your $HOME directory.
 
@@ -561,8 +561,8 @@ file: .gitconfig
 EOF
 
 p. We've covered checkout, commit and status already.  And we just
-covered the @log@ command in the previous lab. Nowyou can type @git
-co@ whereever you used to have to type @git checkout@.  Likewise with
+covered the @log@ command in the previous lab. Now you can type @git
+co@ wherever you used to have to type @git checkout@.  Likewise with
 @git st@ for @git status@ and @git ci@ for @git commit@.  And best of
 all, @git hist@ will allow you to avoid the really long @log@ command.
 
@@ -578,12 +578,16 @@ continuing if you wish to follow along.
 
 h2. @Type@ and @Dump@
 
-p. We've added a few aliases for command we haven't covered yet. The
+p. We've added a few aliases for commands we haven't covered yet. The
 @git branch@ command will be coming up soon.  And the @git cat-file@
 command is useful for exploring git, which we will see in a little
 while.
 
-h2. Shell Aliases
+h2. Shell Aliases (Optional)
+
+p(note). *Note:* This section is for folks running a posix-like shell.
+Windows users and other non-posix shell users can feel free to skip to
+the next lab.
 
 p. If your shell supports aliases or shortcuts, then you can add
 aliases at that level too.  Here are the ones I use:
@@ -603,7 +607,7 @@ alias get='git '
 EOF
 
 p. The @go@ abbreviation for @git checkout@ is particularly nice.  It
-allows me to type.
+allows me to type:
 
 pre(instructions). go <branch>
 
@@ -637,7 +641,7 @@ EOF
 
 p. Examine the log output and find the hash for the first commit.  It
 should be the last line of the @git hist@ output.  Use that hash code
-(the first 8 characters is enough) in the command below.  Then check
+(the first 7 characters are enough) in the command below.  Then check
 the contents of the hello.rb file.
 
 Set: hash=hash_for("First Commit")
@@ -792,7 +796,7 @@ git checkout master
 h2. Change hello.rb
 
 p. Sometimes you have modified a file in your local working directory
-and you wish to just revert to what has already been commited.  The
+and you wish to just revert to what has already been committed.  The
 checkout command will handle that.
 
 Change hello.rb to have a bad comment.
@@ -901,7 +905,7 @@ directory.  So the working directory still has the unwanted comment in
 it.  We can use  the @checkout@ command of the previous lab to remove
 the unwanted change from the working directory.
 
-h2. Checkout the Commited Version
+h2. Checkout the Committed Version
 
 Execute:
 git checkout hello.rb
@@ -926,7 +930,7 @@ h2. Undoing Commits
 p. Sometimes you realized that a change that you have already
 committed was not correct and you wish to undo that commit.  There are
 several ways of handling that issue, and the way we are going to use
-in this lab is always safe to use.
+in this lab is always safe.
 
 p. Essentially we will undo the commit by creating a new commit that
 reverses the unwanted changes.
@@ -952,8 +956,8 @@ p. To undo a committed change, we need to generate a commit that
 removes the changes introduced by our unwanted commit.
 
 Execute:
--git revert head
-+git revert head --no-edit
+-git revert HEAD
++git revert HEAD --no-edit
 =revert
 
 p. This will pop you into the editor.  You can edit the default commit
@@ -963,8 +967,8 @@ Output:
 =revert
 EOF
 
-p. Since we were undoing the very last commit we made We were able to
-use @head@ as the argument to revert.  We can revert any arbitrary
+p. Since we were undoing the very last commit we made, we were able to
+use @HEAD@ as the argument to revert.  We can revert any arbitrary
 commit earlier in history by simply specifying its hash value.
 
 p(note). *Note:* The @--no-edit@ in the output can be ignored.
@@ -1112,7 +1116,7 @@ h3. Goals
 
 h2. Removing tag oops
 
-p. The oops tag has served its purpose.  Let's remove it an allow the
+p. The oops tag has served its purpose.  Let's remove it and allow the
 commits it referenced to be garbage collected.
 
 Execute:
@@ -1137,7 +1141,7 @@ h3. Goals
 
 h2. Change the program then commit
 
-p. Add an author commit to the program.
+p. Add an author comment to the program.
 
 File: hello.rb
 # Default is World
@@ -1149,7 +1153,7 @@ EOF
 
 Execute:
 git add hello.rb
-git commit -m 'Add an author comment'
+git commit -m "Add an author comment"
 
 h2. Oops, Should have an Email
 
@@ -1173,7 +1177,7 @@ amend the previous commit to include the email change.
 Execute:
 git add hello.rb
 =add
-git commit --amend -m 'Add an author/email comment'
+git commit --amend -m "Add an author/email comment"
 =commit
 
 Output:
@@ -1206,8 +1210,8 @@ h3. Goals
 
 h2. Move the hello.rb file into a lib directory.
 
-p. We are now going to build up the structure our little repository.
-Let's move the program into a lib directory.
+p. We are now going to build up the structure of our little
+repository.  Let's move the program into a lib directory.
 
 Execute:
 mkdir lib
@@ -1229,7 +1233,7 @@ p. By using git to do the move, we inform git of 2 things
 # The file @lib/hello.rb@ has been created.
 
 p. Both of these bits of information are immediately staged and ready
-to be commited.  The git status command reports that the file has been
+to be committed.  The git status command reports that the file has been
 moved.
 
 h2. Another way of moving files
@@ -1240,7 +1244,7 @@ What would happen if we used the operating system command to move the
 file instead of the git command?
 
 p. It turns out the following set of commands is identical to what we
-just did.  Its a bit more work, but the result is the same.
+just did.  It's a bit more work, but the result is the same.
 
 p(command). We could have done:
 
@@ -1254,7 +1258,7 @@ h2. Commit the new directory
 p. Let's commit this move.
 
 Execute:
-git commit -m 'Moved hello.rb to lib'
+git commit -m "Moved hello.rb to lib"
 
 ----------------------------------------------------------------------
 h1. More Structure
@@ -1282,7 +1286,7 @@ p. Add and commit the change.
 
 Execute:
 git add Rakefile
-git commit -m 'Added a Rakefile.'
+git commit -m "Added a Rakefile."
 
 p. You should be able to use Rake to run your hello program now.
 
@@ -1343,7 +1347,7 @@ Output:
 EOF
 
 p. Look in one of the two-letter directories.  You should see some
-files with 38 character names.  These are the files that contain the
+files with 38-character names.  These are the files that contain the
 objects stored in git.  These files are compressed and encoded, so
 looking at their contents directly won't be very helpful, but we will
 take a closer look in a bit.
@@ -1358,7 +1362,7 @@ Output:
 =cat
 EOF
 
-p. This is project specific configuration file.  Config entries in
+p. This is a project-specific configuration file.  Config entries in
 here will override the config entries in the @.gitconfig@ file in your
 home directory, at least for this project.
 
@@ -1381,9 +1385,9 @@ Output:
 =refv1
 EOF
 
-p. You should recogize the files in the tags subdirectory.  Each file
+p. You should recognize the files in the tags subdirectory.  Each file
 corresponds to a tag you created with the @git tag@ command earlier.
-It's content is just the hash of the commit tied to the tag.
+Its content is just the hash of the commit tied to the tag.
 
 p. The heads directory is similar, but is used for branches rather
 than tags.  We only have one branch at the moment, so all you will see
@@ -1399,8 +1403,8 @@ Output:
 =head
 EOF
 
-p. The HEAD file contains a reference to the current branch.  Should
-be a reference to master at this point.
+p. The HEAD file contains a reference to the current branch.  It
+should be a reference to master at this point.
 
 ----------------------------------------------------------------------
 h1. Git Internals: Working directly with Git Objects
@@ -1496,8 +1500,8 @@ Output:
 EOF
 
 p. There you have it.  We've dumped commit objects, tree objects and
-blob objects directly from the git repository.  That's all that is
-there, blobs, trees and commits.
+blob objects directly from the git repository.  That's all there is to
+it, blobs, trees and commits.
 
 h2. Explore On You Own
 
@@ -1513,7 +1517,7 @@ h3. Goals
 * Learn how to create a local branch in a repository
 
 p. It's time to do a major rewrite of the hello world functionality.
-Since this might take awhile, you want to put these changes into a
+Since this might take awhile, you'll want to put these changes into a
 separate branch to isolate them from changes in master.
 
 h2. Create a Branch
@@ -1523,6 +1527,9 @@ p. Let's call our new branch 'greet'.
 Execute:
 git checkout -b greet
 !git status
+
+p(note). *NOTE:* @git checkout -b <branchname>@ is a shortcut for @git
+branch <branchname>@ followed by a @git checkout <branchname>@.
 
 p. Notice that the git status command reports that you are on the
 'greet' branch.
@@ -1542,7 +1549,7 @@ EOF
 
 Execute:
 git add lib/greeter.rb
-git commit -m 'Added greeter class'
+git commit -m "Added greeter class"
 
 h2. Changes for Greet: Modify the main program
 
@@ -1560,7 +1567,7 @@ EOF
 
 Execute:
 git add lib/hello.rb
-git commit -m 'Hello uses Greeter'
+git commit -m "Hello uses Greeter"
 
 h2. Changes for Greet: Update the Rakefile
 
@@ -1578,7 +1585,7 @@ EOF
 
 Execute:
 git add Rakefile
-git commit -m 'Updated Rakefile'
+git commit -m "Updated Rakefile"
 
 h2. Up Next
 
@@ -1641,7 +1648,7 @@ h1. Changes in Master
 
 h3. Goals
 
-* Learing how to deal with multiple branches with different (and possibly conflicting) changes.
+* Learning how to deal with multiple branches with different (and possibly conflicting) changes.
 
 p. While you were changing the greet branch, someone else decided to
 update the master branch.  They added a README.
@@ -1657,7 +1664,7 @@ h2. Commit the README changes to master.
 Execute:
 git checkout master
 git add README
-git commit -m 'Added README'
+git commit -m "Added README"
 
 ----------------------------------------------------------------------
 h1. Viewing Diverging Branches
@@ -1749,7 +1756,7 @@ EOF
 
 Execute:
 git add lib/hello.rb
-git commit -m 'Made interactive'
+git commit -m "Made interactive"
 
 h2. View the Branches
 
@@ -1838,7 +1845,7 @@ h2. Commit the Conflict Resolution
 Execute:
 git add lib/hello.rb
 =add
-git commit -m 'Merged master fixed conflict.'
+git commit -m "Merged master fixed conflict."
 =commit
 
 Output:
@@ -2010,7 +2017,7 @@ h2. When to Rebase, When to Merge?
 
 p. Don't use rebase ...
 
-# If the branch is public and shared with others.  Writing publicly shared branches will tend to screw up other members of the team.
+# If the branch is public and shared with others.  Rewriting publicly shared branches will tend to screw up other members of the team.
 # When the _exact_ history of the commit branch is important (since rebase rewrites the commit history).
 
 p. Given the above guidelines, I tend to use rebase for short-lived,
@@ -2038,11 +2045,11 @@ $
 EOF
 
 p. Because the head of master is a direct ancestor of the head of the
-greet branch, git is able to do a fast forward merge.  When
+greet branch, git is able to do a fast-forward merge.  When
 fast-forwarding, the branch pointer is simply moved forward to point
-to same commit as the greeter branch.
+to the same commit as the greeter branch.
 
-p. There will never be conflicts in a fast forward merge.
+p. There will never be conflicts in a fast-forward merge.
 
 h2. Review the logs
 
@@ -2078,7 +2085,7 @@ the things learned in this section will apply to multiple repositories
 whether they are stored locally or remotely over a network.
 
 p. *NOTE:* We are going be making changes to both copies of our
-repositories.  Make sure you pay attention to which repository in are
+repositories.  Make sure you pay attention to which repository you are
 in at each step of the following labs.
 
 ----------------------------------------------------------------------
@@ -2158,7 +2165,7 @@ Output:
 EOF
 
 p. You should see a list of all the files in the top level of the
-original repository (@README@, @Rakefile@ and @lib).
+original repository (@README@, @Rakefile@ and @lib@).
 
 
 h2. Review the Repository History
@@ -2282,7 +2289,7 @@ p. Now add and commit this change
 
 Execute:
 git add README
-git commit -m 'Changed README in original repo'
+git commit -m "Changed README in original repo"
 
 h2. Up Next
 
@@ -2372,7 +2379,7 @@ This is the Hello World example from the git tutorial.
 (changed in original)
 EOF
 
-p. There's the changes.  Even though "git fetch" does not merge the
+p. There are the changes.  Even though "git fetch" does not merge the
 changes, we can still manually merge the changes from the remote
 repository.
 
@@ -2418,7 +2425,7 @@ git branch --track greet origin/greet
 =branch_track
 git branch -a
 =branch_a
-git hist --max-count=1
+git hist --max-count=2
 =log
 
 Output:
@@ -2475,14 +2482,14 @@ cd hello
 +pwd
 git remote add shared ../hello.git
 
-p{color:red}. *NOTE: Now in the +hello_ repository.*
+p{color:red}. *NOTE: Now in the +hello+ repository.*
 
 ----------------------------------------------------------------------
 h1. Pushing a Change
 
 h3. Goals
 
-* Learn out to push a change to a remote repository.
+* Learn how out to push a change to a remote repository.
 
 p. Since bare repositories are usually shared on some sort of network
 server, it is usually difficult to cd into the repo and pull changes.
@@ -2499,7 +2506,7 @@ EOF
 Execute:
 git checkout master
 git add README
-git commit -m 'Added shared comment to readme'
+git commit -m "Added shared comment to readme"
 
 p. Now push the change to the shared repo.
 
@@ -2514,8 +2521,8 @@ Output:
 =push
 EOF
 
-p(note). *NOTE:* We had to explicitly name the branch master that
-we were pushing.  It is possible to set it up automatically, but I
+p(note). *NOTE:* We had to explicitly name the branch master that was
+receiving the push.  It is possible to set it up automatically, but I
 _never_ remember the commands to do that.  Check out the "Git Remote
 Branch" gem for easy management of remote branches.
 
@@ -2599,8 +2606,8 @@ p. Here are some topics you might want to research on your own:
 * Remote Servers
 * Protocols
 * SSH Setup
-* Remote Branch Management (git bisect)
-* Finding Buggy Commits
+* Remote Branch Management
+* Finding Buggy Commits (git bisect)
 * Workflows
 * Non-command line tools (gitx, gitk, magit)
 * Working with GitHub
