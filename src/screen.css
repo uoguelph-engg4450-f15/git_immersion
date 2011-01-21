@@ -276,6 +276,10 @@ div.instructions pre {
   padding-left  : 27px;
   background    : url(circle.png) no-repeat 0 8px; }
 
+#homepage #other_resources li {
+  list-style   : none;
+  line-height  : 18px; }
+
 #intro p {
   position     : relative;
   left         : -27px;
