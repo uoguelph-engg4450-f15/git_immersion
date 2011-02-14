@@ -2071,7 +2071,7 @@ However, git excells at working with multiple repositories.  These
 extra repositories may be stored locally, or may be accessed across a
 network connection.
 
-p. In the next section will create a new repository called
+p. In the next section we will create a new repository called
 "cloned_hello".  We will show how to move changes from one repository
 to another, and how to handle conflicts when they arise from between
 two repositories.
