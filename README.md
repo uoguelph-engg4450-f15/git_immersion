@@ -206,3 +206,9 @@ Example:
 
 Sample names must be unique within a single lab, but do not have to be
 unique across the entire project.
+
+# License
+
+GitImmersion is release under a
+[Creative Commons, Attribution-NonCommercial-ShareAlike, Version 3.0]("http://creativecommons.org/licenses/by-nc-sa/3.0/")
+License.
