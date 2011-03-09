@@ -169,8 +169,9 @@ EXTRA_SRCS = FileList['src/*.css', 'src/*.js', 'src/*.gif', 'src/*.jpg', 'src/*.
 EXTRA_OUT = EXTRA_SRCS.pathmap(TO_HTML)
 INDEX_HTML = File.join(Labs::HTML_DIR, "index.html")
 
-task :extra => EXTRA_OUT
+TEMPLATE_FILES = FileList['templates/*.erb']
 
+task :extra => EXTRA_OUT
 
 EXTRA_SRCS.each do |extra|
   file extra.pathmap(TO_HTML) => [Labs::HTML_DIR, extra] do |t|
@@ -178,7 +179,7 @@ EXTRA_SRCS.each do |extra|
   end
 end
 
-file INDEX_HTML => [Labs::HTML_DIR, Labs::WORK_DIR, "src/labs.txt", "rakelib/labs.rake", :extra, SAMPLE_TAG] do |t|
+file INDEX_HTML => [Labs::HTML_DIR, Labs::WORK_DIR, "src/labs.txt", "rakelib/labs.rake", SAMPLE_TAG] + EXTRA_OUT + TEMPLATE_FILES do |t|
   puts "Generating HTML"
   File.open("src/labs.txt") { |f| Labs.generate_labs(f) }
 end
