@@ -211,6 +211,6 @@ unique across the entire project.
 
 ![CC by-nc-sa](http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png)
 
-GitImmersion is release under a
-[Creative Commons, Attribution-NonCommercial-ShareAlike, Version 3.0]("http://creativecommons.org/licenses/by-nc-sa/3.0/")
+GitImmersion is released under a
+[Creative Commons, Attribution-NonCommercial-ShareAlike, Version 3.0](http://creativecommons.org/licenses/by-nc-sa/3.0/)
 License.
