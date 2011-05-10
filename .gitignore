@@ -1,4 +1,5 @@
 .DS_Store
+.zsh_rake_cache
 auto
 dist
 git_tutorial/html
