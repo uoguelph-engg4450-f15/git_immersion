@@ -167,7 +167,6 @@ $(function() {
   });
 
   window.pager = $('#pager');
-  window.pager.hide();
   window.pagerShouldBeVisible = function(){
     return $(document).scrollTop() > 215;
   };
@@ -175,7 +174,7 @@ $(function() {
     if(pagerShouldBeVisible()) {
       pager.fadeIn(200);
     } else {
-      pager.fadeOut(200);
+      pager.fadeOut(100);
     }
-  });
+  }).scroll();
 });
