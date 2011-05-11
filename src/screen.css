@@ -422,7 +422,7 @@ div.instructions pre {
   top        : 15px;
   right      : 15px;
   width      : 124px;
-  height     : 44px
+  height     : 44px;
   background : url(pager.png); }
 
 #pager a {
