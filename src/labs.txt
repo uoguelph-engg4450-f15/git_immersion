@@ -46,7 +46,7 @@ p. Git the tutorial package from either:
 
 h2. Unzip the tutorial
 
-p. The tutorial package should have a main diretory "git_tutorial"
+p. The tutorial package should have a main directory "git_tutorial"
 with three sub-directories:
 
 * html -- These html files.  Point your browser to html/index.html
@@ -242,7 +242,7 @@ p. By separating staging and committing, you have the ability to
 easily fine tune what goes into each commit.
 
 ----------------------------------------------------------------------
-h1. Commiting Changes
+h1. Committing Changes
 
 h3. Goals
 
@@ -335,7 +335,7 @@ point on.
 p. Git focuses on the changes to a file rather than the file itself.
 When you say @git add file@, you are not telling git to add the file
 to the repository.  Rather you are saying that git should make note of
-the current state of that file to be commited later.
+the current state of that file to be committed later.
 
 p. We will attempt to explore that difference in this lab.
 
@@ -1269,7 +1269,7 @@ h3. Goals
 
 h2. Now add a Rakefile
 
-p. Let's add a rakefile to our repository.  The following one will do
+p. Let's add a Rakefile to our repository.  The following one will do
 nicely.
 
 File: Rakefile
@@ -2064,10 +2064,10 @@ EOF
 p. The greet and master branches are now identical.
 
 ----------------------------------------------------------------------
-h1. Mutliple Repositories
+h1. Multiple Repositories
 
 p. Up to this point we have been working with a single git repository.
-However, git excells at working with multiple repositories.  These
+However, git excels at working with multiple repositories.  These
 extra repositories may be stored locally, or may be accessed across a
 network connection.
 
