@@ -1653,16 +1653,20 @@ h3. Goals
 p. While you were changing the greet branch, someone else decided to
 update the master branch.  They added a README.
 
-h2. Update the README file with changes.
+h2. Switch to the master branch.
+
+Execute:
+git checkout master
+
+h2. Create the README.
 
 File: README
 This is the Hello World example from the git tutorial.
 EOF
 
-h2. Commit the README changes to master.
+h2. Commit the README to master.
 
 Execute:
-git checkout master
 git add README
 git commit -m "Added README"
 
