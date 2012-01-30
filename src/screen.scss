@@ -1,0 +1,487 @@
+@import 'reset';
+@import 'fonts';
+@import 'compass/css3';
+
+$gi_green : #86AC3A;
+$gi_gray  : #7C7C7C;
+
+html, body {
+  font-family : 'DINWebProRegular', helvetica, arial, serif;
+  background  : url(background.jpg); }
+
+
+/* Header
+------------------------------------------------------------ */
+
+#header {
+  position       : fixed;
+  top            : 0;
+  right          : 0;
+  left           : 0;
+  min-height     : 145px;
+  text-transform : uppercase;
+  background     : #fff;
+  z-index        : 2;
+  @include box_shadow(0 1px 3px rgba(0,0,0, 0.15)); }
+
+#home_link {
+  position    : absolute;
+  top         : 47px;
+  left        : 42px;
+  width       : 205px;
+  height      : 30px;
+  text-indent : -999em;
+  background  : url(logo_small.gif); }
+
+#pager {
+  position   : absolute;
+  top        : 92px;
+  left       : 34px;
+  width      : 219px;
+  height     : 260px;
+  background : url(pager.png);
+}
+
+#edgecase_link {
+  top    : 96px;
+  left   : 50px;
+  width  : 334px;
+  height : 40px; }
+
+#pager .arrow {
+  position    : absolute;
+  top         : 37px;
+  width       : 20px;
+  height      : 40px;
+  text-indent :-999em; }
+
+#arrow_previous { left: 18px; }
+#arrow_next     { left: 178px; }
+
+#table_of_contents_link {
+  position    : absolute;
+  top         : 33px;
+  left        : 57px;
+  width       : 100px;
+  height      : 50px;
+  text-indent :-999em; }
+
+#edgecase_link {
+  position    : absolute;
+  top         : 185px;
+  left        : 5px;
+  width       : 203px;
+  height      : 69px;
+  text-indent :-999em; }
+
+#bookmark_link {
+  overflow    : hidden;
+  position    : absolute;
+  top         : 109px;
+  right       : 11px;
+  left        : 6px;
+  height      : 68px;
+  text-indent :-999em;
+  cursor      : pointer;
+
+  #bookmark {
+    position   : absolute;
+    top        :-6px;
+    left       : 16px;
+    width      : 19px;
+    height     : 68px;
+    background : url(bookmarks.png) no-repeat 0px 0;
+
+    &.active { background-position: -19px 0; }
+  }
+
+}
+
+.lab_title {
+  width          : 618px;
+  padding        : 5px 0 15px 340px;
+  color          : #2e2e2e;
+  font           : 39px 'DINWeb-CondMedium', helvetica, arial, sans-serif;
+  line-height    : 100%;
+  text-transform : uppercase; }
+
+.lab_title em {
+  display   : block;
+  color     : $gi_green;
+  font-size : 21px; }
+
+
+
+/* Goals
+------------------------------------------------------------ */
+
+#main_content h3 {
+  width          : 618px;
+  margin         : 0 0 0.15em 340px;
+  color          : $gi_green;
+  font           : 21px 'DINWeb-CondMedium', helvetica, arial, sans-serif;
+  text-transform : uppercase; }
+
+#main_content ul { margin: 0 0 40px 340px; }
+
+#main_content li {
+  margin-bottom : 0.5em;
+  line-height   : 120%; }
+
+
+
+
+/* Main Content
+------------------------------------------------------------ */
+
+#main_content { padding: 175px 0 0 0; }
+
+#main_content h2 {
+  position      : relative;
+  left          :-65px;
+  margin        : 30px 0;
+  padding       : 22px 0 2px 405px;
+  color         : $gi_green;
+  font          : 36px 'DINWebProRegular', helvetica, arial, serif; }
+
+#main_content h2 em {
+  position    : absolute;
+  top         : 22px;
+  left        : 340px;
+  width       : 46px;
+  height      : 46px;
+  color       : #fff;
+  font        : 27px 'DINWeb-CondBold', helvetica, arial, serif;
+  line-height : 50px;
+  text-align  : center;
+  background  : url(green_circle.png) no-repeat; }
+
+#main_content h4 {
+  position       : relative;
+  left           : 340px;
+  display        : inline-block;
+  min-width      : 80px;
+  height         : 25px;
+  margin         : 10px 0;
+  padding        : 0 20px 0 8px;
+  color          : #fff;
+  font           : 18px 'DINWeb-CondBold', helvetica, arial, serif;
+  line-height    : 29px;
+  letter-spacing : 0.1em;
+  text-transform : uppercase;
+  background     : url(label.png) no-repeat 100% 0;
+  @include border_radius(3px 0 0 3px); }
+
+#main_content h4 em {
+  padding-left   : 5px;
+  font           : 14px helvetica, arial, sans-serif;
+  letter-spacing : 0; }
+
+#main_content a { color: #d00; }
+
+div.instructions {
+  margin-bottom : 1em;
+  padding-left  : 318px; }
+
+div.instructions pre {
+  display       : block;
+  width         : 608px;
+  margin-bottom : 0.25em;
+  padding-left  : 22px;
+  font          : 18px courier, 'courier new', monospace;
+  background    : url(prompt.png) no-repeat 0 50%; }
+
+#main_content img {
+  display     : block;
+  margin-left : 85px;
+  @include box_shadow(0 0 14px rgba(0,0,0, 0.15)); }
+
+#main_content p {
+  width        : 618px;
+  margin       : 1em 0;
+  padding-left : 340px;
+  color        : $gi_gray;
+  font-size    : 18px;
+  line-height  : 130%; }
+
+#main_content ol {
+  width        : 608px;
+  margin       : 1em 0;
+  padding-left : 85px;
+  line-height  : 130px; }
+
+#main_content .sample {
+  display       : block;
+  margin-bottom : 1em;
+  padding       : 10px 0 10px 340px;
+  color         : #74e83f;
+  font          : 14px courier, 'courier new', monospace;
+  background    : #1e1e1e; }
+
+#main_content .file {
+  display       : block;
+  margin-bottom : 1em;
+  border-top    : 1px solid #ddd;
+  border-bottom : 1px solid #ddd;
+  padding       : 10px 0 10px 340px;
+  font          : 14px courier, 'courier new', monospace;
+  background    : #fff; }
+
+#main_content p.note {
+  margin-left : 2em;
+  font-style  : italic;
+  color       : #555; }
+
+
+#border_left {
+  position     : relative;
+  top          : -85px;
+  width        : 608px;
+  margin-left  : 54px;
+  padding-top  : 85px;
+  padding-left : 23px;
+  background   : url(border_left.gif) repeat-y; }
+
+#homepage h1 {
+  margin : 0 0 10px 0;
+  color  : #cf0000;
+  font   : 32px helvetica, arial, sans-serif; }
+
+#homepage h2 { font: 21px helvetica, arial, sans-serif; }
+
+#homepage a { color: #000; }
+
+#homepage .beep {
+  float        : left;
+  margin-right : 32px; }
+
+#homepage #install {
+  position     : relative;
+  left         : -23px;
+  padding-left : 346px;
+  background   : url(install_circle.png) no-repeat 0 8px; }
+
+#homepage #gui_clients { padding-top: 32px; }
+
+#homepage #brought_to_you_by {
+  position      : relative;
+  top           : -117px;
+  left          : 55px;
+  width         : 400px;
+  margin-bottom : 40px;
+  padding-left  : 346px;
+  background    : url(install_circle.png) no-repeat 0 8px; }
+
+#homepage #brought_to_you_by a {
+  display     : block;
+  width       : 280px;
+  height      : 89px;
+  text-indent : -999em;
+  background  : url(edgecase_logo.png); }
+
+#homepage #other_resources {
+  position      : relative;
+  top           : -90px;
+  left          : -27px;
+  width         : 300px;
+  margin-bottom : 20px;
+  padding-left  : 27px;
+  background    : url(circle.png) no-repeat 0 8px; }
+
+#homepage #other_resources li {
+  list-style   : none;
+  line-height  : 18px; }
+
+#homepage #license {
+  position      : relative;
+  top           : -90px;
+  left          : -27px;
+  width         : 300px;
+  margin-bottom : 20px;
+  padding-left  : 27px;
+  background    : url(circle.png) no-repeat 0 8px; }
+
+#homepage #license li {
+  list-style   : none;
+  line-height  : 18px; }
+
+#intro p {
+  position     : relative;
+  left         : -27px;
+  font         : 18px baskerville, georgia, serif;
+  margin       : 0 0 40px 0;
+  padding-left : 27px;
+  background   : url(circle.png) no-repeat 0 8px; }
+
+#intro p em {
+  font-size  : 27px;
+  font-style : normal; }
+
+
+
+/* Labs Index
+------------------------------------------------------------ */
+
+#index {
+  display     : none;
+  position    : fixed;
+  top         : 0;
+  bottom      : 0;
+  left        : 50%;
+  width       : 420px;
+  margin-left : -210px;
+  background  : #e9e7e0;
+  z-index     : 2;
+  @include box_shadow(0 0 20px rgba(0,0,0, 0.5)); }
+
+#index.visible { display: block; }
+
+#index #show_bookmarks {
+  position   : absolute;
+  top        : -20px;
+  right      : 40px;
+  width      : 19px;
+  height     : 46px;
+  cursor     : pointer;
+  background : url(bookmarks.png) no-repeat;
+  z-index    : 2; }
+
+#index #show_bookmarks.active { background-position: -19px 0; }
+
+#index #no_bookmarks {
+  display     : none;
+  position    : absolute;
+  top         : 100px;
+  left        : 50%;
+  width       : 300px;
+  height      : 78px;
+  margin-left : -150px;
+  background  : url(no_bookmarks.png); }
+
+#index h1 {
+  position       : absolute;
+  top            : 0;
+  right          : 0;
+  left           : 0;
+  height         : 60px;
+  padding-left   : 30px;
+  font           : 24px helvetica, arial, sans-serif;
+  line-height    : 60px;
+  text-transform : uppercase;
+  background     : url(index_heading_background.png) repeat-x;
+  z-index        : 2; }
+
+#index ul {
+  overflow : auto;
+  position : absolute;
+  top      : 0;
+  right    : 5px;
+  bottom   : 0;
+  left     : 0;
+  padding  : 50px 0 10px 0;
+  z-index  : 1; }
+
+#index ul::-webkit-scrollbar                        { width: 10px; height: 10px; }
+#index ul::-webkit-scrollbar-track:enabled          { background-color: transparent; }
+#index ul::-webkit-scrollbar-button:start:decrement,
+#index ul::-webkit-scrollbar-button:end:increment   { display: block; width: 10px; height: 10px; background-color: transparent; }
+#index ul::-webkit-scrollbar-thumb:vertical,
+#index ul::-webkit-scrollbar-thumb:horizontal       { width: 30px; background-color: transparent; -webkit-border-radius: 5px; }
+#index ul.hover::-webkit-scrollbar-thumb:vertical,
+#index ul.hover::-webkit-scrollbar-thumb:horizontal { background-color: rgba(0, 0, 0, 0.3); -webkit-box-shadow: 0 1px 1px rgba(255,255,255, 0.5); }
+
+#index li {
+  overflow: hidden;
+  padding-left: 12px; }
+
+#index a {
+  display         : block;
+  height          : 28px;
+  color           : #353535;
+  font            : 14px helvetica, arial, sans-serif;
+  font-weight     : bold;
+  line-height     : 26px;
+  text-decoration : none;
+  text-shadow     : 0 1px 0 #fff;
+  background      : url(index_item_background.gif) no-repeat 0 100%; }
+
+#index li:last-child a { background: none; }
+
+#index a span {
+  float        : left;
+  display      : block;
+  margin-right : 5px;
+  width        : 25px;
+  font-weight  : normal;
+  text-align   : right; }
+
+
+
+/* Footer
+------------------------------------------------------------ */
+
+footer {
+  position   : relative;
+  height     : 100px;
+  margin-top : 50px;
+  border-top : 4px double #adadad;
+  background : #eee;
+  z-index    : 1; }
+
+footer nav {
+  position : relative;
+  width    : 608px;
+  margin   : 0 0 0 8px; }
+
+footer nav li {
+  position : absolute;
+  top      : 32px; }
+
+footer nav .arrow {
+  display : block;
+  width   : 144px;
+  height  : 32px; }
+
+footer nav .arrow * {
+  display         : inline-block;
+  height          : 32px;
+  color           : #222;
+  font            : 18px helvetica, arial, sans-serif;
+  line-height     : 34px;
+  text-decoration : none;
+  text-transform  : uppercase; }
+
+footer nav .arrow span { color: #aaa; }
+
+footer nav .previous   { left: 0; }
+footer nav .previous * {
+  float         : right;
+  padding       : 0 0 0 30px;
+  text-align    : right;
+  background    : url(previous_arrow.png) no-repeat; }
+
+footer nav .next   { left : 206px; }
+footer nav .next * {
+  padding      : 0 30px 0 40px;
+  background   : url(next_arrow.png) no-repeat 100% 0; }
+
+footer nav .index_button a {
+  position    : absolute;
+  top         : -5px;
+  left        : 174px;
+  width       : 40px;
+  height      : 40px;
+  text-indent : -999em;
+  background  : url(index.png); }
+
+footer a#edgecase_link_small {
+  position    : absolute;
+  top         : 24px;
+  left        : 575px;
+  display     : block;
+  width       : 169px;
+  height      : 53px;
+  text-indent : -999em;
+  background  : url(edgecase_logo_small.png); }
+
+

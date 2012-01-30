@@ -22,19 +22,14 @@ function readCookie(name) {
 function eraseCookie(name) { createCookie(name,"",-1); }
 
 function switchBookmarkOn() {
-  $('#bookmark').addClass('active')
-                .animate({ top: -45, }, 100);
+  $('#bookmark').addClass('active').animate({ top: 0, }, 100);
 }
 
 function switchBookmarkOff() {
-  $('#bookmark').removeClass('active')
-                .animate({ top: -75, }, 100);
+  $('#bookmark').removeClass('active').animate({ top: -6, }, 100);
 }
 
-var current_section = {element:'#main_content', index:0};
-
 $(function() {
-  var h2_ceil = $("h2").length -1;
   // Bookmark
   var currentLabID = $('body').data('lab-id');
   if(readCookie(currentLabID)) { switchBookmarkOn(); }
@@ -44,20 +39,20 @@ $(function() {
     if(readCookie(item.data('lab-id'))) { item.addClass('bookmark'); }
   });
 
-  $('#bookmark').click(function() {
-    var bookmark = $(this);
-    if(bookmark.hasClass('active')) {
+  $('#bookmark').on('click', function(e) {
+    e.preventDefault();
+    if($(this).hasClass('active')) {
       switchBookmarkOff();
       eraseCookie(currentLabID);
-      $('#index li[data-lab-id=' + currentLabID +']').removeClass('bookmark');
+      $('#lab_' + currentLabID +'_link').removeClass('bookmark');
     } else {
       switchBookmarkOn();
       createCookie(currentLabID, '1', 365);
-      $('#index li[data-lab-id=' + currentLabID +']').addClass('bookmark');
+      $('#lab_' + currentLabID +'_link').addClass('bookmark');
     }
   });
 
-  $('#show_bookmarks').click(function() {
+  $('#show_bookmarks').on('click', function() {
     var bookmark = $(this);
     if(bookmark.hasClass('active')) {
       bookmark.removeClass('active')
@@ -78,7 +73,7 @@ $(function() {
 
 
   // Lab Index
-  $('#header .index_button a, #footer .index_button a, #pager .index_button a').click(function(e) {
+  $('#header .index_button a, #footer .index_button a').on('click', function(e) {
     e.preventDefault();
     $('#index').fadeToggle(200);
   });
@@ -117,16 +112,4 @@ $(function() {
 
     $(pre).replaceWith(container);
   });
-
-  window.pager = $('#pager');
-  window.pagerShouldBeVisible = function(){
-    return $(document).scrollTop() > 215;
-  };
-  $(window).scroll(function(e) {
-    if(pagerShouldBeVisible()) {
-      pager.fadeIn(200);
-    } else {
-      pager.fadeOut(100);
-    }
-  }).scroll();
 });
