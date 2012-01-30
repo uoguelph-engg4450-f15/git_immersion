@@ -29,19 +29,22 @@ html, body {
   position    : absolute;
   top         : 47px;
   left        : 42px;
-  width       : 205px;
-  height      : 30px;
-  text-indent : -999em;
-  background  : url(logo_small.gif); }
+  width       : 210px;
+  height      : 35px;
+  text-indent :-999em;
+  background  : url(logo_small.png); }
+
+.blur #home_link { background: url(logo_small_blur.png);}
 
 #pager {
   position   : absolute;
   top        : 92px;
   left       : 34px;
-  width      : 219px;
-  height     : 260px;
-  background : url(pager.png);
-}
+  width      : 229px;
+  height     : 268px;
+  background : url(pager.png); }
+
+.blur #pager { background: url(pager_blur.png); }
 
 #edgecase_link {
   top    : 96px;
@@ -78,7 +81,7 @@ html, body {
 #bookmark_link {
   overflow    : hidden;
   position    : absolute;
-  top         : 109px;
+  top         : 113px;
   right       : 11px;
   left        : 6px;
   height      : 68px;
@@ -106,12 +109,19 @@ html, body {
   line-height    : 100%;
   text-transform : uppercase; }
 
+.blur .lab_title {
+  color       : transparent;
+  text-shadow : 0 0 2px #2e2e2e; }
+
 .lab_title em {
   display    : block;
   color      : $gi_green;
   font-size  : 21px;
   font-style : normal; }
 
+.blur .lab_title em {
+  color       : transparent;
+  text-shadow : 0 0 2px $gi_green; }
 
 
 /* Goals
@@ -124,7 +134,17 @@ h3 {
   font           : 21px 'DINWeb-CondMedium', helvetica, arial, sans-serif;
   text-transform : uppercase; }
 
-ul { margin: 0 0 40px 340px; }
+.blur h3 {
+  color       : transparent;
+  text-shadow : 0 0 2px $gi_green; }
+
+ul {
+  margin : 0 0 40px 340px;
+  color  : #222; }
+
+.blur ul {
+  color       : transparent;
+  text-shadow : 0 0 2px #222; }
 
 li {
   margin-bottom : 0.5em;
@@ -148,33 +168,47 @@ h2 {
   color         : $gi_green;
   font          : 36px 'DINWebProRegular', helvetica, arial, serif; }
 
+.blur h2 {
+  color       : transparent;
+  text-shadow : 0 0 2px $gi_green; }
+
 h2 em {
   position    : absolute;
-  top         : 22px;
+  top         : 17px;
   left        : 340px;
-  width       : 46px;
-  height      : 46px;
+  width       : 56px;
+  height      : 56px;
   color       : #fff;
   font        : 27px 'DINWeb-CondBold', helvetica, arial, serif;
-  line-height : 50px;
+  line-height : 60px;
   text-align  : center;
-  background  : url(green_circle.png) no-repeat; }
+  background  : url(green_circle.png) no-repeat 50% 50%; }
+
+.blur h2 em {
+  color       : transparent;
+  text-shadow : 0 0 2px #fff;
+  background-image: url(green_circle_blur.png); }
 
 h4 {
   position       : relative;
   left           : 340px;
   display        : inline-block;
   min-width      : 80px;
-  height         : 25px;
+  height         : 35px;
   margin         : 10px 0;
   padding        : 0 20px 0 8px;
   color          : #fff;
   font           : 18px 'DINWeb-CondBold', helvetica, arial, serif;
-  line-height    : 29px;
+  line-height    : 36px;
   letter-spacing : 0.1em;
   text-transform : uppercase;
   background     : url(label.png) no-repeat 100% 0;
   @include border_radius(3px 0 0 3px); }
+
+.blur h4 {
+  color       : transparent; 
+  text-shadow : 0 0 2px #fff;
+  background  : url(label_blur.png) no-repeat 100% 0; }
 
 h4 em {
   padding-left   : 5px;
@@ -186,7 +220,12 @@ a { color: #d00; }
 
 .instructions {
   margin-bottom : 1em;
-  padding-left  : 318px; }
+  padding-left  : 318px;
+  color         : #222; }
+
+.blur .instructions {
+  color       : transparent;
+  text-shadow : 0 0 2px #222; }
 
 .instructions pre {
   display       : block;
@@ -209,6 +248,10 @@ p {
   font-size    : 18px;
   line-height  : 130%; }
 
+.blur p {
+  color       : transparent;
+  text-shadow : 0 0 2px $gi_gray; }
+
 ol {
   width        : 608px;
   margin       : 1em 0;
@@ -224,6 +267,12 @@ ol {
   color         : #74e83f;
   font          : 14px courier, 'courier new', monospace;
   background    : #2E2E2E; }
+
+.blur .sample {
+  color       : transparent;
+  text-shadow : 0 0 2px #74e83f;
+  @include box_shadow(0 0 5px #000);
+}
 
 .file {
   overflow      : auto;
@@ -332,6 +381,17 @@ ol {
 /* Labs Index
 ------------------------------------------------------------ */
 
+#cover {
+  display    : none;
+  position   : fixed;
+  top        : 0;
+  right      : 0;
+  bottom     : 0;
+  left       : 0;
+  background : rgba(0,0,0, 0.65);
+  z-index    : 3;
+}
+
 #index {
   display     : none;
   position    : fixed;
@@ -341,7 +401,7 @@ ol {
   width       : 420px;
   margin-left : -210px;
   background  : #e9e7e0;
-  z-index     : 2;
+  z-index     : 4;
   @include box_shadow(0 0 20px rgba(0,0,0, 0.5)); }
 
 #index.visible { display: block; }

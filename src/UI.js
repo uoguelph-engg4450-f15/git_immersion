@@ -23,23 +23,26 @@ function eraseCookie(name) { createCookie(name,'',-1); }
 
 
 $(function() {
-  // Bookmark
   var currentLabID           = $('body').attr('data-lab-id')
     , switchBookmarkOn       = function()  { $('#bookmark').addClass('active').animate({ top: 0, }, 100); }
     , switchBookmarkOff      = function()  { $('#bookmark').removeClass('active').animate({ top: -6, }, 100); }
     , navigateToNextPage     = function()  { $('#arrow_next').click(); }
     , navigateToPreviousPage = function()  { $('#arrow_previous').click(); }
     , followHREF             = function(e) { window.location = '/' + $(this).attr('href'); }
+    , showIndex              = function() {
+      $('#cover').show();
+      $('#index').fadeIn(200);
+      $('body').addClass('blur');
+    }
+    , hideIndex              = function() {
+      $('#cover').hide();
+      $('#index').fadeOut(200);
+      $('body').removeClass('blur');
+    }
   ;
 
-
+  // Bookmark
   if(readCookie(currentLabID)) { switchBookmarkOn(); }
-
-  $('#index li').each(function(i, item){
-    var item = $(item);
-    console.log('LAB ID: ' + item.attr('data-lab-id'));
-    if(readCookie(item.attr('data-lab-id'))) { item.addClass('bookmark'); }
-  });
 
   $('#bookmark_link').on('click', function(e) {
     e.preventDefault();
@@ -75,9 +78,15 @@ $(function() {
 
 
   // Lab Index
+  $('#index li').each(function(i, item){
+    var item = $(item);
+    console.log('LAB ID: ' + item.attr('data-lab-id'));
+    if(readCookie(item.attr('data-lab-id'))) { item.addClass('bookmark'); }
+  });
+
   $('#table_of_contents_link').on('click', function(e) {
     e.preventDefault();
-    $('#index').fadeToggle(200);
+    showIndex();
   });
 
   $('#index ul').hover(
@@ -88,12 +97,12 @@ $(function() {
 
   // Page nav key bindings
   $('#arrow_next, #arrow_previous').on('click', followHREF);
-  $(document).click(function(e) {
+  $(document).on('click', function(e) {
     if (!$(e.target).closest('#table_of_contents_link, #index').length) {
-      $('#index').fadeOut(100);
+      hideIndex();
     }
-  }).keyup(function(e) {
-    if(e.keyCode == 27)                    { /* escape key */       $('#index').fadeOut(100); }
+  }).on('keyup', function(e) {
+    if(e.keyCode == 27)                    { /* escape key */       hideIndex(); }
     if(e.keyCode == 76 || e.keyCode == 39) { /* l or right arrow */ navigateToNextPage(); }
     if(e.keyCode == 72 || e.keyCode == 37) { /* h or left arrow */  navigateToPreviousPage(); }
   });
