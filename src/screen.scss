@@ -107,9 +107,10 @@ html, body {
   text-transform : uppercase; }
 
 .lab_title em {
-  display   : block;
-  color     : $gi_green;
-  font-size : 21px; }
+  display    : block;
+  color      : $gi_green;
+  font-size  : 21px;
+  font-style : normal; }
 
 
 
@@ -347,7 +348,7 @@ ol {
 
 #index #show_bookmarks {
   position   : absolute;
-  top        : -20px;
+  top        :-6px;
   right      : 40px;
   width      : 19px;
   height     : 46px;
@@ -373,9 +374,9 @@ ol {
   right          : 0;
   left           : 0;
   height         : 60px;
-  padding-left   : 30px;
-  font           : 24px helvetica, arial, sans-serif;
-  line-height    : 60px;
+  padding-left   : 42px;
+  font           : 24px 'DINWeb-CondBold', helvetica, arial, sans-serif;
+  line-height    : 54px;
   text-transform : uppercase;
   background     : url(index_heading_background.png) repeat-x;
   z-index        : 2; }
@@ -387,6 +388,7 @@ ol {
   right    : 5px;
   bottom   : 0;
   left     : 0;
+  margin   : 0;
   padding  : 50px 0 10px 0;
   z-index  : 1; }
 

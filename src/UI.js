@@ -21,17 +21,16 @@ function readCookie(name) {
 
 function eraseCookie(name) { createCookie(name,"",-1); }
 
-function switchBookmarkOn() {
-  $('#bookmark').addClass('active').animate({ top: 0, }, 100);
-}
-
-function switchBookmarkOff() {
-  $('#bookmark').removeClass('active').animate({ top: -6, }, 100);
-}
 
 $(function() {
   // Bookmark
-  var currentLabID = $('body').data('lab-id');
+  var currentLabID           = $('body').data('lab-id')
+    , switchBookmarkOn       = function() { $('#bookmark').addClass('active').animate({ top: 0, }, 100); }
+    , switchBookmarkOff      = function() { $('#bookmark').removeClass('active').animate({ top: -6, }, 100); }
+    , navigateToNextPage     = function() { console.log('next page!'); $('#arrow_next').click(); }
+    , navigateToPreviousPage = function() { $('#arrow_previous').click(); }
+  ;
+
   if(readCookie(currentLabID)) { switchBookmarkOn(); }
 
   $('#index li').each(function(i, item){
@@ -39,9 +38,9 @@ $(function() {
     if(readCookie(item.data('lab-id'))) { item.addClass('bookmark'); }
   });
 
-  $('#bookmark').on('click', function(e) {
+  $('#bookmark_link').on('click', function(e) {
     e.preventDefault();
-    if($(this).hasClass('active')) {
+    if($('#bookmark').hasClass('active')) {
       switchBookmarkOff();
       eraseCookie(currentLabID);
       $('#lab_' + currentLabID +'_link').removeClass('bookmark');
@@ -56,7 +55,7 @@ $(function() {
     var bookmark = $(this);
     if(bookmark.hasClass('active')) {
       bookmark.removeClass('active')
-              .animate({ top: -20, }, 100);
+              .animate({ top: -6, }, 100);
 
       $('#no_bookmarks').fadeOut(100);
       $('#index li').fadeIn(100);
@@ -73,7 +72,7 @@ $(function() {
 
 
   // Lab Index
-  $('#header .index_button a, #footer .index_button a').on('click', function(e) {
+  $('#table_of_contents_link').on('click', function(e) {
     e.preventDefault();
     $('#index').fadeToggle(200);
   });
@@ -84,25 +83,20 @@ $(function() {
   );
 
 
-  $('#header .arrow a').click(function(e){
-    var anchor = location.href.match('main_content') ? '' : '#main_content'
-    window.location = '/' + $(this).attr('href') + anchor;
-  });
-
-  function nextPage()     { $('header .next a').click(); }
-  function previousPage() { $('header .previous a').click(); }
-
+  // Page nav key bindings
   $(document).click(function(e) {
-    if (!$(e.target).closest('#index, .index_button').length) {
+    if (!$(e.target).closest('#table_of_contents_link, #index').length) {
       $('#index').fadeOut(100);
     }
   }).keyup(function(e) {
     if(e.keyCode == 27)                    { /* escape key */       $('#index').fadeOut(100); }
-    if(e.keyCode == 76 || e.keyCode == 39) { /* l or right arrow */ nextPage(); }
-    if(e.keyCode == 72 || e.keyCode == 37) { /* h or left arrow */  previousPage(); }
+    if(e.keyCode == 76 || e.keyCode == 39) { /* l or right arrow */ navigateToNextPage(); }
+    if(e.keyCode == 72 || e.keyCode == 37) { /* h or left arrow */  navigateToPreviousPage(); }
   });
 
-  $('#main_content pre.instructions').each(function(i, pre) {
+
+  // Pre tag fixens
+  $('#main_content .instructions').each(function(i, pre) {
     var lines = pre.innerHTML.split("\n")
         container = $('<div class="instructions">');
 
