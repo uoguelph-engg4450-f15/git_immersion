@@ -6,8 +6,9 @@ $gi_green : #86AC3A;
 $gi_gray  : #7C7C7C;
 
 html, body {
-  font-family : 'DINWebProRegular', helvetica, arial, serif;
-  background  : url(background.jpg); }
+  padding-bottom : 20px;
+  font-family    : 'DINWebProRegular', helvetica, arial, serif;
+  background     : url(background.jpg); }
 
 
 /* Header
@@ -115,16 +116,16 @@ html, body {
 /* Goals
 ------------------------------------------------------------ */
 
-#main_content h3 {
+h3 {
   width          : 618px;
   margin         : 0 0 0.15em 340px;
   color          : $gi_green;
   font           : 21px 'DINWeb-CondMedium', helvetica, arial, sans-serif;
   text-transform : uppercase; }
 
-#main_content ul { margin: 0 0 40px 340px; }
+ul { margin: 0 0 40px 340px; }
 
-#main_content li {
+li {
   margin-bottom : 0.5em;
   line-height   : 120%; }
 
@@ -136,7 +137,9 @@ html, body {
 
 #main_content { padding: 175px 0 0 0; }
 
-#main_content h2 {
+#main_content h1 { display: none; }
+
+h2 {
   position      : relative;
   left          :-65px;
   margin        : 30px 0;
@@ -144,7 +147,7 @@ html, body {
   color         : $gi_green;
   font          : 36px 'DINWebProRegular', helvetica, arial, serif; }
 
-#main_content h2 em {
+h2 em {
   position    : absolute;
   top         : 22px;
   left        : 340px;
@@ -156,7 +159,7 @@ html, body {
   text-align  : center;
   background  : url(green_circle.png) no-repeat; }
 
-#main_content h4 {
+h4 {
   position       : relative;
   left           : 340px;
   display        : inline-block;
@@ -172,18 +175,19 @@ html, body {
   background     : url(label.png) no-repeat 100% 0;
   @include border_radius(3px 0 0 3px); }
 
-#main_content h4 em {
+h4 em {
   padding-left   : 5px;
   font           : 14px helvetica, arial, sans-serif;
-  letter-spacing : 0; }
+  letter-spacing : 0;
+  text-transform : none; }
 
-#main_content a { color: #d00; }
+a { color: #d00; }
 
-div.instructions {
+.instructions {
   margin-bottom : 1em;
   padding-left  : 318px; }
 
-div.instructions pre {
+.instructions pre {
   display       : block;
   width         : 608px;
   margin-bottom : 0.25em;
@@ -193,10 +197,10 @@ div.instructions pre {
 
 #main_content img {
   display     : block;
-  margin-left : 85px;
+  margin-left : 340px;
   @include box_shadow(0 0 14px rgba(0,0,0, 0.15)); }
 
-#main_content p {
+p {
   width        : 618px;
   margin       : 1em 0;
   padding-left : 340px;
@@ -204,21 +208,24 @@ div.instructions pre {
   font-size    : 18px;
   line-height  : 130%; }
 
-#main_content ol {
+ol {
   width        : 608px;
   margin       : 1em 0;
-  padding-left : 85px;
+  padding-left : 340px;
+  color        : $gi_gray;
   line-height  : 130px; }
 
-#main_content .sample {
+.sample {
+  overflow      : auto;
   display       : block;
   margin-bottom : 1em;
   padding       : 10px 0 10px 340px;
   color         : #74e83f;
   font          : 14px courier, 'courier new', monospace;
-  background    : #1e1e1e; }
+  background    : #2E2E2E; }
 
-#main_content .file {
+.file {
+  overflow      : auto;
   display       : block;
   margin-bottom : 1em;
   border-top    : 1px solid #ddd;
@@ -227,15 +234,17 @@ div.instructions pre {
   font          : 14px courier, 'courier new', monospace;
   background    : #fff; }
 
-#main_content p.note {
-  margin-left : 2em;
-  font-style  : italic;
-  color       : #555; }
+.note strong {
+  color: #000;
+  text-decoration: underline; }
 
+
+
+/* HOME PAGE */
 
 #border_left {
   position     : relative;
-  top          : -85px;
+  top          :-85px;
   width        : 608px;
   margin-left  : 54px;
   padding-top  : 85px;
@@ -414,74 +423,3 @@ div.instructions pre {
   width        : 25px;
   font-weight  : normal;
   text-align   : right; }
-
-
-
-/* Footer
------------------------------------------------------------- */
-
-footer {
-  position   : relative;
-  height     : 100px;
-  margin-top : 50px;
-  border-top : 4px double #adadad;
-  background : #eee;
-  z-index    : 1; }
-
-footer nav {
-  position : relative;
-  width    : 608px;
-  margin   : 0 0 0 8px; }
-
-footer nav li {
-  position : absolute;
-  top      : 32px; }
-
-footer nav .arrow {
-  display : block;
-  width   : 144px;
-  height  : 32px; }
-
-footer nav .arrow * {
-  display         : inline-block;
-  height          : 32px;
-  color           : #222;
-  font            : 18px helvetica, arial, sans-serif;
-  line-height     : 34px;
-  text-decoration : none;
-  text-transform  : uppercase; }
-
-footer nav .arrow span { color: #aaa; }
-
-footer nav .previous   { left: 0; }
-footer nav .previous * {
-  float         : right;
-  padding       : 0 0 0 30px;
-  text-align    : right;
-  background    : url(previous_arrow.png) no-repeat; }
-
-footer nav .next   { left : 206px; }
-footer nav .next * {
-  padding      : 0 30px 0 40px;
-  background   : url(next_arrow.png) no-repeat 100% 0; }
-
-footer nav .index_button a {
-  position    : absolute;
-  top         : -5px;
-  left        : 174px;
-  width       : 40px;
-  height      : 40px;
-  text-indent : -999em;
-  background  : url(index.png); }
-
-footer a#edgecase_link_small {
-  position    : absolute;
-  top         : 24px;
-  left        : 575px;
-  display     : block;
-  width       : 169px;
-  height      : 53px;
-  text-indent : -999em;
-  background  : url(edgecase_logo_small.png); }
-
-
