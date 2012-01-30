@@ -5,7 +5,7 @@
   <ul>
     <li id="lab_0_link"><a href="index.html"><span>&nbsp;</span>Home Cover Page</a></li>
     <% labs.each do |l| -%>
-      <li id="lab_<%= l.number %>_link"><a href="<%= l.filename %>"><span><%= l.number %>:</span> <%= l.name %></a></li>
+      <li id="lab_<%= l.number %>_link" data-lab-id="<%= l.number %>"><a href="<%= l.filename %>"><span><%= l.number %>:</span> <%= l.name %></a></li>
     <% end -%>
   </ul>
 </div>

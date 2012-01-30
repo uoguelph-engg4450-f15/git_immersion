@@ -19,23 +19,26 @@ function readCookie(name) {
   return null;
 }
 
-function eraseCookie(name) { createCookie(name,"",-1); }
+function eraseCookie(name) { createCookie(name,'',-1); }
 
 
 $(function() {
   // Bookmark
-  var currentLabID           = $('body').data('lab-id')
-    , switchBookmarkOn       = function() { $('#bookmark').addClass('active').animate({ top: 0, }, 100); }
-    , switchBookmarkOff      = function() { $('#bookmark').removeClass('active').animate({ top: -6, }, 100); }
-    , navigateToNextPage     = function() { console.log('next page!'); $('#arrow_next').click(); }
-    , navigateToPreviousPage = function() { $('#arrow_previous').click(); }
+  var currentLabID           = $('body').attr('data-lab-id')
+    , switchBookmarkOn       = function()  { $('#bookmark').addClass('active').animate({ top: 0, }, 100); }
+    , switchBookmarkOff      = function()  { $('#bookmark').removeClass('active').animate({ top: -6, }, 100); }
+    , navigateToNextPage     = function()  { $('#arrow_next').click(); }
+    , navigateToPreviousPage = function()  { $('#arrow_previous').click(); }
+    , followHREF             = function(e) { window.location = '/' + $(this).attr('href'); }
   ;
+
 
   if(readCookie(currentLabID)) { switchBookmarkOn(); }
 
   $('#index li').each(function(i, item){
     var item = $(item);
-    if(readCookie(item.data('lab-id'))) { item.addClass('bookmark'); }
+    console.log('LAB ID: ' + item.attr('data-lab-id'));
+    if(readCookie(item.attr('data-lab-id'))) { item.addClass('bookmark'); }
   });
 
   $('#bookmark_link').on('click', function(e) {
@@ -84,6 +87,7 @@ $(function() {
 
 
   // Page nav key bindings
+  $('#arrow_next, #arrow_previous').on('click', followHREF);
   $(document).click(function(e) {
     if (!$(e.target).closest('#table_of_contents_link, #index').length) {
       $('#index').fadeOut(100);
