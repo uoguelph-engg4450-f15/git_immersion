@@ -8,3 +8,4 @@ git_tutorial/work/**/*
 samples
 served
 src/.sass-cache/*
+.sass-cache/*
