@@ -857,10 +857,11 @@ ol {
 /* line 565, screen.scss */
 #index li {
   overflow: hidden;
+  margin-bottom: 0;
   padding-left: 12px;
 }
 
-/* line 569, screen.scss */
+/* line 570, screen.scss */
 #index a {
   display: block;
   height: 28px;
@@ -873,12 +874,12 @@ ol {
   background: url(index_item_background.gif) no-repeat 0 100%;
 }
 
-/* line 580, screen.scss */
+/* line 581, screen.scss */
 #index li:last-child a {
   background: none;
 }
 
-/* line 582, screen.scss */
+/* line 583, screen.scss */
 #index a span {
   float: left;
   display: block;

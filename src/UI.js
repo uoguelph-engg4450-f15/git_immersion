@@ -28,7 +28,12 @@ $(function() {
     , switchBookmarkOff      = function()  { $('#bookmark').removeClass('active').animate({ top: -6, }, 100); }
     , navigateToNextPage     = function()  { $('#arrow_next').click(); }
     , navigateToPreviousPage = function()  { $('#arrow_previous').click(); }
-    , followHREF             = function(e) { window.location = '/' + $(this).attr('href'); }
+    , followHREF             = function(e) {
+      var href = $(this).attr('href');
+      if(href) {
+        window.location = '/' + $(this).attr('href');
+      }
+    }
     , showIndex              = function() {
       $('#cover').show();
       $('#index').fadeIn(200);
