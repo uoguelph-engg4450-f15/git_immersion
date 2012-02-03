@@ -5,6 +5,8 @@
 $gi_green : #86AC3A;
 $gi_gray  : #7C7C7C;
 
+.clear { clear: both; }
+
 html, body {
   padding-bottom : 20px;
   font-family    : 'DINWebProRegular', helvetica, arial, serif;
@@ -12,6 +14,12 @@ html, body {
 
 
 #index_body { background: #fff; }
+
+.wrapper {
+  position : relative;
+  width    : 894px;
+  margin   : 0 auto;
+}
 
 
 
@@ -148,7 +156,7 @@ html, body {
   text-shadow : 0 0 2px $gi_green; }
 
 
-/* Index Attention
+/* Index: Attention
 ------------------------------------------------------------ */
 
 #attention {
@@ -156,12 +164,8 @@ html, body {
   background : #dfe2e2;
 
   .wrapper {
-    position    : relative;
-    width       : 894px;
-    margin      : 0 auto;
     padding     : 25px 0;
-    line-height : 150%;
-  }
+    line-height : 150%; }
 
   p {
     width : 600px;
@@ -174,8 +178,7 @@ html, body {
       color          : #526668;
       font           : 39px 'DINWeb-CondMedium', helvetica, arial, sans-serif;
       line-height    : 115%;
-      text-transform : uppercase;
-    }
+      text-transform : uppercase; }
   }
 }
 
@@ -206,8 +209,7 @@ html, body {
     text-align      : center;
     text-decoration : none;
     text-transform  : uppercase;
-    background      : url(button.png);
-  }
+    background      : url(button.png); }
 }
 
 #start_immersion {
@@ -218,7 +220,96 @@ html, body {
   height      : 119px;
   text-indent : -999em;
   background  : url(start_button.png);
+
+  &:active { bottom: -61px; }
 }
+
+
+/* Index: Private Training
+------------------------------------------------------------ */
+
+#private_training {
+  margin: 40px 0 20px 0;
+
+  h1 {
+    color          : #526668;
+    font           : 39px 'DINWeb-CondMedium', helvetica, arial, sans-serif;
+    text-transform : uppercase; }
+
+  p {
+    border-bottom  : 1px solid #ccc;
+    padding-bottom : 60px;
+    color          : #666;
+    font-size      : 17px;
+    line-height    : 150%; }
+}
+
+
+/* Index: Other Resources
+------------------------------------------------------------ */
+
+#other_resources {
+  float    : left;
+  position : relative;
+  width    : 375px;
+
+  h1 {
+    color          : #999;
+    font           : 21px 'DINWeb-CondBold', helvetica, arial, sans-serif;
+    text-transform : uppercase;
+  }
+}
+
+
+#other_resources li {
+  list-style   : none;
+  display      : inline;
+  margin-right : 10px;
+
+  a {  color: #999; }
+}
+
+
+/* Index: Brought to you by
+------------------------------------------------------------ */
+
+#brought_to_you_by {
+  color           : #ED6B44;
+  font            : 39px 'DINWeb-CondMedium', helvetica, arial, sans-serif;
+  text-decoration : none;
+  text-transform  : uppercase;
+
+  img {
+    display: block;
+  }
+}
+
+
+/* Index: License
+------------------------------------------------------------ */
+
+#license {
+  color     : #999;
+  font-size : 17px;
+
+  h1 {
+    color          : #999;
+    font           : 21px 'DINWeb-CondBold', helvetica, arial, sans-serif;
+    text-transform : uppercase;
+  }
+
+  a {
+    color           : #999;
+    text-decoration : none;
+  }
+
+  img {
+    float   : left;
+    display : block;
+    margin  : 0 10px 10px 0;
+  }
+}
+
 
 
 /* Goals
@@ -235,11 +326,11 @@ h3 {
   color       : transparent;
   text-shadow : 0 0 2px $gi_green; }
 
-ul {
+#main_content ul {
   margin : 0 0 40px 340px;
   color  : #222; }
 
-.blur ul {
+.blur #main_content ul {
   color       : transparent;
   text-shadow : 0 0 2px #222; }
 
@@ -384,83 +475,6 @@ ol {
 .note strong {
   color: #000;
   text-decoration: underline; }
-
-
-
-/* HOME PAGE */
-
-#border_left {
-  position     : relative;
-  top          :-85px;
-  width        : 608px;
-  margin-left  : 54px;
-  padding-top  : 85px;
-  padding-left : 23px;
-  background   : url(border_left.gif) repeat-y; }
-
-#homepage h1 {
-  margin : 0 0 10px 0;
-  color  : #cf0000;
-  font   : 32px helvetica, arial, sans-serif; }
-
-#homepage h2 { font: 21px helvetica, arial, sans-serif; }
-
-#homepage a { color: #000; }
-
-#homepage .beep {
-  float        : left;
-  margin-right : 32px; }
-
-#homepage #install {
-  position     : relative;
-  left         : -23px;
-  padding-left : 346px;
-  background   : url(install_circle.png) no-repeat 0 8px; }
-
-#homepage #gui_clients { padding-top: 32px; }
-
-#homepage #brought_to_you_by {
-  position      : relative;
-  top           : -117px;
-  left          : 55px;
-  width         : 400px;
-  margin-bottom : 40px;
-  padding-left  : 346px;
-  background    : url(install_circle.png) no-repeat 0 8px; }
-
-#homepage #brought_to_you_by a {
-  display     : block;
-  width       : 280px;
-  height      : 89px;
-  text-indent : -999em;
-  background  : url(edgecase_logo.png); }
-
-#homepage #other_resources {
-  position      : relative;
-  top           : -90px;
-  left          : -27px;
-  width         : 300px;
-  margin-bottom : 20px;
-  padding-left  : 27px;
-  background    : url(circle.png) no-repeat 0 8px; }
-
-#homepage #other_resources li {
-  list-style   : none;
-  line-height  : 18px; }
-
-#homepage #license {
-  position      : relative;
-  top           : -90px;
-  left          : -27px;
-  width         : 300px;
-  margin-bottom : 20px;
-  padding-left  : 27px;
-  background    : url(circle.png) no-repeat 0 8px; }
-
-#homepage #license li {
-  list-style   : none;
-  line-height  : 18px; }
-
 
 
 
