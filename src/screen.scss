@@ -11,7 +11,31 @@ html, body {
   background     : url(background.jpg); }
 
 
-/* Header
+#index_body { background: #fff; }
+
+
+
+/* Index Header
+------------------------------------------------------------ */
+
+#index_header {
+  height     : 240px;
+  background : url(background.jpg);
+
+  a {
+    position    : relative;
+    top         : 56px;
+    display     : block;
+    width       : 894px;
+    height      : 130px;
+    margin      : 0 auto;
+    text-indent :-999em;
+    background  : url(logo_large.png);
+  }
+}
+
+
+/* Lab Header
 ------------------------------------------------------------ */
 
 #header {
@@ -122,6 +146,79 @@ html, body {
 .blur .lab_title em {
   color       : transparent;
   text-shadow : 0 0 2px $gi_green; }
+
+
+/* Index Attention
+------------------------------------------------------------ */
+
+#attention {
+  border-top : 2px solid #fff;
+  background : #dfe2e2;
+
+  .wrapper {
+    position    : relative;
+    width       : 894px;
+    margin      : 0 auto;
+    padding     : 25px 0;
+    line-height : 150%;
+  }
+
+  p {
+    width : 600px;
+    color : #666;
+    font  : 17px 'DINWebProRegular', helvetica, arial, sans-serif;
+
+    em {
+      display        : block;
+      margin-bottom  : 5px;
+      color          : #526668;
+      font           : 39px 'DINWeb-CondMedium', helvetica, arial, sans-serif;
+      line-height    : 115%;
+      text-transform : uppercase;
+    }
+  }
+}
+
+#attention_links {
+  position : absolute;
+  top      : 21px;
+  right    : 0;
+  width    : 280px;
+
+  h1 {
+    margin-bottom : 15px;
+    color         : #666;
+    font-size     : 18px;
+    text-align    : center;
+    background    : url(line.png) no-repeat 0 50%;
+
+    span { padding: 0 8px; background: #dfe2e2; }
+  }
+
+  a {
+    display         : inline-block;
+    width           : 117px;
+    height          : 43px;
+    margin-left     : 9px;
+    color           : #fff;
+    font            : 21px 'DINWeb-CondBold', helvetica, arial, sans-serif;
+    line-height     : 45px;
+    text-align      : center;
+    text-decoration : none;
+    text-transform  : uppercase;
+    background      : url(button.png);
+  }
+}
+
+#start_immersion {
+  position    : absolute;
+  right       : 9px;
+  bottom      :-60px;
+  width       : 266px;
+  height      : 119px;
+  text-indent : -999em;
+  background  : url(start_button.png);
+}
 
 
 /* Goals
@@ -240,7 +337,7 @@ a { color: #d00; }
   margin-left : 340px;
   @include box_shadow(0 0 14px rgba(0,0,0, 0.15)); }
 
-p {
+#main_content p {
   width        : 618px;
   margin       : 1em 0;
   padding-left : 340px;
@@ -364,17 +461,6 @@ ol {
   list-style   : none;
   line-height  : 18px; }
 
-#intro p {
-  position     : relative;
-  left         : -27px;
-  font         : 18px baskerville, georgia, serif;
-  margin       : 0 0 40px 0;
-  padding-left : 27px;
-  background   : url(circle.png) no-repeat 0 8px; }
-
-#intro p em {
-  font-size  : 27px;
-  font-style : normal; }
 
 
 

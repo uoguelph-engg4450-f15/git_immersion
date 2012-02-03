@@ -133,9 +133,33 @@ html, body {
   background: url(background.jpg);
 }
 
-/* Header
+/* line 14, screen.scss */
+#index_body {
+  background: #fff;
+}
+
+/* Index Header
 ------------------------------------------------------------ */
-/* line 17, screen.scss */
+/* line 21, screen.scss */
+#index_header {
+  height: 240px;
+  background: url(background.jpg);
+}
+/* line 25, screen.scss */
+#index_header a {
+  position: relative;
+  top: 56px;
+  display: block;
+  width: 894px;
+  height: 130px;
+  margin: 0 auto;
+  text-indent: -999em;
+  background: url(logo_large.png);
+}
+
+/* Lab Header
+------------------------------------------------------------ */
+/* line 41, screen.scss */
 #header {
   position: fixed;
   top: 0;
@@ -151,7 +175,7 @@ html, body {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
-/* line 28, screen.scss */
+/* line 52, screen.scss */
 #home_link {
   position: absolute;
   top: 47px;
@@ -162,12 +186,12 @@ html, body {
   background: url(logo_small.png);
 }
 
-/* line 37, screen.scss */
+/* line 61, screen.scss */
 .blur #home_link {
   background: url(logo_small_blur.png);
 }
 
-/* line 39, screen.scss */
+/* line 63, screen.scss */
 #pager {
   position: absolute;
   top: 92px;
@@ -177,12 +201,12 @@ html, body {
   background: url(pager.png);
 }
 
-/* line 47, screen.scss */
+/* line 71, screen.scss */
 .blur #pager {
   background: url(pager_blur.png);
 }
 
-/* line 49, screen.scss */
+/* line 73, screen.scss */
 #edgecase_link {
   top: 96px;
   left: 50px;
@@ -190,7 +214,7 @@ html, body {
   height: 40px;
 }
 
-/* line 55, screen.scss */
+/* line 79, screen.scss */
 #pager .arrow {
   position: absolute;
   top: 37px;
@@ -199,17 +223,17 @@ html, body {
   text-indent: -999em;
 }
 
-/* line 62, screen.scss */
+/* line 86, screen.scss */
 #arrow_previous {
   left: 18px;
 }
 
-/* line 63, screen.scss */
+/* line 87, screen.scss */
 #arrow_next {
   left: 178px;
 }
 
-/* line 65, screen.scss */
+/* line 89, screen.scss */
 #table_of_contents_link {
   position: absolute;
   top: 33px;
@@ -219,7 +243,7 @@ html, body {
   text-indent: -999em;
 }
 
-/* line 73, screen.scss */
+/* line 97, screen.scss */
 #edgecase_link {
   position: absolute;
   top: 185px;
@@ -229,7 +253,7 @@ html, body {
   text-indent: -999em;
 }
 
-/* line 81, screen.scss */
+/* line 105, screen.scss */
 #bookmark_link {
   overflow: hidden;
   position: absolute;
@@ -240,7 +264,7 @@ html, body {
   text-indent: -999em;
   cursor: pointer;
 }
-/* line 91, screen.scss */
+/* line 115, screen.scss */
 #bookmark_link #bookmark {
   position: absolute;
   top: -6px;
@@ -249,12 +273,12 @@ html, body {
   height: 68px;
   background: url(bookmarks.png) no-repeat 0px 0;
 }
-/* line 99, screen.scss */
+/* line 123, screen.scss */
 #bookmark_link #bookmark.active {
   background-position: -19px 0;
 }
 
-/* line 104, screen.scss */
+/* line 128, screen.scss */
 .lab_title {
   width: 618px;
   padding: 5px 0 15px 340px;
@@ -264,13 +288,13 @@ html, body {
   text-transform: uppercase;
 }
 
-/* line 112, screen.scss */
+/* line 136, screen.scss */
 .blur .lab_title {
   color: transparent;
   text-shadow: 0 0 2px #2e2e2e;
 }
 
-/* line 116, screen.scss */
+/* line 140, screen.scss */
 .lab_title em {
   display: block;
   color: #86ac3a;
@@ -278,15 +302,92 @@ html, body {
   font-style: normal;
 }
 
-/* line 122, screen.scss */
+/* line 146, screen.scss */
 .blur .lab_title em {
   color: transparent;
   text-shadow: 0 0 2px #86ac3a;
 }
 
+/* Index Attention
+------------------------------------------------------------ */
+/* line 154, screen.scss */
+#attention {
+  border-top: 2px solid #fff;
+  background: #dfe2e2;
+}
+/* line 158, screen.scss */
+#attention .wrapper {
+  position: relative;
+  width: 894px;
+  margin: 0 auto;
+  padding: 25px 0;
+  line-height: 150%;
+}
+/* line 166, screen.scss */
+#attention p {
+  width: 600px;
+  color: #666;
+  font: 17px 'DINWebProRegular', helvetica, arial, sans-serif;
+}
+/* line 171, screen.scss */
+#attention p em {
+  display: block;
+  margin-bottom: 5px;
+  color: #526668;
+  font: 39px 'DINWeb-CondMedium', helvetica, arial, sans-serif;
+  line-height: 115%;
+  text-transform: uppercase;
+}
+
+/* line 182, screen.scss */
+#attention_links {
+  position: absolute;
+  top: 21px;
+  right: 0;
+  width: 280px;
+}
+/* line 188, screen.scss */
+#attention_links h1 {
+  margin-bottom: 15px;
+  color: #666;
+  font-size: 18px;
+  text-align: center;
+  background: url(line.png) no-repeat 0 50%;
+}
+/* line 195, screen.scss */
+#attention_links h1 span {
+  padding: 0 8px;
+  background: #dfe2e2;
+}
+/* line 198, screen.scss */
+#attention_links a {
+  display: inline-block;
+  width: 117px;
+  height: 43px;
+  margin-left: 9px;
+  color: #fff;
+  font: 21px 'DINWeb-CondBold', helvetica, arial, sans-serif;
+  line-height: 45px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: url(button.png);
+}
+
+/* line 213, screen.scss */
+#start_immersion {
+  position: absolute;
+  right: 9px;
+  bottom: -60px;
+  width: 266px;
+  height: 119px;
+  text-indent: -999em;
+  background: url(start_button.png);
+}
+
 /* Goals
 ------------------------------------------------------------ */
-/* line 130, screen.scss */
+/* line 227, screen.scss */
 h3 {
   width: 618px;
   margin: 0 0 0.15em 340px;
@@ -295,25 +396,25 @@ h3 {
   text-transform: uppercase;
 }
 
-/* line 137, screen.scss */
+/* line 234, screen.scss */
 .blur h3 {
   color: transparent;
   text-shadow: 0 0 2px #86ac3a;
 }
 
-/* line 141, screen.scss */
+/* line 238, screen.scss */
 ul {
   margin: 0 0 40px 340px;
   color: #222;
 }
 
-/* line 145, screen.scss */
+/* line 242, screen.scss */
 .blur ul {
   color: transparent;
   text-shadow: 0 0 2px #222;
 }
 
-/* line 149, screen.scss */
+/* line 246, screen.scss */
 li {
   margin-bottom: 0.5em;
   line-height: 120%;
@@ -321,17 +422,17 @@ li {
 
 /* Main Content
 ------------------------------------------------------------ */
-/* line 159, screen.scss */
+/* line 256, screen.scss */
 #main_content {
   padding: 175px 0 0 0;
 }
 
-/* line 161, screen.scss */
+/* line 258, screen.scss */
 #main_content h1 {
   display: none;
 }
 
-/* line 163, screen.scss */
+/* line 260, screen.scss */
 h2 {
   position: relative;
   left: -65px;
@@ -341,13 +442,13 @@ h2 {
   font: 36px 'DINWebProRegular', helvetica, arial, serif;
 }
 
-/* line 171, screen.scss */
+/* line 268, screen.scss */
 .blur h2 {
   color: transparent;
   text-shadow: 0 0 2px #86ac3a;
 }
 
-/* line 175, screen.scss */
+/* line 272, screen.scss */
 h2 em {
   position: absolute;
   top: 17px;
@@ -361,14 +462,14 @@ h2 em {
   background: url(green_circle.png) no-repeat 50% 50%;
 }
 
-/* line 187, screen.scss */
+/* line 284, screen.scss */
 .blur h2 em {
   color: transparent;
   text-shadow: 0 0 2px #fff;
   background-image: url(green_circle_blur.png);
 }
 
-/* line 192, screen.scss */
+/* line 289, screen.scss */
 h4 {
   position: relative;
   left: 340px;
@@ -391,14 +492,14 @@ h4 {
   border-radius: 3px 0 0 3px;
 }
 
-/* line 208, screen.scss */
+/* line 305, screen.scss */
 .blur h4 {
   color: transparent;
   text-shadow: 0 0 2px #fff;
   background: url(label_blur.png) no-repeat 100% 0;
 }
 
-/* line 213, screen.scss */
+/* line 310, screen.scss */
 h4 em {
   padding-left: 5px;
   font: 14px helvetica, arial, sans-serif;
@@ -406,25 +507,25 @@ h4 em {
   text-transform: none;
 }
 
-/* line 219, screen.scss */
+/* line 316, screen.scss */
 a {
   color: #d00;
 }
 
-/* line 221, screen.scss */
+/* line 318, screen.scss */
 .instructions {
   margin-bottom: 1em;
   padding-left: 318px;
   color: #222;
 }
 
-/* line 226, screen.scss */
+/* line 323, screen.scss */
 .blur .instructions {
   color: transparent;
   text-shadow: 0 0 2px #222;
 }
 
-/* line 230, screen.scss */
+/* line 327, screen.scss */
 .instructions pre {
   display: block;
   width: 608px;
@@ -434,7 +535,7 @@ a {
   background: url(prompt.png) no-repeat 0 50%;
 }
 
-/* line 238, screen.scss */
+/* line 335, screen.scss */
 #main_content img {
   display: block;
   margin-left: 340px;
@@ -444,8 +545,8 @@ a {
   box-shadow: 0 0 14px rgba(0, 0, 0, 0.15);
 }
 
-/* line 243, screen.scss */
-p {
+/* line 340, screen.scss */
+#main_content p {
   width: 618px;
   margin: 1em 0;
   padding-left: 340px;
@@ -454,13 +555,13 @@ p {
   line-height: 130%;
 }
 
-/* line 251, screen.scss */
+/* line 348, screen.scss */
 .blur p {
   color: transparent;
   text-shadow: 0 0 2px #7c7c7c;
 }
 
-/* line 255, screen.scss */
+/* line 352, screen.scss */
 ol {
   width: 608px;
   margin: 1em 0;
@@ -469,7 +570,7 @@ ol {
   line-height: 130px;
 }
 
-/* line 262, screen.scss */
+/* line 359, screen.scss */
 .sample {
   overflow: auto;
   display: block;
@@ -480,7 +581,7 @@ ol {
   background: #2E2E2E;
 }
 
-/* line 271, screen.scss */
+/* line 368, screen.scss */
 .blur .sample {
   color: transparent;
   text-shadow: 0 0 2px #74e83f;
@@ -490,7 +591,7 @@ ol {
   box-shadow: 0 0 5px black;
 }
 
-/* line 277, screen.scss */
+/* line 374, screen.scss */
 .file {
   overflow: auto;
   display: block;
@@ -502,14 +603,14 @@ ol {
   background: #fff;
 }
 
-/* line 287, screen.scss */
+/* line 384, screen.scss */
 .note strong {
   color: #000;
   text-decoration: underline;
 }
 
 /* HOME PAGE */
-/* line 295, screen.scss */
+/* line 392, screen.scss */
 #border_left {
   position: relative;
   top: -85px;
@@ -520,30 +621,30 @@ ol {
   background: url(border_left.gif) repeat-y;
 }
 
-/* line 304, screen.scss */
+/* line 401, screen.scss */
 #homepage h1 {
   margin: 0 0 10px 0;
   color: #cf0000;
   font: 32px helvetica, arial, sans-serif;
 }
 
-/* line 309, screen.scss */
+/* line 406, screen.scss */
 #homepage h2 {
   font: 21px helvetica, arial, sans-serif;
 }
 
-/* line 311, screen.scss */
+/* line 408, screen.scss */
 #homepage a {
   color: #000;
 }
 
-/* line 313, screen.scss */
+/* line 410, screen.scss */
 #homepage .beep {
   float: left;
   margin-right: 32px;
 }
 
-/* line 317, screen.scss */
+/* line 414, screen.scss */
 #homepage #install {
   position: relative;
   left: -23px;
@@ -551,12 +652,12 @@ ol {
   background: url(install_circle.png) no-repeat 0 8px;
 }
 
-/* line 323, screen.scss */
+/* line 420, screen.scss */
 #homepage #gui_clients {
   padding-top: 32px;
 }
 
-/* line 325, screen.scss */
+/* line 422, screen.scss */
 #homepage #brought_to_you_by {
   position: relative;
   top: -117px;
@@ -567,7 +668,7 @@ ol {
   background: url(install_circle.png) no-repeat 0 8px;
 }
 
-/* line 334, screen.scss */
+/* line 431, screen.scss */
 #homepage #brought_to_you_by a {
   display: block;
   width: 280px;
@@ -576,7 +677,7 @@ ol {
   background: url(edgecase_logo.png);
 }
 
-/* line 341, screen.scss */
+/* line 438, screen.scss */
 #homepage #other_resources {
   position: relative;
   top: -90px;
@@ -587,13 +688,13 @@ ol {
   background: url(circle.png) no-repeat 0 8px;
 }
 
-/* line 350, screen.scss */
+/* line 447, screen.scss */
 #homepage #other_resources li {
   list-style: none;
   line-height: 18px;
 }
 
-/* line 354, screen.scss */
+/* line 451, screen.scss */
 #homepage #license {
   position: relative;
   top: -90px;
@@ -604,31 +705,15 @@ ol {
   background: url(circle.png) no-repeat 0 8px;
 }
 
-/* line 363, screen.scss */
+/* line 460, screen.scss */
 #homepage #license li {
   list-style: none;
   line-height: 18px;
 }
 
-/* line 367, screen.scss */
-#intro p {
-  position: relative;
-  left: -27px;
-  font: 18px baskerville, georgia, serif;
-  margin: 0 0 40px 0;
-  padding-left: 27px;
-  background: url(circle.png) no-repeat 0 8px;
-}
-
-/* line 375, screen.scss */
-#intro p em {
-  font-size: 27px;
-  font-style: normal;
-}
-
 /* Labs Index
 ------------------------------------------------------------ */
-/* line 384, screen.scss */
+/* line 470, screen.scss */
 #cover {
   display: none;
   position: fixed;
@@ -640,7 +725,7 @@ ol {
   z-index: 3;
 }
 
-/* line 395, screen.scss */
+/* line 481, screen.scss */
 #index {
   display: none;
   position: fixed;
@@ -657,12 +742,12 @@ ol {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-/* line 407, screen.scss */
+/* line 493, screen.scss */
 #index.visible {
   display: block;
 }
 
-/* line 409, screen.scss */
+/* line 495, screen.scss */
 #index #show_bookmarks {
   position: absolute;
   top: -6px;
@@ -674,12 +759,12 @@ ol {
   z-index: 2;
 }
 
-/* line 419, screen.scss */
+/* line 505, screen.scss */
 #index #show_bookmarks.active {
   background-position: -19px 0;
 }
 
-/* line 421, screen.scss */
+/* line 507, screen.scss */
 #index #no_bookmarks {
   display: none;
   position: absolute;
@@ -691,7 +776,7 @@ ol {
   background: url(no_bookmarks.png);
 }
 
-/* line 431, screen.scss */
+/* line 517, screen.scss */
 #index h1 {
   position: absolute;
   top: 0;
@@ -706,7 +791,7 @@ ol {
   z-index: 2;
 }
 
-/* line 444, screen.scss */
+/* line 530, screen.scss */
 #index ul {
   overflow: auto;
   position: absolute;
@@ -719,18 +804,18 @@ ol {
   z-index: 1;
 }
 
-/* line 455, screen.scss */
+/* line 541, screen.scss */
 #index ul::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 
-/* line 456, screen.scss */
+/* line 542, screen.scss */
 #index ul::-webkit-scrollbar-track:enabled {
   background-color: transparent;
 }
 
-/* line 458, screen.scss */
+/* line 544, screen.scss */
 #index ul::-webkit-scrollbar-button:start:decrement,
 #index ul::-webkit-scrollbar-button:end:increment {
   display: block;
@@ -739,7 +824,7 @@ ol {
   background-color: transparent;
 }
 
-/* line 460, screen.scss */
+/* line 546, screen.scss */
 #index ul::-webkit-scrollbar-thumb:vertical,
 #index ul::-webkit-scrollbar-thumb:horizontal {
   width: 30px;
@@ -747,20 +832,20 @@ ol {
   -webkit-border-radius: 5px;
 }
 
-/* line 462, screen.scss */
+/* line 548, screen.scss */
 #index ul.hover::-webkit-scrollbar-thumb:vertical,
 #index ul.hover::-webkit-scrollbar-thumb:horizontal {
   background-color: rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
 }
 
-/* line 464, screen.scss */
+/* line 550, screen.scss */
 #index li {
   overflow: hidden;
   padding-left: 12px;
 }
 
-/* line 468, screen.scss */
+/* line 554, screen.scss */
 #index a {
   display: block;
   height: 28px;
@@ -773,12 +858,12 @@ ol {
   background: url(index_item_background.gif) no-repeat 0 100%;
 }
 
-/* line 479, screen.scss */
+/* line 565, screen.scss */
 #index li:last-child a {
   background: none;
 }
 
-/* line 481, screen.scss */
+/* line 567, screen.scss */
 #index a span {
   float: left;
   display: block;
