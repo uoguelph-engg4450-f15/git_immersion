@@ -20,6 +20,16 @@ html, body {
   width    : 894px;
   margin   : 0 auto; }
 
+#image_preloader {
+  overflow : hidden;
+  position : absolute;
+  top      : -2px;
+  left     : -2px;
+  width    : 1px;
+  height   : 0;
+  opacity  : 0;
+}
+
 
 
 /* Index Header
@@ -426,6 +436,8 @@ a { color: #d00; }
   font          : 18px courier, 'courier new', monospace;
   background    : url(prompt.png) no-repeat 0 50%; }
 
+.blur .instructions pre { background: url(prompt_blur.png) no-repeat 0 50%; }
+
 #main_content img {
   display     : block;
   margin-left : 340px;
@@ -477,6 +489,15 @@ ol {
 .note strong {
   color: #000;
   text-decoration: underline; }
+
+#main_content .note.red strong {
+  color           : #d00;
+  text-decoration : none;
+}
+.blur #main_content .note.red strong {
+  color: transparent;
+  text-shadow: 0 0 2px #f00;
+}
 
 
 

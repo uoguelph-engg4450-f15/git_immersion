@@ -2316,7 +2316,7 @@ git fetch
 git hist --all
 =hist
 
-p{color:red}. *NOTE: Now in the _cloned_hello_ repo*
+p(note red). *NOTE: Now in the _cloned_hello_ repo*
 
 Output:
 =fetch
