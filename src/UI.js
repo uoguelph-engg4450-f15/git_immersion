@@ -84,9 +84,9 @@ $(function() {
 
   // Lab Index
   $('#index li').each(function(i, item){
-    var item = $(item);
-    console.log('LAB ID: ' + item.attr('data-lab-id'));
-    if(readCookie(item.attr('data-lab-id'))) { item.addClass('bookmark'); }
+    var item  = $(item);
+    var labID = item.attr('data-lab-id');
+    if(readCookie(labID)) { item.addClass('bookmark'); }
   });
 
   $('#table_of_contents_link').on('click', function(e) {
