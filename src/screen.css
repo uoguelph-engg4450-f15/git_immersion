@@ -1,99 +1,57 @@
-/* line 1, _reset.scss */
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
   border: 0;
-  outline: 0;
   font-size: 100%;
+  font: inherit;
   vertical-align: baseline;
-  background: transparent;
-  margin: 0;
-  padding: 0;
 }
 
-/* line 2, _reset.scss */
-a {
-  outline: none;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
-  margin: 0;
-  padding: 0;
-}
-
-/* line 3, _reset.scss */
 body {
   line-height: 1;
 }
 
-/* line 4, _reset.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-/* line 5, _reset.scss */
-nav ul {
+ol, ul {
   list-style: none;
 }
 
-/* line 6, _reset.scss */
-blockquote, q {
-  quotes: none;
-}
-
-/* line 7, _reset.scss */
-blockquote:before, blockquote:after, q:before, q:after {
-  content: none;
-}
-
-/* line 8, _reset.scss */
-ins {
-  background-color: #ff9;
-  color: #000;
-  text-decoration: none;
-}
-
-/* line 9, _reset.scss */
-mark {
-  background-color: #ff9;
-  color: #000;
-  font-style: italic;
-  font-weight: bold;
-}
-
-/* line 10, _reset.scss */
-del {
-  text-decoration: line-through;
-}
-
-/* line 11, _reset.scss */
-abbr[title], dfn[title] {
-  border-bottom: 1px dotted;
-  cursor: help;
-}
-
-/* line 12, _reset.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 13, _reset.scss */
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
-}
-
-/* line 14, _reset.scss */
-input, select {
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 15, _reset.scss */
-.clear {
-  clear: both;
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
 }
 
 @font-face {
@@ -126,31 +84,20 @@ input, select {
   src: url(DINWebPro.woff) format("woff");
 }
 
-/* line 8, screen.scss */
 .clear {
   clear: both;
 }
 
-/* line 10, screen.scss */
 html, body {
   padding-bottom: 20px;
   font-family: 'DINWebProRegular', helvetica, arial, serif;
   background: url(background.jpg);
 }
 
-/* line 16, screen.scss */
 #index_body {
   background: #fff;
 }
 
-/* line 18, screen.scss */
-.wrapper {
-  position: relative;
-  width: 894px;
-  margin: 0 auto;
-}
-
-/* line 23, screen.scss */
 #image_preloader {
   overflow: hidden;
   position: absolute;
@@ -161,14 +108,18 @@ html, body {
   opacity: 0;
 }
 
+.wrapper {
+  position: relative;
+  width: 894px;
+  margin: 0 auto;
+}
+
 /* Index Header
 ------------------------------------------------------------ */
-/* line 38, screen.scss */
 #index_header {
   height: 240px;
   background: url(background.jpg);
 }
-/* line 42, screen.scss */
 #index_header a {
   position: relative;
   top: 56px;
@@ -177,12 +128,11 @@ html, body {
   height: 130px;
   margin: 0 auto;
   text-indent: -999em;
-  background: url(logo_large.png);
+  background: url(logo_large.png) no-repeat 50% 50%;
 }
 
 /* Lab Header
 ------------------------------------------------------------ */
-/* line 57, screen.scss */
 #header {
   position: fixed;
   top: 0;
@@ -198,7 +148,6 @@ html, body {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
-/* line 68, screen.scss */
 #home_link {
   position: absolute;
   top: 47px;
@@ -209,12 +158,10 @@ html, body {
   background: url(logo_small.png);
 }
 
-/* line 77, screen.scss */
 .blur #home_link {
   background: url(logo_small_blur.png);
 }
 
-/* line 79, screen.scss */
 #pager {
   position: absolute;
   top: 92px;
@@ -224,12 +171,10 @@ html, body {
   background: url(pager.png);
 }
 
-/* line 87, screen.scss */
 .blur #pager {
   background: url(pager_blur.png);
 }
 
-/* line 89, screen.scss */
 #edgecase_link {
   top: 96px;
   left: 50px;
@@ -237,7 +182,6 @@ html, body {
   height: 40px;
 }
 
-/* line 95, screen.scss */
 #pager .arrow {
   position: absolute;
   top: 37px;
@@ -246,17 +190,14 @@ html, body {
   text-indent: -999em;
 }
 
-/* line 102, screen.scss */
 #arrow_previous {
   left: 18px;
 }
 
-/* line 103, screen.scss */
 #arrow_next {
   left: 178px;
 }
 
-/* line 105, screen.scss */
 #table_of_contents_link {
   position: absolute;
   top: 33px;
@@ -266,7 +207,6 @@ html, body {
   text-indent: -999em;
 }
 
-/* line 113, screen.scss */
 #edgecase_link {
   position: absolute;
   top: 185px;
@@ -276,7 +216,6 @@ html, body {
   text-indent: -999em;
 }
 
-/* line 121, screen.scss */
 #bookmark_link {
   overflow: hidden;
   position: absolute;
@@ -287,7 +226,6 @@ html, body {
   text-indent: -999em;
   cursor: pointer;
 }
-/* line 131, screen.scss */
 #bookmark_link #bookmark {
   position: absolute;
   top: -6px;
@@ -296,12 +234,10 @@ html, body {
   height: 68px;
   background: url(bookmarks.png) no-repeat 0px 0;
 }
-/* line 139, screen.scss */
 #bookmark_link #bookmark.active {
   background-position: -19px 0;
 }
 
-/* line 144, screen.scss */
 .lab_title {
   width: 618px;
   padding: 5px 0 15px 340px;
@@ -311,13 +247,11 @@ html, body {
   text-transform: uppercase;
 }
 
-/* line 152, screen.scss */
 .blur .lab_title {
   color: transparent;
   text-shadow: 0 0 2px #2e2e2e;
 }
 
-/* line 156, screen.scss */
 .lab_title em {
   display: block;
   color: #86ac3a;
@@ -325,7 +259,6 @@ html, body {
   font-style: normal;
 }
 
-/* line 162, screen.scss */
 .blur .lab_title em {
   color: transparent;
   text-shadow: 0 0 2px #86ac3a;
@@ -333,23 +266,19 @@ html, body {
 
 /* Index: Attention
 ------------------------------------------------------------ */
-/* line 170, screen.scss */
 #attention {
   border-top: 2px solid #fff;
   background: #dfe2e2;
 }
-/* line 174, screen.scss */
 #attention .wrapper {
   padding: 25px 0;
   line-height: 150%;
 }
-/* line 178, screen.scss */
 #attention p {
   width: 600px;
   color: #666;
   font: 17px 'DINWebProRegular', helvetica, arial, sans-serif;
 }
-/* line 183, screen.scss */
 #attention p em {
   display: block;
   margin-bottom: 5px;
@@ -359,14 +288,12 @@ html, body {
   text-transform: uppercase;
 }
 
-/* line 193, screen.scss */
 #attention_links {
   position: absolute;
   top: 21px;
   right: 0;
   width: 280px;
 }
-/* line 199, screen.scss */
 #attention_links h1 {
   margin-bottom: 15px;
   color: #666;
@@ -374,12 +301,10 @@ html, body {
   text-align: center;
   background: url(line.png) no-repeat 0 50%;
 }
-/* line 206, screen.scss */
 #attention_links h1 span {
   padding: 0 8px;
   background: #dfe2e2;
 }
-/* line 209, screen.scss */
 #attention_links a {
   position: relative;
   display: inline-block;
@@ -394,12 +319,10 @@ html, body {
   text-transform: uppercase;
   background: url(button.png);
 }
-/* line 223, screen.scss */
 #attention_links a:active {
   top: 1px;
 }
 
-/* line 226, screen.scss */
 #start_immersion {
   position: absolute;
   right: 9px;
@@ -409,24 +332,20 @@ html, body {
   text-indent: -999em;
   background: url(start_button.png);
 }
-/* line 235, screen.scss */
 #start_immersion:active {
   bottom: -61px;
 }
 
 /* Index: Private Training
 ------------------------------------------------------------ */
-/* line 242, screen.scss */
 #private_training {
   margin: 40px 0 20px 0;
 }
-/* line 245, screen.scss */
 #private_training h1 {
   color: #526668;
   font: 39px 'DINWeb-CondMedium', helvetica, arial, sans-serif;
   text-transform: uppercase;
 }
-/* line 250, screen.scss */
 #private_training p {
   border-bottom: 1px solid #ccc;
   padding-bottom: 60px;
@@ -434,7 +353,6 @@ html, body {
   font-size: 17px;
   line-height: 150%;
 }
-/* line 257, screen.scss */
 #private_training a {
   padding: 3px 16px 5px 16px;
   color: #fff;
@@ -450,63 +368,56 @@ html, body {
 
 /* Index: Other Resources
 ------------------------------------------------------------ */
-/* line 270, screen.scss */
 #other_resources {
   float: left;
   position: relative;
   width: 375px;
 }
-/* line 275, screen.scss */
 #other_resources h1 {
   color: #999;
   font: 21px 'DINWeb-CondBold', helvetica, arial, sans-serif;
   text-transform: uppercase;
 }
 
-/* line 282, screen.scss */
 #other_resources li {
   list-style: none;
   display: inline;
   margin-right: 10px;
 }
-/* line 287, screen.scss */
 #other_resources li a {
   color: #999;
 }
 
-/* Index: Brought to you by
+/* Index: License and EdgeCase
 ------------------------------------------------------------ */
-/* line 294, screen.scss */
+#license_and_edgecase {
+  float: right;
+  width: 485px;
+}
+
 #brought_to_you_by {
   color: #ED6B44;
   font: 39px 'DINWeb-CondMedium', helvetica, arial, sans-serif;
   text-decoration: none;
   text-transform: uppercase;
 }
-/* line 300, screen.scss */
 #brought_to_you_by img {
   display: block;
 }
 
-/* Index: License
------------------------------------------------------------- */
-/* line 307, screen.scss */
 #license {
   color: #999;
   font-size: 17px;
 }
-/* line 311, screen.scss */
 #license h1 {
   color: #999;
   font: 21px 'DINWeb-CondBold', helvetica, arial, sans-serif;
   text-transform: uppercase;
 }
-/* line 316, screen.scss */
 #license a {
   color: #999;
   text-decoration: none;
 }
-/* line 320, screen.scss */
 #license img {
   float: left;
   display: block;
@@ -515,7 +426,6 @@ html, body {
 
 /* Goals
 ------------------------------------------------------------ */
-/* line 331, screen.scss */
 h3 {
   width: 618px;
   margin: 0 0 0.15em 340px;
@@ -524,25 +434,21 @@ h3 {
   text-transform: uppercase;
 }
 
-/* line 338, screen.scss */
 .blur h3 {
   color: transparent;
   text-shadow: 0 0 2px #86ac3a;
 }
 
-/* line 342, screen.scss */
 #main_content ul {
   margin: 0 0 40px 340px;
   color: #222;
 }
 
-/* line 346, screen.scss */
 .blur #main_content ul {
   color: transparent;
   text-shadow: 0 0 2px #222;
 }
 
-/* line 350, screen.scss */
 li {
   margin-bottom: 0.5em;
   line-height: 120%;
@@ -550,17 +456,14 @@ li {
 
 /* Main Content
 ------------------------------------------------------------ */
-/* line 360, screen.scss */
 #main_content {
   padding: 175px 0 0 0;
 }
 
-/* line 362, screen.scss */
 #main_content h1 {
   display: none;
 }
 
-/* line 364, screen.scss */
 h2 {
   position: relative;
   left: -65px;
@@ -570,13 +473,11 @@ h2 {
   font: 36px 'DINWebProRegular', helvetica, arial, serif;
 }
 
-/* line 372, screen.scss */
 .blur h2 {
   color: transparent;
   text-shadow: 0 0 2px #86ac3a;
 }
 
-/* line 376, screen.scss */
 h2 em {
   position: absolute;
   top: 17px;
@@ -590,14 +491,12 @@ h2 em {
   background: url(green_circle.png) no-repeat 50% 50%;
 }
 
-/* line 388, screen.scss */
 .blur h2 em {
   color: transparent;
   text-shadow: 0 0 2px #fff;
   background-image: url(green_circle_blur.png);
 }
 
-/* line 393, screen.scss */
 h4 {
   position: relative;
   left: 340px;
@@ -620,14 +519,12 @@ h4 {
   border-radius: 3px 0 0 3px;
 }
 
-/* line 409, screen.scss */
 .blur h4 {
   color: transparent;
   text-shadow: 0 0 2px #fff;
   background: url(label_blur.png) no-repeat 100% 0;
 }
 
-/* line 414, screen.scss */
 h4 em {
   padding-left: 5px;
   font: 14px helvetica, arial, sans-serif;
@@ -635,25 +532,21 @@ h4 em {
   text-transform: none;
 }
 
-/* line 420, screen.scss */
 a {
   color: #d00;
 }
 
-/* line 422, screen.scss */
 .instructions {
   margin-bottom: 1em;
   padding-left: 318px;
   color: #222;
 }
 
-/* line 427, screen.scss */
 .blur .instructions {
   color: transparent;
   text-shadow: 0 0 2px #222;
 }
 
-/* line 431, screen.scss */
 .instructions pre {
   display: block;
   width: 608px;
@@ -663,12 +556,10 @@ a {
   background: url(prompt.png) no-repeat 0 50%;
 }
 
-/* line 439, screen.scss */
 .blur .instructions pre {
   background: url(prompt_blur.png) no-repeat 0 50%;
 }
 
-/* line 441, screen.scss */
 #main_content img {
   display: block;
   margin-left: 340px;
@@ -678,7 +569,6 @@ a {
   box-shadow: 0 0 14px rgba(0, 0, 0, 0.15);
 }
 
-/* line 446, screen.scss */
 #main_content p {
   width: 618px;
   margin: 1em 0;
@@ -688,13 +578,11 @@ a {
   line-height: 130%;
 }
 
-/* line 454, screen.scss */
 .blur p {
   color: transparent;
   text-shadow: 0 0 2px #7c7c7c;
 }
 
-/* line 458, screen.scss */
 ol {
   width: 608px;
   margin: 1em 0;
@@ -703,7 +591,6 @@ ol {
   line-height: 130px;
 }
 
-/* line 465, screen.scss */
 .sample {
   overflow: auto;
   display: block;
@@ -714,7 +601,6 @@ ol {
   background: #2E2E2E;
 }
 
-/* line 474, screen.scss */
 .blur .sample {
   color: transparent;
   text-shadow: 0 0 2px #74e83f;
@@ -724,7 +610,6 @@ ol {
   box-shadow: 0 0 5px black;
 }
 
-/* line 479, screen.scss */
 .file {
   overflow: auto;
   display: block;
@@ -736,19 +621,16 @@ ol {
   background: #fff;
 }
 
-/* line 489, screen.scss */
 .note strong {
   color: #000;
   text-decoration: underline;
 }
 
-/* line 493, screen.scss */
 #main_content .note.red strong {
   color: #d00;
   text-decoration: none;
 }
 
-/* line 497, screen.scss */
 .blur #main_content .note.red strong {
   color: transparent;
   text-shadow: 0 0 2px #f00;
@@ -756,7 +638,6 @@ ol {
 
 /* Labs Index
 ------------------------------------------------------------ */
-/* line 507, screen.scss */
 #cover {
   display: none;
   position: fixed;
@@ -768,7 +649,6 @@ ol {
   z-index: 3;
 }
 
-/* line 517, screen.scss */
 #index {
   display: none;
   position: fixed;
@@ -785,12 +665,10 @@ ol {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-/* line 529, screen.scss */
 #index.visible {
   display: block;
 }
 
-/* line 531, screen.scss */
 #index #show_bookmarks {
   position: absolute;
   top: -6px;
@@ -802,12 +680,10 @@ ol {
   z-index: 2;
 }
 
-/* line 541, screen.scss */
 #index #show_bookmarks.active {
   background-position: -19px 0;
 }
 
-/* line 543, screen.scss */
 #index #no_bookmarks {
   display: none;
   position: absolute;
@@ -819,7 +695,6 @@ ol {
   background: url(no_bookmarks.png);
 }
 
-/* line 553, screen.scss */
 #index h1 {
   position: absolute;
   top: 0;
@@ -834,7 +709,6 @@ ol {
   z-index: 2;
 }
 
-/* line 566, screen.scss */
 #index ul {
   overflow: auto;
   position: absolute;
@@ -847,18 +721,15 @@ ol {
   z-index: 1;
 }
 
-/* line 577, screen.scss */
 #index ul::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 
-/* line 578, screen.scss */
 #index ul::-webkit-scrollbar-track:enabled {
   background-color: transparent;
 }
 
-/* line 580, screen.scss */
 #index ul::-webkit-scrollbar-button:start:decrement,
 #index ul::-webkit-scrollbar-button:end:increment {
   display: block;
@@ -867,7 +738,6 @@ ol {
   background-color: transparent;
 }
 
-/* line 582, screen.scss */
 #index ul::-webkit-scrollbar-thumb:vertical,
 #index ul::-webkit-scrollbar-thumb:horizontal {
   width: 30px;
@@ -875,21 +745,18 @@ ol {
   -webkit-border-radius: 5px;
 }
 
-/* line 584, screen.scss */
 #index ul.hover::-webkit-scrollbar-thumb:vertical,
 #index ul.hover::-webkit-scrollbar-thumb:horizontal {
   background-color: rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
 }
 
-/* line 586, screen.scss */
 #index li {
   overflow: hidden;
   margin-bottom: 0;
   padding-left: 12px;
 }
 
-/* line 591, screen.scss */
 #index a {
   display: block;
   height: 28px;
@@ -902,12 +769,10 @@ ol {
   background: url(index_item_background.gif) no-repeat 0 100%;
 }
 
-/* line 602, screen.scss */
 #index li:last-child a {
   background: none;
 }
 
-/* line 604, screen.scss */
 #index a span {
   float: left;
   display: block;
@@ -915,4 +780,46 @@ ol {
   width: 25px;
   font-weight: normal;
   text-align: right;
+}
+
+/* ------------------------------------------------------------- */
+/*                       MAX WIDTH: 914px                        */
+/* ------------------------------------------------------------- */
+@media all and (max-width: 914px) {
+  .wrapper {
+    width: 708px;
+    padding: 0 30px;
+  }
+
+  #index_header {
+    height: 175px;
+  }
+  #index_header a {
+    top: 20px;
+    width: auto;
+    background-size: 700px 102px;
+  }
+
+  #attention p {
+    width: auto;
+    padding-right: 330px;
+  }
+  #attention p em {
+    font-size: 36px;
+  }
+
+  #start_immersion {
+    right: 42px;
+    bottom: 48px;
+  }
+
+  #attention_links {
+    right: 33px;
+  }
+
+  #license_and_edgecase {
+    float: none;
+    width: auto;
+    margin-bottom: 40px;
+  }
 }

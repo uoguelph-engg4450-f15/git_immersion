@@ -1,4 +1,4 @@
-@import 'reset';
+@import 'compass/reset';
 @import 'fonts';
 @import 'compass/css3';
 
@@ -10,15 +10,11 @@ $gi_gray  : #7C7C7C;
 html, body {
   padding-bottom : 20px;
   font-family    : 'DINWebProRegular', helvetica, arial, serif;
-  background     : url(background.jpg); }
+  background     : url(background.jpg);
+}
 
 
 #index_body { background: #fff; }
-
-.wrapper {
-  position : relative;
-  width    : 894px;
-  margin   : 0 auto; }
 
 #image_preloader {
   overflow : hidden;
@@ -29,6 +25,11 @@ html, body {
   height   : 0;
   opacity  : 0;
 }
+
+.wrapper {
+  position : relative;
+  width    : 894px;
+  margin   : 0 auto; }
 
 
 
@@ -47,7 +48,7 @@ html, body {
     height      : 130px;
     margin      : 0 auto;
     text-indent :-999em;
-    background  : url(logo_large.png); }
+    background  : url(logo_large.png) no-repeat 50% 50%; }
 }
 
 
@@ -288,8 +289,14 @@ html, body {
 }
 
 
-/* Index: Brought to you by
+
+/* Index: License and EdgeCase
 ------------------------------------------------------------ */
+
+#license_and_edgecase {
+  float : right;
+  width : 485px;
+}
 
 #brought_to_you_by {
   color           : #ED6B44;
@@ -299,10 +306,6 @@ html, body {
 
   img { display: block; }
 }
-
-
-/* Index: License
------------------------------------------------------------- */
 
 #license {
   color     : #999;
@@ -608,3 +611,50 @@ ol {
   width        : 25px;
   font-weight  : normal;
   text-align   : right; }
+
+
+
+/* ------------------------------------------------------------- */
+/*                       MAX WIDTH: 914px                        */
+/* ------------------------------------------------------------- */
+
+@media all and (max-width: 914px) {
+  .wrapper {
+    width   : 708px;
+    padding : 0 30px;
+  }
+
+  #index_header {
+    height: 175px;
+   
+    a {
+      top             : 20px;
+      width           : auto;
+      background-size : 700px 102px;
+    }
+  }
+
+  #attention p {
+    width: auto;
+    padding-right: 330px;
+
+    em {
+      font-size: 36px;
+    }
+  }
+
+  #start_immersion {
+    right  : 42px;
+    bottom : 48px;
+  }
+
+  #attention_links {
+    right: 33px;
+  }
+
+  #license_and_edgecase {
+    float         : none;
+    width         : auto;
+    margin-bottom : 40px;
+  }
+}
