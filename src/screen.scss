@@ -646,6 +646,8 @@ ol {
   #start_immersion {
     right  : 42px;
     bottom : 48px;
+
+    &:active { bottom: 47px; }
   }
 
   #attention_links {

@@ -812,6 +812,9 @@ ol {
     right: 42px;
     bottom: 48px;
   }
+  #start_immersion:active {
+    bottom: 47px;
+  }
 
   #attention_links {
     right: 33px;
