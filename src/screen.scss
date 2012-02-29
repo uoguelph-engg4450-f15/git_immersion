@@ -626,7 +626,7 @@ ol {
 
   #index_header {
     height: 175px;
-   
+
     a {
       top             : 20px;
       width           : auto;
@@ -668,7 +668,74 @@ ol {
 /* ------------------------------------------------------------- */
 
 @media all and (max-width: 914px) {
+  #home_link {
+    top   : 43px;
+    right : 70px;
+    left  : auto;
+  }
+
+  #pager {
+    right      : 22px;
+    left       : auto;
+    width      : 300px;
+    height     : 181px;
+    background-image: url(pager_ipad.png);
+
+    .arrow { top: 17px; }
+  }
+
+  #arrow_next { left: 257px; }
+
+  #bookmark_link { top: 65px; }
+
+  .lab_title {
+    width        : auto;
+    padding-left : 30px;
+    margin-right : 270px;
+  }
+
+  #main_content { padding-top: 260px; }
+
   #main_content p {
     width: auto;
+    padding: 0 30px;
+  }
+
+  #main_content ul {
+    margin-left : 0;
+    padding     : 0 30px;
+  }
+
+  h2 {
+    left: 0;
+    padding: 0 30px 0 86px;
+
+    em {
+      top  : -3px;
+      left : 25px;
+    }
+  }
+
+  h3 {
+    width       : auto;
+    margin-left : 0;
+    padding     : 0 30px;
+  }
+
+  h4 {
+    left: 30px;
+  }
+
+  .instructions {
+    padding: 0 30px;
+    pre { width: auto; }
+  }
+
+  .sample {
+    padding-left: 30px;
+  }
+
+  .file {
+    padding-left: 30px;
   }
 }
