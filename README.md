@@ -35,7 +35,7 @@ The HTML output is put into `git_tutorial/html`.  Browsing the
 `git_tutorial/html/index.html` file will bring up the git tutorial in
 your browser.
 
-## Publising the Labs
+## Publishing the Labs
 
 To publish the labs on the web-site, run the `rake publish` command.
 This will copy the `git_tutorial/html` directory to the `gh-pages`
@@ -174,7 +174,7 @@ command.
     Execute:
     git checkout <hash>
 
-### =\<sample name\>_
+### =_\<sample name\>_
 
 Define/use a sample output.
 
