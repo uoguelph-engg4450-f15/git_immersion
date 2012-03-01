@@ -68,7 +68,7 @@ html, body {
 
 #home_link {
   position    : absolute;
-  top         : 47px;
+  top         : 22px;
   left        : 42px;
   width       : 210px;
   height      : 35px;
@@ -79,7 +79,7 @@ html, body {
 
 #pager {
   position   : absolute;
-  top        : 92px;
+  top        : 62px;
   left       : 34px;
   width      : 229px;
   height     : 268px;
@@ -93,6 +93,9 @@ html, body {
   width  : 334px;
   height : 40px; }
 
+#other_edgecase_link {
+  display: none; }
+
 #pager .arrow {
   position    : absolute;
   top         : 37px;
@@ -100,7 +103,7 @@ html, body {
   height      : 40px;
   text-indent :-999em; }
 
-#arrow_previous { left: 18px; }
+#arrow_previous { left: 16px; }
 #arrow_next     { left: 178px; }
 
 #table_of_contents_link {
@@ -143,8 +146,8 @@ html, body {
 }
 
 .lab_title {
-  width          : 618px;
-  padding        : 5px 0 15px 340px;
+  margin-top     : 25px;
+  padding        : 5px 10px 15px 340px;
   color          : #2e2e2e;
   font           : 39px 'DINWeb-CondMedium', helvetica, arial, sans-serif;
   line-height    : 100%;
@@ -669,42 +672,74 @@ ol {
 
 @media all and (max-width: 914px) {
   #home_link {
-    top   : 43px;
-    right : 70px;
-    left  : auto;
-  }
+    top   : 26px;
+    right : auto;
+    left  : 24px; }
+
+  #table_of_contents_link {
+    top    : 14px;
+    left   : 47px;
+    width  : 128px;
+    height : 37px; }
+
+.blur #pager { background: url(pager_ipad_blur.png); }
 
   #pager {
-    right      : 22px;
-    left       : auto;
-    width      : 300px;
-    height     : 181px;
+    top        : 69px;
+    left       : 21px;
+    width      : 227px;
+    height     : 129px;
     background-image: url(pager_ipad.png);
 
-    .arrow { top: 17px; }
+    .arrow { top: 6px; }
   }
 
-  #arrow_next { left: 257px; }
+  #edgecase_link { display: none; }
 
-  #bookmark_link { top: 65px; }
+  #arrow_previous { left: 20px; }
+  #arrow_next { left: 181px; }
+
+  #bookmark_link { top: 65px; height: 51px; }
+  #bookmark_link #bookmark { left: 21px; }
+
+  #other_edgecase_link {
+    display     : block;
+    position    : absolute;
+    right       : 50px;
+    bottom      : 10px;
+    width       : 84px;
+    height      : 23px;
+    text-indent : -999em;
+    background  : url(ipad-ec-logo.png); }
 
   .lab_title {
     width        : auto;
-    padding-left : 30px;
-    margin-right : 270px;
+    padding-left : 280px;
+    font-size    : 32px;
+
+    em { margin-bottom: 8px; }
   }
 
-  #main_content { padding-top: 260px; }
+  #main_content {
+    padding-top: 230px;
 
-  #main_content p {
-    width: auto;
-    padding: 0 30px;
+    p {
+      width: auto;
+      padding: 0 30px 0 88px; }
+
+    ul {
+      margin-left : 0;
+      padding     : 0 30px 0 88px; }
+
+    ol {
+      margin-left : 1em;
+      padding-left: 72px;
+      list-style-type: lower-roman;
+    }
+
+    img { margin-left: 88px; }
   }
 
-  #main_content ul {
-    margin-left : 0;
-    padding     : 0 30px;
-  }
 
   h2 {
     left: 0;
@@ -712,30 +747,24 @@ ol {
 
     em {
       top  : -3px;
-      left : 25px;
-    }
+      left : 25px; }
   }
 
   h3 {
     width       : auto;
     margin-left : 0;
-    padding     : 0 30px;
-  }
+    padding     : 0 30px 0 88px; }
 
   h4 {
-    left: 30px;
-  }
+    left   : 30px;
+    margin : 10px 0 10px 60px; }
 
   .instructions {
-    padding: 0 30px;
+    padding: 0 30px 0 66px;
     pre { width: auto; }
   }
 
-  .sample {
-    padding-left: 30px;
-  }
+  .sample { padding-left: 88px; }
 
-  .file {
-    padding-left: 30px;
-  }
+  .file { padding-left: 88px; }
 }
