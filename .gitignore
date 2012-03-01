@@ -7,3 +7,4 @@ git_tutorial/repos
 git_tutorial/work/**/*
 samples
 served
+.sass-cache/*
