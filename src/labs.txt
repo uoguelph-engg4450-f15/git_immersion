@@ -1729,7 +1729,7 @@ p. By merging master into your greet branch periodically, you can pick
 up any changes to master and keep your changes in greet compatible
 with changes in the mainline.
 
-p. However, it does produce ugly commit graphs. Latter we will look at
+p. However, it does produce ugly commit graphs. Later we will look at
 the option of rebasing rather than merging.
 
 h2. Up Next
