@@ -560,11 +560,15 @@ file: .gitconfig
   dump = cat-file -p
 EOF
 
-p. We've covered checkout, commit and status already.  And we just
-covered the @log@ command in the previous lab. Now you can type @git
-co@ wherever you used to have to type @git checkout@.  Likewise with
-@git st@ for @git status@ and @git ci@ for @git commit@.  And best of
-all, @git hist@ will allow you to avoid the really long @log@ command.
+p. We've covered the commit and status commands already.  And we just
+covered the @log@ command in the previous lab. The @checkout@ command
+will be coming up soon.
+
+p. With these aliases defined in the @.gitconfig@ file you can type
+@git co@ wherever you used to have to type @git checkout@.  Likewise
+with @git st@ for @git status@ and @git ci@ for @git commit@.  And
+best of all, @git hist@ will allow you to avoid the really long @log@
+command.
 
 p. Go ahead and give the new commands a try.
 
