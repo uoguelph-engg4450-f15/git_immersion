@@ -544,7 +544,7 @@ h3. Goals
 
 h2. Common Aliases
 
-p. +git status+, +git add+, +git commit+, and +git checkout+ are such
+p. @git status@, @git add@, @git commit@, and @git checkout@ are such
 common commands that it is useful to have abbreviations for them.
 
 p. Add the following to the .gitconfig file in your $HOME directory.
