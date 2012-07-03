@@ -693,7 +693,7 @@ Output:
 EOF
 
 p. 'master' is the name of the default branch.  By checking out a branch
-by name, you go to the lastest version of that branch.
+by name, you go to the latest version of that branch.
 
 ----------------------------------------------------------------------
 h1. Tagging versions
@@ -792,7 +792,7 @@ h3. Goals
 
 h2. Checkout Master
 
-p. Make sure you are on the lastest commit in master before proceeding.
+p. Make sure you are on the latest commit in master before proceeding.
 
 Execute:
 git checkout master
