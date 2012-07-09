@@ -499,7 +499,7 @@ p. Here's what I use to review the changes made in the last week.
 I'll add @--author=jim@ if I only want to see changes I made.
 
 pre(instructions).
-git log --all --pretty=format:"%h %cd %s (%an)" --since='7 days ago'
+git log --all --pretty=format:'%h %cd %s (%an)' --since='7 days ago'
 
 h2. The Ultimate Log Format
 
@@ -507,7 +507,7 @@ p. Over time, I've decided that I like the following log format for
 most of my work.
 
 Execute:
-git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short
+git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
 =ultimate
 
 It looks like this:
@@ -555,7 +555,7 @@ file: .gitconfig
   ci = commit
   st = status
   br = branch
-  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
   type = cat-file -t
   dump = cat-file -p
 EOF
