@@ -2452,7 +2452,7 @@ h3. Goals
 * Learn how to create bare repositories.
 
 p. Bare repositories (without working directories) are usually used for
-sharing).
+sharing.
 
 h2. Create a bare repository.
 
