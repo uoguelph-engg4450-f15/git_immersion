@@ -720,7 +720,7 @@ lookup up the hash, we will use the @^@ notation to indicate "the parent
 of v1".
 
 p(note). If the @v1@^ notation gives you any trouble, you can also try
-@v1~1@, which will reference the same version.  This notation means 
+@v1~1@, which will reference the same version.  This notation means
 "the first ancestor of v1".
 
 Execute:
@@ -2227,8 +2227,8 @@ EOF
 p. Now we see that the remote repository "origin" is simply the original
 *hello* repository.  Remote repositories typically live on a separate
 machine, possibly a centralized server.  As we can see here, however,
-they can just as well point to a repository on the same machine.  
-There is nothing particularly special about the name "origin", 
+they can just as well point to a repository on the same machine.
+There is nothing particularly special about the name "origin",
 however the convention is to use the name "origin" for
 the primary centralized repository (if there is one).
 
@@ -2625,4 +2625,3 @@ h1. Thank You
 
 p. Thank you for trying out the Git Immersion Labs.  Feel free to send
 comments to jim.weirich@gmail.com.
-
