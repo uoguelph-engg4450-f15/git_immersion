@@ -50,7 +50,7 @@ h2. Get the Tutorial package.
 
 p. Git the tutorial package from:
 
-* The URL "http://www.uoguelph.ca/~gwtaylor/outbox/git_tutorial.zip":http://www.uoguelph.ca/~gwtaylor/outbox/git_tutorial.zip"
+* The URL "http://www.uoguelph.ca/~gwtaylor/outbox/git_tutorial.zip":http://www.uoguelph.ca/~gwtaylor/outbox/git_tutorial.zip
 
 h2. Unzip the tutorial
 
