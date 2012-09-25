@@ -5,6 +5,11 @@ h3. Goals
 
 * To setup git so that it is ready for work.
 
+h2. Start a bash shell
+
+From the GNOME desktop, double-click on icon: "Bash Terminal".
+This will bring up a command prompt.
+
 h2. Setup Name and Email
 
 p. If you have never used git before, you need to do some setup first.
@@ -18,7 +23,7 @@ git config --global user.email "your_email@whatever.com"
 
 h2. Setup Line Ending Preferences
 
-Also, for Unix/Mac users:
+Also, for Unix/Mac users (this is what you should do in the lab):
 
 execute:
 git config --global core.autocrlf input
@@ -35,13 +40,12 @@ h1. More Setup
 
 h3. Goals
 
-* Get the tutorial materials setup and ready to run.
+* Get the tutorial materials set up and ready to run.
 
 h2. Get the Tutorial package.
 
 p. Git the tutorial package from either:
 
-* The memory sticks provided in the tutorial
 * The URL "http://gitimmersion.com/git_tutorial.zip":http://gitimmersion.com/git_tutorial.zip
 
 h2. Unzip the tutorial
@@ -82,8 +86,8 @@ repository from that directory, run the git init command.
 Execute:
 git init
 =init
-+git config user.name "Jim Weirich"
-+git config user.email "jim (at) edgecase.com"
++git config user.name "Graham Taylor"
++git config user.email "gwtaylor (at) gmail.com"
 
 Output:
 =init
@@ -286,7 +290,7 @@ Output:
 # Changes to be committed:
 #   (use "git reset HEAD <file>..." to unstage)
 #
-#	modified:   hello.rb
+#       modified:   hello.rb
 #
 EOF
 
@@ -496,7 +500,7 @@ p. See man git-log for all the details.
 h2. Getting Fancy
 
 p. Here's what I use to review the changes made in the last week.
-I'll add @--author=jim@ if I only want to see changes I made.
+I'll add @--author=gwtaylor@ if I only want to see changes I made.
 
 pre(instructions).
 git log --all --pretty=format:'%h %cd %s (%an)' --since='7 days ago'
@@ -1149,7 +1153,7 @@ p. Add an author comment to the program.
 
 File: hello.rb
 # Default is World
-# Author: Jim Weirich
+# Author: Graham Taylor
 name = ARGV.first || "World"
 
 puts "Hello, #{name}!"
@@ -1167,7 +1171,7 @@ email.
 
 File: hello.rb
 # Default is World
-# Author: Jim Weirich (jim@somewhere.com)
+# Author: Graham Taylor (gwtaylor@somewhere.com)
 name = ARGV.first || "World"
 
 puts "Hello, #{name}!"
@@ -2137,8 +2141,8 @@ git clone hello cloned_hello
 ls
 =ls2
 +cd cloned_hello
-+git config user.name "Jim Weirich"
-+git config user.email "jim (at) edgecase.com"
++git config user.name "Graham Taylor"
++git config user.email "gwtaylor (at) gmail.com"
 +cd ..
 
 Output:
@@ -2624,4 +2628,4 @@ p. Here are some topics you might want to research on your own:
 h1. Thank You
 
 p. Thank you for trying out the Git Immersion Labs.  Feel free to send
-comments to jim.weirich@gmail.com.
+comments to the original author, Jim Weirich (jim.weirich@gmail.com).
