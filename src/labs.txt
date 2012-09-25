@@ -1882,6 +1882,13 @@ work with any third party merge tool you wish to use.  See
 "http://onestepback.org/index.cgi/Tech/Git/UsingP4MergeWithGit.red":http://onestepback.org/index.cgi/Tech/Git/UsingP4MergeWithGit.red
 for a description of using the Perforce merge tool with git.
 
+p. On my Mac, I like working with @opendiff@ which comes with
+Xcode. You can configure this automatically. If you have a Mac,
+
+Execute:
+git config --global diff.tool opendiff
+git config --global difftool.prompt false
+
 ----------------------------------------------------------------------
 h1. Rebasing VS Merging
 
@@ -2544,9 +2551,19 @@ Output:
 EOF
 
 p(note). *NOTE:* We had to explicitly name the branch master that was
-receiving the push.  It is possible to set it up automatically, but I
-_never_ remember the commands to do that.  Check out the "Git Remote
-Branch" gem for easy management of remote branches.
+receiving the push.  It is possible to set it up automatically, but
+I always have to look up the command to do that. Just for reference, to
+push automatically to the master branch on the remote repo called
+@shared@,
+
+Execute:
+git push --set-upstream shared master
+=push1
+
+Output:
+=push1
+EOF
+
 
 ----------------------------------------------------------------------
 h1. Pulling Shared Changes
