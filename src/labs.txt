@@ -21,6 +21,10 @@ execute:
 git config --global user.name "Your Name"
 git config --global user.email "your_email@whatever.com"
 
+p. Since we'll be using Github later in the tutorial, your email
+address for Git should be the same one associated with your GitHub
+account.
+
 h2. Setup Line Ending Preferences
 
 Also, for Unix/Mac users (this is what you should do in the lab):
@@ -2590,50 +2594,98 @@ git pull shared master
 cat README
 
 ----------------------------------------------------------------------
-h1. Hosting your Git Repositories
+h1. Cloning a Github repository
 
 h3. Goals
 
-* Learn how to setup git server for sharing repositories.
+* Set up ssh access to Github
+* Learn how to clone a Github repo and make local changes
 
-p. There are many ways to share git repositories over the network.
-Here is a quick and dirty way.
+p. Github makes it easy for you to collaborate with others using Git.
 
-h2. Start up the git server
+h2. Set up ssh access
 
-execute:
-# (From the work directory)
-git daemon --verbose --export-all --base-path=.
+In order to push and pull to Github repos, we need to set up ssh
+access from the UNIX lab.
 
-p. Now, in a separate terminal window, go to your work directory
+If you have not done so already, follow <a
+href="https://help.github.com/articles/generating-ssh-keys#platform-linux">these
+instructions</a> to set up authentication. Test ssh authentication and make
+sure it's working.
 
-execute:
-# (From the work directory)
-git clone git://localhost/hello.git network_hello
-cd network_hello
-ls
+Execute:
+ssh -T git@github.com
+=sshtest
 
-p. You should see a copy of hello project.
+Output:
+=sshtest
+EOF
 
-h2. Pushing to the Git Daemon
+h2. Clone the class sandbox
 
-p. If you want to push to the git daemon repository, add
-@--enable=receive-pack@ to the git daemon command.  Be careful because
-there is no authentication on this server, anyone could push to your
-repository.
+Execute:
+cd ..
+git clone git@github.com:uoguelph-engg4450-f12/sandbox.git
+=clone
+
+Output:
+=clone
+EOF
+
+Execute:
+cd sandbox
+git hist
+
+h2. Make some changes
+
+p. Let's add a text file and name it something unique (e.g. your username)
+
+File: gwtaylor.txt
+Here is a message for the rest of the class (this could be dangerous)
+EOF
+
+Execute:
+git add gwtaylor.txt
+git commit -m "Added a message to share with the class"
+
+p. Now push the change to the shared repo.
+
+Execute:
+git push 
+=push
+
+Output:
+=push
+EOF
+
+p. Note that we didn't specify the name of the remote or the remote
+branch. When we cloned the repo from Github, this was automatically
+set to the remote @origin@ and remote branch @master@.
 
 ----------------------------------------------------------------------
-h1. Sharing Repos
+h1. Pulling others' changes
 
 h3. Goals
 
-* Learn to share repos across WIFI.
+* Pull changes from Github
 
-p. See if your neighbor is running the git daemon.  Exchange IP
-addresses and see if you can pull from each other's repositories.
+h2. Pulling from Github
 
-p(note). *NOTE:* The gitjour gem is really useful in sharing
-ad-hoc repositories.
+p. Let's see if your classmates made changes to the repo.
+
+Execute:
+git pull
+=pull
+
+Output:
+=pull
+EOF
+
+p. You may need to wait a while to see changes since everyone's at
+different stages in the tutorial.
+
+p. See if you can modify someone else's message and send it back to
+them!
 
 ----------------------------------------------------------------------
 h1. Advanced / Future Topics
@@ -2649,10 +2701,12 @@ p. Here are some topics you might want to research on your own:
 * Finding Buggy Commits (git bisect)
 * Workflows
 * Non-command line tools (gitx, gitk, magit)
-* Working with GitHub
+* Working with GitHub (branching, merging, issues, etc.)
 
 ----------------------------------------------------------------------
 h1. Thank You
 
-p. Thank you for trying out the Git Immersion Labs.  Feel free to send
-comments to the original author, Jim Weirich (jim.weirich@gmail.com).
+p. We hope you had fun!
+
+* 
+
