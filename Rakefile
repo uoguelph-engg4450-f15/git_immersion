@@ -50,5 +50,5 @@ task :repackage => [:clobber, :package]
 
 desc "Upload the zipped tutorial to the download site."
 task :upload => [:not_dirty, "dist/git_tutorial.zip"] do
-  sh 'scp dist/git_tutorial.zip linode:htdocs/download/git_tutorial.zip'
+  sh 'rsync -avzPh dist/git_tutorial.zip home.web.uoguelph.ca:public_html/outbox/git_tutorial.zip'
 end
