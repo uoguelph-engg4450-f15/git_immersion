@@ -44,7 +44,7 @@ h3. Goals
 
 h2. Get the Tutorial package.
 
-p. Git the tutorial package from either:
+p. Git the tutorial package from:
 
 * The URL "http://gitimmersion.com/git_tutorial.zip":http://gitimmersion.com/git_tutorial.zip
 
@@ -272,7 +272,15 @@ following list (in priority order):
 * VISUAL environment variable
 * EDITOR environment variable
 
-p. I have the EDITOR variable set to @emacsclient@.
+p. In the UNIX lab, your @~/.bashrc@ references
+@/export/scripts/bashrc@ and this sets @EDITOR=/usr/bin/vim@ and
+@VISUAL=/usr/bin/vim@.
+
+p. I have the EDITOR variable set to @emacs@ because I am an emacs user. However, if you prefer a
+graphical editor, I would add @export GIT_EDITOR=gedit@ to a new file
+in your home directory called @~/.bash.local@. This will pop up gedit
+to take your commit message when you do not include the @-m@ flag in
+your commit.
 
 p. So commit now and check the status.
 
@@ -537,7 +545,9 @@ Fortunately we will learn about git aliases in the next lab.
 h2. Other Tools
 
 p. Both <code>gitx</code> (for Macs) and <code>gitk</code> (any
-platform) are useful in exploring log history.
+platform) are useful in exploring log history. I really like @tig@
+which is a lightweight command-line git browser (tig is installed in
+the lab).
 
 ----------------------------------------------------------------------
 h1. Aliases
@@ -600,7 +610,7 @@ the next lab.
 p. If your shell supports aliases or shortcuts, then you can add
 aliases at that level too.  Here are the ones I use:
 
-file: .profile
+file: .bashrc.local
 alias gs='git status '
 alias ga='git add '
 alias gb='git branch '
