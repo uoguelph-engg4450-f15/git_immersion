@@ -52,6 +52,14 @@ p. Git the tutorial package from:
 
 * The URL "http://www.uoguelph.ca/~gwtaylor/outbox/git_tutorial.zip":http://www.uoguelph.ca/~gwtaylor/outbox/git_tutorial.zip
 
+We are assuming that you're working from a folder in your home
+directory called @~lab2@. But you can start from anywhere you like.
+
+Execute:
+-mkdir lab2
+-cd ~/lab2
+-wget http://www.uoguelph.ca/~gwtaylor/outbox/git_tutorial.zip
+
 h2. Unzip the tutorial
 
 p. The tutorial package should have a main directory "git_tutorial"
@@ -59,7 +67,14 @@ with three sub-directories:
 
 * html -- These html files.  Point your browser to html/index.html
 * work -- An empty working directory.  Create your repos in here.
-* repos -- Prepackaged Git repositories so you can jump into the tutorial at any point.  If you get stuck, just copy the desired lab into your working directory.
+* repos -- Prepackaged Git repositories so you can jump into the
+* tutorial at any point.  If you get stuck, just copy the desired lab
+* into your working directory.
+
+Execute:
+-unzip git_tutorial.zip
+-cd git_tutorial/work
+
 
 ----------------------------------------------------------------------
 h1. Create a Project
@@ -280,11 +295,16 @@ p. In the UNIX lab, your @~/.bashrc@ references
 @/export/scripts/bashrc@ and this sets @EDITOR=/usr/bin/vim@ and
 @VISUAL=/usr/bin/vim@.
 
-p. I have the EDITOR variable set to @emacs@ because I am an emacs user. However, if you prefer a
-graphical editor, I would add @export GIT_EDITOR=gedit@ to a new file
-in your home directory called @~/.bash.local@. This will pop up gedit
+p. I have the EDITOR variable set to @emacs@ because I am an emacs
+user. For the purposes of this lab, let's just use @gedit@ by setting
+the @GIT_EDITOR@ environment variable. This will pop up gedit
 to take your commit message when you do not include the @-m@ flag in
 your commit.
+
+Execute:
+export GIT_EDITOR=gedit
+
+If you prefer another editor, feel free to change the above command.
 
 p. So commit now and check the status.
 
@@ -578,6 +598,11 @@ file: .gitconfig
   dump = cat-file -p
 EOF
 
+p(note). *Note:* to edit @.gitconfig@ you can do the following.
+
+Execute:
+gedit ~/.gitconfig
+
 p. We've covered the commit and status commands already.  And we just
 covered the @log@ command in the previous lab. The @checkout@ command
 will be coming up soon.
@@ -627,6 +652,17 @@ alias gx='gitx --all'
 alias got='git '
 alias get='git '
 EOF
+
+p(note). *Note:* to edit @.bashrc.local@ you can do the following.
+
+Execute:
+gedit ~/.bashrc.local
+
+p. The change will take effect next time you start the terminal. But you
+want it to take effect right away, so you can "source" the file.
+
+Execute:
+source ~/.bashrc.local
 
 p. The @go@ abbreviation for @git checkout@ is particularly nice.  It
 allows me to type:
@@ -1883,15 +1919,10 @@ h2. Advanced Merging
 
 p. git doesn't provide any graphical merge tools, but it will gladly
 work with any third party merge tool you wish to use.  See
-"http://onestepback.org/index.cgi/Tech/Git/UsingP4MergeWithGit.red":http://onestepback.org/index.cgi/Tech/Git/UsingP4MergeWithGit.red
-for a description of using the Perforce merge tool with git.
-
-p. On my Mac, I like working with @opendiff@ which comes with
-Xcode. You can configure this automatically. If you have a Mac,
-
-Execute:
-git config --global diff.tool opendiff
-git config --global difftool.prompt false
+"http://twobitlabs.com/2011/08/install-diffmerge-git-mac-os-x/":http://twobitlabs.com/2011/08/install-diffmerge-git-mac-os-x/
+for a description of using the DiffMerge merge tool with git (it works
+on Linux, OSX, and Windows). No need to do this right now - but the
+option is there if you are curious!
 
 ----------------------------------------------------------------------
 h1. Rebasing VS Merging
@@ -2477,7 +2508,8 @@ h3. Goals
 * Learn how to create bare repositories.
 
 p. Bare repositories (without working directories) are usually used for
-sharing.
+sharing. One example is on a remote host (e.g. Github) which team
+members access, pushing and pulling their changes.
 
 h2. Create a bare repository.
 
@@ -2610,8 +2642,15 @@ access from the UNIX lab.
 
 If you have not done so already, follow <a
 href="https://help.github.com/articles/generating-ssh-keys#platform-linux">these
-instructions</a> to set up authentication. Test ssh authentication and make
-sure it's working.
+instructions</a> to set up authentication. 
+
+p(note). *Note:* In step 4, the instructions recommend installing
+xclip to copy your public key the clipboard. You won't have
+permissions to install xclip. After creating your public key, just
+open it up in @gedit@ and copy it to the clipboard with @ctrl-c@,
+being careful not to add any newlines or whitespace.
+
+p. Once you've copied your key to Github, test ssh authentication and make sure it's working.
 
 Execute:
 ssh -T git@github.com
