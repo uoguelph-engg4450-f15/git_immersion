@@ -1273,6 +1273,9 @@ h3. Goals
 
 h2. Now add a Rakefile
 
+p. This lab assumes you have installed both @ruby@ and @rake@. Please
+do that before continuing. To check, run @which ruby@ and @which rake@.
+
 p. Let's add a Rakefile to our repository.  The following one will do
 nicely.
 
