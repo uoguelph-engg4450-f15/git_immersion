@@ -35,7 +35,7 @@ h2. Setup Ruby
 p. For this tutorial you need a working Ruby interpreter. If you haven´t one 
 installed yet, it is time to set it up now:
 
-https://www.ruby-lang.org/en/installation/
+"https://www.ruby-lang.org/en/installation/":https://www.ruby-lang.org/en/installation/
 
 ----------------------------------------------------------------------
 h1. More Setup
@@ -1280,7 +1280,7 @@ h3. Goals
 
 h2. Now add a Rakefile
 
-p. This lab assumes you have installed @rake@. Please
+p. This lab assumes you have installed *rake*. Please
 do that before continuing. Check for your specific Operating System.
 Otherwise execute: 
 
