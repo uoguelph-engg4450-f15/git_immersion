@@ -3,7 +3,7 @@ h1. Setup
 
 h3. Goals
 
-* To setup git so that it is ready for work.
+* To setup git and ruby so that it is ready for work.
 
 h2. Setup Name and Email
 
@@ -29,6 +29,13 @@ And for Windows users:
 execute:
 git config --global core.autocrlf true
 git config --global core.safecrlf true
+
+h2. Setup Ruby 
+
+p. For this tutorial you need a working Ruby interpreter. If you haven´t one 
+installed yet, it is time to set it up now:
+
+https://www.ruby-lang.org/en/installation/
 
 ----------------------------------------------------------------------
 h1. More Setup
@@ -1273,8 +1280,12 @@ h3. Goals
 
 h2. Now add a Rakefile
 
-p. This lab assumes you have installed both @ruby@ and @rake@. Please
-do that before continuing. To check, run @which ruby@ and @which rake@.
+p. This lab assumes you have installed @rake@. Please
+do that before continuing. Check for your specific Operating System.
+Otherwise execute: 
+
+Execute:
+gem install rake 
 
 p. Let's add a Rakefile to our repository.  The following one will do
 nicely.
