@@ -56,7 +56,7 @@ The Format Directives are:
 
 ### h1. _\<lab name\>_
 
-Starts a new lab with the name _\<lab name\>_.  Each lab 
+Starts a new lab with the name _\<lab name\>_.  Each lab
 
 Example:
 
@@ -129,7 +129,7 @@ Example:
 
     File: hello.rb
     # This is the hello world program in Ruby.
-    
+
     puts "Hello, World!"
     EOF
 
