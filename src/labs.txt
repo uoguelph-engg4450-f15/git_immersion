@@ -2664,7 +2664,7 @@ h2. Clone the class sandbox
 
 Execute:
 cd ..
-git clone git@github.com:uoguelph-engg4450-f13/sandbox.git
+git clone git@github.com:uoguelph-engg4450-f14/sandbox.git
 =clone
 
 Output:
