@@ -24,5 +24,3 @@ https://www.ruby-lang.org/en/installation/
 
 You will also need to install the RubyGems package manager:
 http://rubygems.org/
-
-
