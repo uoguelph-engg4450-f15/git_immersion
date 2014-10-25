@@ -17,4 +17,12 @@ In this workshop we take two approaches to dealing with the whole "fear of git" 
 
 So, whether you are a complete newcomer to git, or have been using it a while but would like a deeper understanding, this workshop is for you.
 
-Attendees of this workshop should bring a wifi-enabled laptop with git installed and ready to go.
+Attendees of this workshop should bring a wifi-enabled laptop with git and ruby pre-installed and ready to go.
+
+For reference how to install the Ruby-Interpreter on your Operating System visit:
+https://www.ruby-lang.org/en/installation/
+
+You will also need to install the RubyGems package manager:
+http://rubygems.org/
+
+
