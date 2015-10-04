@@ -32,7 +32,7 @@ task :publish => [:not_dirty, :build, :labs] do
   cp FileList['git_tutorial/html/*'], '.'
   sh 'git add .'
   sh "git commit -m 'Updated docs to #{head}'"
-  sh 'git push'
+  sh 'git push --set-upstream origin gh-pages'
   sh 'git checkout master'
 end
 
