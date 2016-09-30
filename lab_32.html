@@ -63,30 +63,30 @@ git hist</pre>
 <pre class="sample">$ git checkout greet
 Already on 'greet'
 $ git hist
-*   d2970b6 2015-10-04 | Merged master fixed conflict. (HEAD, greet) [Graham Taylor]
+*   0acf1e2 2016-09-30 | Merged master fixed conflict. (HEAD -&gt; greet) [Graham Taylor]
 |\  
-| * 1ef1008 2015-10-04 | Made interactive (master) [Graham Taylor]
-* |   38c5120 2015-10-04 | Merge branch 'master' into greet [Graham Taylor]
+| * 10da91c 2016-09-30 | Made interactive (master) [Graham Taylor]
+* |   457c29b 2016-09-30 | Merge branch 'master' into greet [Graham Taylor]
 |\ \  
 | |/  
-| * 088f3fe 2015-10-04 | Added README [Graham Taylor]
-* | d0418ca 2015-10-04 | Updated Rakefile [Graham Taylor]
-* | 44a4980 2015-10-04 | Hello uses Greeter [Graham Taylor]
-* | 4ef0f62 2015-10-04 | Added greeter class [Graham Taylor]
+| * 6f14490 2016-09-30 | Added README [Graham Taylor]
+* | d2a0cb5 2016-09-30 | Updated Rakefile [Graham Taylor]
+* | 5ae9152 2016-09-30 | Hello uses Greeter [Graham Taylor]
+* | 8c9c210 2016-09-30 | Added greeter class [Graham Taylor]
 |/  
-* 82a1e27 2015-10-04 | Added a Rakefile. [Graham Taylor]
-* 3a5dc81 2015-10-04 | Moved hello.rb to lib [Graham Taylor]
-* 3a63808 2015-10-04 | Add an author/email comment [Graham Taylor]
-* e39aef4 2015-10-04 | Added a comment (tag: v1) [Graham Taylor]
-* d469061 2015-10-04 | Added a default value (tag: v1-beta) [Graham Taylor]
-* 4416b24 2015-10-04 | Using ARGV [Graham Taylor]
-* 25f39a2 2015-10-04 | First Commit [Graham Taylor]</pre>
+* e9e9ab8 2016-09-30 | Added a Rakefile. [Graham Taylor]
+* b0815d0 2016-09-30 | Moved hello.rb to lib [Graham Taylor]
+* 204d8be 2016-09-30 | Add an author/email comment [Graham Taylor]
+* 70ec85b 2016-09-30 | Added a comment (tag: v1) [Graham Taylor]
+* dad25bf 2016-09-30 | Added a default value (tag: v1-beta) [Graham Taylor]
+* 61d6fde 2016-09-30 | Using ARGV [Graham Taylor]
+* 67d5d9c 2016-09-30 | First Commit [Graham Taylor]</pre>
 <p>That&#8217;s a bit hard to read, but looking at the data we see that the &#8220;Updated Rakefile&#8221; commit was the last commit on the greet branch before merging.  Let&#8217;s reset the greet branch to that commit.</p>
 <h4>Execute:</h4>
 <pre class="instructions">git reset --hard &lt;hash&gt;</pre>
 <h4>Output:</h4>
-<pre class="sample">$ git reset --hard d0418ca
-HEAD is now at d0418ca Updated Rakefile
+<pre class="sample">$ git reset --hard d2a0cb5
+HEAD is now at d2a0cb5 Updated Rakefile
 </pre>
 <h2>Check the branch. <em>02</em></h2>
 <p>Look at the log for the greet branch.  We no longer have the merge commits in its history.</p>
@@ -94,19 +94,19 @@ HEAD is now at d0418ca Updated Rakefile
 <pre class="instructions">git hist --all</pre>
 <h4>Output:</h4>
 <pre class="sample">$ git hist --all
-* d0418ca 2015-10-04 | Updated Rakefile (HEAD, greet) [Graham Taylor]
-* 44a4980 2015-10-04 | Hello uses Greeter [Graham Taylor]
-* 4ef0f62 2015-10-04 | Added greeter class [Graham Taylor]
-| * 1ef1008 2015-10-04 | Made interactive (master) [Graham Taylor]
-| * 088f3fe 2015-10-04 | Added README [Graham Taylor]
+* d2a0cb5 2016-09-30 | Updated Rakefile (HEAD -&gt; greet) [Graham Taylor]
+* 5ae9152 2016-09-30 | Hello uses Greeter [Graham Taylor]
+* 8c9c210 2016-09-30 | Added greeter class [Graham Taylor]
+| * 10da91c 2016-09-30 | Made interactive (master) [Graham Taylor]
+| * 6f14490 2016-09-30 | Added README [Graham Taylor]
 |/  
-* 82a1e27 2015-10-04 | Added a Rakefile. [Graham Taylor]
-* 3a5dc81 2015-10-04 | Moved hello.rb to lib [Graham Taylor]
-* 3a63808 2015-10-04 | Add an author/email comment [Graham Taylor]
-* e39aef4 2015-10-04 | Added a comment (tag: v1) [Graham Taylor]
-* d469061 2015-10-04 | Added a default value (tag: v1-beta) [Graham Taylor]
-* 4416b24 2015-10-04 | Using ARGV [Graham Taylor]
-* 25f39a2 2015-10-04 | First Commit [Graham Taylor]</pre>
+* e9e9ab8 2016-09-30 | Added a Rakefile. [Graham Taylor]
+* b0815d0 2016-09-30 | Moved hello.rb to lib [Graham Taylor]
+* 204d8be 2016-09-30 | Add an author/email comment [Graham Taylor]
+* 70ec85b 2016-09-30 | Added a comment (tag: v1) [Graham Taylor]
+* dad25bf 2016-09-30 | Added a default value (tag: v1-beta) [Graham Taylor]
+* 61d6fde 2016-09-30 | Using ARGV [Graham Taylor]
+* 67d5d9c 2016-09-30 | First Commit [Graham Taylor]</pre>
   </div>
 
   <div id="index">

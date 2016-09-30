@@ -60,15 +60,15 @@
 git hist</pre>
 <h4>Output:</h4>
 <pre class="sample">$ git hist
-* 1ef1008 2015-10-04 | Made interactive (HEAD, master) [Graham Taylor]
-* 088f3fe 2015-10-04 | Added README [Graham Taylor]
-* 82a1e27 2015-10-04 | Added a Rakefile. [Graham Taylor]
-* 3a5dc81 2015-10-04 | Moved hello.rb to lib [Graham Taylor]
-* 3a63808 2015-10-04 | Add an author/email comment [Graham Taylor]
-* e39aef4 2015-10-04 | Added a comment (tag: v1) [Graham Taylor]
-* d469061 2015-10-04 | Added a default value (tag: v1-beta) [Graham Taylor]
-* 4416b24 2015-10-04 | Using ARGV [Graham Taylor]
-* 25f39a2 2015-10-04 | First Commit [Graham Taylor]</pre>
+* 10da91c 2016-09-30 | Made interactive (HEAD -&gt; master) [Graham Taylor]
+* 6f14490 2016-09-30 | Added README [Graham Taylor]
+* e9e9ab8 2016-09-30 | Added a Rakefile. [Graham Taylor]
+* b0815d0 2016-09-30 | Moved hello.rb to lib [Graham Taylor]
+* 204d8be 2016-09-30 | Add an author/email comment [Graham Taylor]
+* 70ec85b 2016-09-30 | Added a comment (tag: v1) [Graham Taylor]
+* dad25bf 2016-09-30 | Added a default value (tag: v1-beta) [Graham Taylor]
+* 61d6fde 2016-09-30 | Using ARGV [Graham Taylor]
+* 67d5d9c 2016-09-30 | First Commit [Graham Taylor]</pre>
 <p>The &#8216;Added <span class="caps">README</span>&#8217; commit is the one directly before the conflicting interactive mode.  We will reset the master branch to &#8216;Added <span class="caps">README</span>&#8217; branch.</p>
 <h4>Execute:</h4>
 <pre class="instructions">git reset --hard &lt;hash&gt;
@@ -76,18 +76,18 @@ git hist --all</pre>
 <p>Review the log.  It should look like the repository has been wound back in time to the point before we merged anything.</p>
 <h4>Output:</h4>
 <pre class="sample">$ git hist --all
-* d0418ca 2015-10-04 | Updated Rakefile (greet) [Graham Taylor]
-* 44a4980 2015-10-04 | Hello uses Greeter [Graham Taylor]
-* 4ef0f62 2015-10-04 | Added greeter class [Graham Taylor]
-| * 088f3fe 2015-10-04 | Added README (HEAD, master) [Graham Taylor]
+* d2a0cb5 2016-09-30 | Updated Rakefile (greet) [Graham Taylor]
+* 5ae9152 2016-09-30 | Hello uses Greeter [Graham Taylor]
+* 8c9c210 2016-09-30 | Added greeter class [Graham Taylor]
+| * 6f14490 2016-09-30 | Added README (HEAD -&gt; master) [Graham Taylor]
 |/  
-* 82a1e27 2015-10-04 | Added a Rakefile. [Graham Taylor]
-* 3a5dc81 2015-10-04 | Moved hello.rb to lib [Graham Taylor]
-* 3a63808 2015-10-04 | Add an author/email comment [Graham Taylor]
-* e39aef4 2015-10-04 | Added a comment (tag: v1) [Graham Taylor]
-* d469061 2015-10-04 | Added a default value (tag: v1-beta) [Graham Taylor]
-* 4416b24 2015-10-04 | Using ARGV [Graham Taylor]
-* 25f39a2 2015-10-04 | First Commit [Graham Taylor]</pre>
+* e9e9ab8 2016-09-30 | Added a Rakefile. [Graham Taylor]
+* b0815d0 2016-09-30 | Moved hello.rb to lib [Graham Taylor]
+* 204d8be 2016-09-30 | Add an author/email comment [Graham Taylor]
+* 70ec85b 2016-09-30 | Added a comment (tag: v1) [Graham Taylor]
+* dad25bf 2016-09-30 | Added a default value (tag: v1-beta) [Graham Taylor]
+* 61d6fde 2016-09-30 | Using ARGV [Graham Taylor]
+* 67d5d9c 2016-09-30 | First Commit [Graham Taylor]</pre>
   </div>
 
   <div id="index">

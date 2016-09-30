@@ -61,7 +61,7 @@
 <p>This should show the latest commit made in the repository.  The SHA1 hash on your system is probably different that what is on mine, but you should see something like this.</p>
 <h4>Output:</h4>
 <pre class="sample">$ git hist --max-count=1
-* 82a1e27 2015-10-04 | Added a Rakefile. (HEAD, master) [Graham Taylor]</pre>
+* e9e9ab8 2016-09-30 | Added a Rakefile. (HEAD -&gt; master) [Graham Taylor]</pre>
 <h2>Dumping the Latest Commit <em>02</em></h2>
 <p>Using the SHA1 hash from the commit listed above &#8230;</p>
 <h4>Execute:</h4>
@@ -69,13 +69,13 @@
 git cat-file -p &lt;hash&gt;</pre>
 <p>Here&#8217;s my output &#8230;</p>
 <h4>Output:</h4>
-<pre class="sample">$ git cat-file -t 82a1e27
+<pre class="sample">$ git cat-file -t e9e9ab8
 commit
-$ git cat-file -p 82a1e27
+$ git cat-file -p e9e9ab8
 tree bdae880ee99af38c88bfaac6260517e8e7c40ee2
-parent 3a5dc819a605eb45458dcd7fc18add4b3cecc6e5
-author Graham Taylor &lt;gwtaylor (at) gmail.com&gt; 1443982649 -0400
-committer Graham Taylor &lt;gwtaylor (at) gmail.com&gt; 1443982649 -0400
+parent b0815d04c4f0c9fa72d1a275f5b4ff1010d8685a
+author Graham Taylor &lt;gwtaylor (at) gmail.com&gt; 1475251642 -0400
+committer Graham Taylor &lt;gwtaylor (at) gmail.com&gt; 1475251642 -0400
 
 Added a Rakefile.
 </pre>

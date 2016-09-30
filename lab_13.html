@@ -75,9 +75,9 @@ state without impacting any branches by performing another checkout.
 If you want to create a new branch to retain commits you create, you may
 do so (now or later) by using -b with the checkout command again. Example:
 
-  git checkout -b new_branch_name
+  git checkout -b &lt;new-branch-name&gt;
 
-HEAD is now at d469061... Added a default value
+HEAD is now at dad25bf... Added a default value
 $ cat hello.rb
 name = ARGV.first || "World"
 
@@ -93,11 +93,11 @@ puts "Hello, #{name}!"
 git checkout v1-beta</pre>
 <h4>Output:</h4>
 <pre class="sample">$ git checkout v1
-Previous HEAD position was d469061... Added a default value
-HEAD is now at e39aef4... Added a comment
+Previous HEAD position was dad25bf... Added a default value
+HEAD is now at 70ec85b... Added a comment
 $ git checkout v1-beta
-Previous HEAD position was e39aef4... Added a comment
-HEAD is now at d469061... Added a default value
+Previous HEAD position was 70ec85b... Added a comment
+HEAD is now at dad25bf... Added a default value
 </pre>
 <h2>Viewing Tags using the <code>tag</code> command <em>04</em></h2>
 <p>You can see what tags are available using the <code>git tag</code> command.</p>
@@ -114,10 +114,10 @@ v1-beta
 <pre class="instructions">git hist master --all</pre>
 <h4>Output:</h4>
 <pre class="sample">$ git hist master --all
-* e39aef4 2015-10-04 | Added a comment (tag: v1, master) [Graham Taylor]
-* d469061 2015-10-04 | Added a default value (HEAD, tag: v1-beta) [Graham Taylor]
-* 4416b24 2015-10-04 | Using ARGV [Graham Taylor]
-* 25f39a2 2015-10-04 | First Commit [Graham Taylor]</pre>
+* 70ec85b 2016-09-30 | Added a comment (tag: v1, master) [Graham Taylor]
+* dad25bf 2016-09-30 | Added a default value (HEAD, tag: v1-beta) [Graham Taylor]
+* 61d6fde 2016-09-30 | Using ARGV [Graham Taylor]
+* 67d5d9c 2016-09-30 | First Commit [Graham Taylor]</pre>
 <p>You can see both tags (<code>v1</code> and <code>v1-beta</code>) listed in the log output, along with the branch name (<code>master</code>).  Also <code>HEAD</code> shows you the currently checked out commit (which is <code>v1-beta</code> at the moment).</p>
   </div>
 
